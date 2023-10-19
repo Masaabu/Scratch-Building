@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ゲームバージョン選択</title>
     <style>
         .version-group {
             background-color: #f0f0f0;
@@ -26,27 +25,65 @@
             text-decoration: none; /* リンクの下線を非表示 */
             color: #000; /* テキストの色 */
         }
+
+        .game-version-title {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .game-version-group {
+            background-color:#c3c3c3;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
     </style>
 </head>
 <body>
-    <h1>ビル経営ゲーム7.0 アルファ版</h1>
+    
+    <details class="game-version-group"> 
+        <summary class="game-version-title">ビル経営ゲームv7.0</summary>
 
-    <div class="version-group">
-        <div>
-            <h2>alpha7.0.1</h2>
-            <p class="version-info">更新日: 未公開</p>
-            <p>更新内容はこちらに表示されます。</p>
+        <div class="version-group">
+            <div>
+                <h2>2023年末公開予定</h2>
+            </div>
         </div>
-        <a class="execute-button" href="a7-0-1.html">開く</a>
-    </div>
+    </details>
 
-    <div class="version-group">
-        <div>
-            <h2>alpha7.0.0</h2>
-            <p class="version-info">更新日: 2023-10-20</p>
-            <p>部屋が表示されるだけで、その他のことはまだできません。</p>
+    <details class="game-version-group"> 
+        <summary class="game-version-title">ビル経営ゲームv7.0 ベータ版</summary>
+
+        <div class="version-group">
+            <div>
+                <h2>現在公開されているベータ版はありません。</h2>
+            </div>
         </div>
-        <a class="execute-button" href="a7-0-0.html">開く</a>
-    </div>
+    </details>
+
+    <details class="game-version-group" open> 
+        <summary class="game-version-title">ビル経営ゲームv7.0 アルファ版</summary>
+
+        <div class="version-group">
+            <div>
+                <h2>alpha7.0.1</h2>
+                <p class="version-info">更新日: 未公開</p>
+                <p>更新内容はこちらに表示されます。</p>
+            </div>
+            <a class="execute-button" href="a7-0-1.html">開く</a>
+        </div>
+
+        <div class="version-group">
+            <div>
+                <h2>alpha7.0.0</h2>
+                <p class="version-info">更新日: 2023-10-20</p>
+                <p>部屋が表示されるだけで、その他のことはまだできません。</p>
+            </div>
+            <a class="execute-button" href="a7-0-0.html">開く</a>
+        </div>
+    </details>
 </body>
 </html>
