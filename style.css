@@ -31,12 +31,12 @@ body {
 
 .execute-button {
     display: inline-block;
-    background-color: #b7d5f3; /* 背景 */
+    background-color: #b7d5f3;
     padding: 5px 10px;
     border-radius: 8px;
     margin-top: 10px;
-    text-decoration: none; /* リンクの下線を非表示 */
-    color: #000; /* テキストの色 */
+    text-decoration: none;
+    color: #000;
 }
 
 .game-version-title {
@@ -97,11 +97,11 @@ nav.home {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* ナビゲーションバーの背景色（半透明） */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 15px;
     box-sizing: border-box;
-    border-radius: 10px; /* 角を丸める */
+    border-radius: 10px;
 }
     
 ul {
@@ -115,7 +115,7 @@ li {
     margin-right: 20px;
 }
 
-a {
+a.nav {
     color: white;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.1);
@@ -124,5 +124,17 @@ a {
 }
 
 a[href="#"] {
-    background-color: rgb(214, 126, 215); /* 赤色の背景 */
+    background-color: rgb(214, 126, 215);
+}
+
+.footercontent {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footerimg {
+    width: 40px;
+    margin-left: 30px;
+    top: 5px;
 }

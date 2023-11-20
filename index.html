@@ -11,7 +11,7 @@
         <div class="banner-container">
             <img class="homebanner" src="image/banner.png" alt="Banner Image">
             <div class="overlay">
-                <p class="overlay-text">ビル経営ゲームv7.0<br>12月1日 17時公開<br><a href='playgame'>alpha版をプレイ</a><br><br><br></p>
+                <p class="overlay-text">ビル経営ゲームv7.0<br>12月1日 17時公開<br><a class="nav" href='playgame'>alpha版をプレイ</a><br><br><br></p>
                 <p class="overlay-text"id="countdown"></p>
             </div>
         </div>
@@ -20,10 +20,10 @@
             <li>
                 <img src="image/title.png" alt="Icon" width="136" height="24" class="logo">
             </li>
-            <li><a href="#">ホーム</a></li>
-            <li><a href="playgame">プレイ</a></li>
-            <li><a href="wiki">wiki</a></li>
-            <li><a href="https://discord.gg/KhAd9zBrBk">お問い合わせ</a></li>
+            <li><a class="nav" href="#">ホーム</a></li>
+            <li><a class="nav" href="playgame">プレイ</a></li>
+            <li><a class="nav" href="wiki">wiki</a></li>
+            <li><a class="nav" href="https://discord.gg/KhAd9zBrBk">お問い合わせ</a></li>
         </ul>
     </nav>
     </header>
@@ -52,8 +52,14 @@
     </div>
 
     <footer>
-        <p>参考：<a href="https://scratch.mit.edu/users/wood_sword/">@wood_sword</a></p>
-        <p>&copy; <a href="https://youtube.com/@masaabu_">@Masaabu-YT</a></p>
+        <nav>
+            <li>&copy; @Masaabu-YT</li>
+            <li>
+                <a class="footercontent" href="https://youtube.com/@masaabu_" target="_blank">
+                    <img class="footerimg" src="image/YouTube.svg" alt="YouTube Icon">
+                </a>
+            </li>
+        </nav>
     </footer>
     <script src="index.js"></script>
     <script src="comment.js"></script>
