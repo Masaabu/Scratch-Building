@@ -138,3 +138,12 @@ a[href="#"] {
     margin-left: 30px;
     top: 5px;
 }
+
+.section_bg {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
