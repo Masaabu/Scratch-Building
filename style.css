@@ -3,7 +3,7 @@ body {
     padding: 0;
 }
 
-.game-version-group {
+.group_bg1 {
     background-color:#c3c3c3;
     padding: 10px;
     border-radius: 10px;
@@ -15,7 +15,7 @@ body {
     box-shadow: 0px 0px 10px #000000b3
 }
 
-.version-group {
+.group_bg2 {
     background-color: #f0f0f0;
     padding: 15px;
     border-radius: 10px;
@@ -104,13 +104,13 @@ nav.home {
     border-radius: 10px;
 }
     
-ul {
+ul.nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-li {
+li.nav {
     display: inline;
     margin-right: 20px;
 }
@@ -125,6 +125,15 @@ a.nav {
 
 a[href="#"] {
     background-color: rgb(214, 126, 215);
+}
+
+
+a.button {
+    color: white;
+    text-decoration: none;
+    background-color: rgb(214, 126, 215);
+    padding: 8px 14px;
+    border-radius: 5px;
 }
 
 .footercontent {
