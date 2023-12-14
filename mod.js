@@ -3,7 +3,7 @@ const sbApi = [
       title: 'SBAPI',
       description: 'ビル経営ゲームの拡張性を上げるツール<br>by dmmo-com-jp',
       id: '933515639',
-      tag: '"frame-blue">前提MOD<'
+      tag: '"textFrame blue">前提MOD<'
     },
     {
       title: 'cmdplus',
@@ -16,7 +16,8 @@ const sbAddonsList = [
     {
       title: 'SB Addons',
       description: 'by -Masaabu-,Masaabu-YT',
-      id: '790969288'
+      id: '790969288',
+      tag: '"textFrame orange">公式<'
     },
     {
       title: 'SB Addons+',
@@ -45,7 +46,7 @@ const sbAddonsApiList = [
       title: 'SBAPI',
       description: 'お金の管理や幸福度の管理を簡単に行えます。<br>by dmmo-com-jp',
       id: '926411096',
-      tag: '"frame-blue">前提MOD<'
+      tag: '"textFrame blue">前提MOD<'
     },
     {
       title: '天候復活アドオン',
