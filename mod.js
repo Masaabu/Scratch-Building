@@ -9,6 +9,11 @@ const sbApi = [
       title: 'cmdplus',
       description: 'SBAPIのpostに依存した、コマンド強化modです。<br>by dmmo-com-jp',
       id: '939787547'
+    },
+    {
+      title: '隕石経営ゲーム',
+      description: '隕石！！<br>by banana_877_',
+      id: '933713134'
     }
 ];
 
