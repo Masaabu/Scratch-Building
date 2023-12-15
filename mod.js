@@ -1,10 +1,10 @@
 const sbModList = [
-    /*{
+    {
       title: 'SB MOD v1.0',
       description: 'by Masaabu-YT',
       id: 940232456,
       tag: '"textFrame orange">公式<'
-    }*/
+    }
 ]
 
 const sbApiList = [
