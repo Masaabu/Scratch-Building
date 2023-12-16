@@ -4,7 +4,11 @@ A building management game is a simulation game where you create buildings using
 
 
 ## [公式ホームページ](https://masaabu.github.io/Scratch-Building/)
-created by @Masaabu
+source code on [GitHub](https://github.com/Masaabu/Scratch-Building)
+
+> created by @Masaabu
 
 ## [非公式ホームページ](https://fun117.github.io/Scratch-Building/)
-created by @Fun117
+source code on [GitHub](https://github.com/Fun117/Scratch-Building)
+
+> created by @Fun117
