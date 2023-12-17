@@ -10,7 +10,7 @@ git add .
 
 # step3
 ```
-git commit -m <コミットメッセージ>
+git commit -m "<コミットメッセージ>"
 ```
 
 # step4
@@ -24,7 +24,7 @@ git push -u origin <ブランチ名>
 git add .
 ```
 ```
-git commit -m <コミットメッセージ>
+git commit -m 
 ```
 ```
 git push
