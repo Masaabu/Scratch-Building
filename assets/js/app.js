@@ -9,10 +9,12 @@ window.addEventListener("beforeinstallprompt", (e) => {
     deferredPrompt = e;
     // ホーム画面に内側へ追加できることをユーザーに通知する UI の更新
     addBtn.style.display = "block";
+    document.getElementById('InstallDone').style.display = "none";
 
     addBtn.addEventListener("click", (e) => {
         // A2HS ボタンを表示するユーザーインターフェイスを非表示にします。
         addBtn.style.display = "none";
+        document.getElementById('InstallDone').style.display = "block";
         // プロンプトを表示
         deferredPrompt.prompt();
         // ユーザーがプロンプトに応答するのを待つ

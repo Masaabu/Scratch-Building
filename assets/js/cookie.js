@@ -1,7 +1,7 @@
 var obj = convertCookieToObject(document.cookie);//クッキーを読み出す
 if(obj.html_class !== 'dark' || obj.html_class !== 'light'){
     document.cookie = 'html_class=dark; path=/';
-    console.log('error')
+    //console.log('error')
 }
 document.cookie = 'html_class=dark; path=/';
 document.getElementById('html').className = ('dark')
