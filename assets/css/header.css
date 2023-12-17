@@ -1,0 +1,290 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: 56px;
+    z-index: 5;
+    position: fixed;
+    box-shadow: 0 0 9px -3px #000;
+    background-color: var(--background-2);
+}
+
+.headerspees {
+    width: 100%;
+    height: 64px;
+}
+
+
+
+
+
+
+
+
+
+/* ヘッダー背景 -----------------------------------------*/
+
+.header--TuwRF.transparent--\+Qg9m { /* 背景透明 */
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
+    color: var(--text-1);
+}
+.header--TuwRF { /* 背景あり */
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    background-color: #2a2a2c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border-bottom: 1px solid #2a2a2c;
+    transition: background-color .2s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    color: #b2b2b2;
+}
+.header--TuwRF .link {
+    opacity: 8;
+    font-weight: normal;
+    text-decoration: none;
+    color: #b2b2b2;
+}
+
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+/* ----------------------------------------- */
+
+
+.header-leftArea {
+    max-width: 1830px;
+    /* min-width: 180px; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: scroll;
+}
+.header-site-logo-area {
+    margin: 0 1em 0 0; /* ブロック前後の余白 */
+}
+
+
+/* 背景カスタム */
+.header--TuwRF>* {
+    max-width: 1830px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+
+.header--TuwRF>*>.logo--Fxnxa {
+    flex: 0 0 auto;
+}
+.header--TuwRF>*>.logo--Fxnxa.noGrowOnDesktop--iT0yH {
+    flex: 0;
+}
+
+.LeftCen{
+    display: flex;
+}
+.LeftCenItem{
+    width: 40px;
+    text-align: center;
+}
+
+a {
+    color: inherit; /*リンクの色変化無効*/
+    text-decoration: none; /*リンク下線削除*/
+}
+
+.link-decoration {
+    text-decoration:underline;
+}
+
+.linkHover a:hover { /*リンクホバーしたら下線表示*/
+    text-decoration:underline;
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* トップ */
+.container--8UnAl {
+    position: relative;
+    width: 100%;
+    min-height: 440px;
+    color: #fff;
+    z-index: 9;
+}
+/* ---------------------------------------------------------------------------------- */
+
+
+
+
+
+/* クラスモード変更 CSS */
+
+.class_modeListBox {
+    background-color: none;
+    margin: 1em 0; /* ブロック前後の余白 */
+    padding: 1em; /* ブロック内の余白 */
+    position: absolute;
+    right: 4%;
+    top: 25px;
+
+}
+.header--TuwRF .class_modeList {
+    background-color: var(--node-background-input);
+    padding: 0.1em 0.5em 0.1em 0.5em; /* ブロック内の余白 */
+    border-radius: 5px; /* 角丸 */
+    list-style:none;
+    display: none;
+    box-shadow: 0px 5px 9px 6px rgba(0, 0, 0, 0.25);
+    height: 100%;
+}
+.class_modeListAreaBoxs {
+    height: 100%;
+    overflow: scroll;
+}
+.header--TuwRF.transparent--\+Qg9m .class_modeList{
+    background-color: var(--node-background-input);
+}
+.class_modeList, li {
+    width: 100%;
+    margin: 0.15em 10; /* ブロック前後の余白 */
+    padding: 0.4em; /* ブロック内の余白 */
+    border-radius: 5px; /* 角丸 */
+}
+.class_modeList, li, a {
+    color: var(--node-text);
+}
+.header--TuwRF .class_modeList li:hover{
+    background-color: var(--node-background-hover);
+}
+.header--TuwRF.transparent--\+Qg9m .class_modeList li:hover{
+    background-color: var(--node-background-hover);
+}
+
+/* 言語変更 CSS */
+
+.languageListBox {
+    background-color: none;
+    margin: 1em 0; /* ブロック前後の余白 */
+    padding: 1em; /* ブロック内の余白 */
+    position: absolute;
+    right: 0;
+    top: 25px;
+    height: 410%;
+}
+.header--TuwRF .languageList {
+    background-color: var(--node-background-input);
+    padding: 0.1em 0.5em 0.1em 0.5em; /* ブロック内の余白 */
+    border-radius: 5px; /* 角丸 */
+    list-style:none;
+    display: none;
+    box-shadow: 0px 5px 9px 6px rgba(0, 0, 0, 0.25);
+    height: 100%;
+}
+.languageListAreaBoxs {
+    height: 100%;
+    overflow: scroll;
+}
+.header--TuwRF.transparent--\+Qg9m .languageList{
+    background-color: var(--node-background-input);
+}
+.languageList, li {
+    width: 100%;
+    margin: 0.15em 10; /* ブロック前後の余白 */
+    padding: 0.4em; /* ブロック内の余白 */
+    border-radius: 5px; /* 角丸 */
+}
+.languageList, li, a {
+    color: var(--node-text);
+}
+.header--TuwRF .languageList li:hover{
+    background-color: var(--node-background-hover);
+}
+.header--TuwRF.transparent--\+Qg9m .languageList li:hover{
+    background-color: var(--node-background-hover);
+}
+
+
+
+
+
+.active {
+    display: block !important;
+}
+
+.spaceHeaderOuter {
+    height: 70px;
+}
+
+
+
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+    margin: 0;
+}
+
+
+/* discussion css */
+
+.discussionAreaBox {
+    margin: 50px 0 0 10px;
+}
+
+
+
+/* footer css */
+
+footer {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 50px 30px;
+    color: var(--text-3);
+}
+
+footer>*:not(:last-child) {
+    margin-right: 30px;
+}
+
+footer p {
+    display: flex;
+    align-items: center;
+}
+
+footer a {
+    color: var(--text-3);
+}
+
+
+footer i {
+    fill: var(--text-3);
+    margin-right: 8px;
+}
+
+i, img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+}
