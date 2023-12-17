@@ -1,0 +1,16 @@
+:root.dark {
+    --background: #2c2c2c;
+    --background-2: #656565;
+    --background-3: #a0a0a0;
+    --text-1: #ffffff;
+    --shadow-1: #ffffff4d;
+    --blur-brightness: 100%;
+}
+:root {
+    --background: #ffffff;
+    --background-2: #c3c3c3;
+    --background-3: #f0f0f0;
+    --text-1: #000000;
+    --shadow-1: #0000004d;
+    --blur-brightness: 50%;
+}

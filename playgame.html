@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html class="dark">
 <head>
     <title>ビル経営ゲーム - ゲーム選択</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color.css">
     <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
 </head>
 <body>
-    <nav>
-        <ul class="nav">
-            <li class="nav">
-                <img src="image/title.png" alt="Icon" width="136" height="24" class="logo">
-            </li>
-            <li class="nav"><a class="nav" href="index">ホーム</a></li>
-            <li class="nav"><a class="nav" href="#">プレイ</a></li>
-            <li class="nav"><a class="nav" href="wiki_home">wiki</a></li>
-            <li class="nav"><a class="nav" href="https://discord.gg/KhAd9zBrBk">お問い合わせ</a></li>
-        </ul class="nav">
-    </nav>
+    <div class="hidden md:block">
+        <div class="fixed inset-x-0 top-4 z-50 w-full" >
+          <div class="flex justify-between text-white max-w-7xl gap-4 mx-auto border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-lg w-[95%] inset-x-0 backdrop-blur-md z-50" style="backdrop-filter: blur(10px) brightness(var(--blur-brightness));">
+              <a class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="./">
+                  <img alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="./image/Masaabu_yticon.png">
+                  <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
+              </a>
+              <div class="flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 py-2 space-x-6 text-sm items-center justify-center px-6 font-medium overflow-hidden">
+                <a rel="noopener noreferrer" href="./" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">ホーム</a>
+                <a rel="noopener noreferrer" href="./playgame" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">プレイ</a>
+                <a rel="noopener noreferrer" href="./mod" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">MOD</a>
+                <a rel="noopener noreferrer" href="./wiki_home" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Wiki</a>
+                <a target="__blank" rel="noopener noreferrer" href="https://discord.gg/KhAd9zBrBk" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Discord</a>
+            </div>
+            <div class="flex space-x-4 items-center">
+                <a href="#" class="text-sm font-medium text-white text-opacity-60 hover:text-opacity-80 transition">Sign in</a>
+                <button onclick="toggleTheme()">テーマ</button>
+            </div>
+          </div>
+        </div>
+    </div>
 
+    <br><br><br>
     <details class="group_bg1" open> 
         <summary class="game-version-title">ビル経営ゲーム 本編</summary>
 
@@ -140,5 +152,6 @@
             </li>
         </nav>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

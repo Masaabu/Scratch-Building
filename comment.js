@@ -1,4 +1,4 @@
-const apiURL = 'https://script.googleusercontent.com/macros/echo?user_content_key=UlREUe_8nCrNxOAIQPZGU-icp9BVCYOYKBAn4RumuS9GCvIMQXa_tNDakekijnslyghW2rz7EQu6hOPxtxzOrgGxZSIJpU_Tm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnA30LcFUwIdD0zHxt0pP1MfEcXlalO9LAS2a8KlEHr86MAk-3HrUQDxkKrtaQQdmBvUPUdLJmDOpo447Y6gzhpbzFQBgvMgraNz9Jw9Md8uu&lib=MYo5YPB8x8pm9i43XpKsAFgPx66acL29B';
+const apiURL = 'https://script.google.com/macros/s/AKfycbxm-7lnqXUimeXMYN45Ebj5iY5tyKJW0pL2tWoGi84MKGCiBXr0gXspvuyUQo-JBFraCQ/exec';
 
 async function loadData() {
   const commentsContainer = document.getElementById('commentsContainer');
@@ -13,6 +13,12 @@ async function loadData() {
     usernamePara.classList.add('username');
     usernamePara.textContent = entry.name;
 
+      const checkDiv = document.createElement('p');
+    if (entry.check) {
+      checkDiv.style.color = '#f26b30';
+      checkDiv.textContent = "認証済み";
+    }
+
     const timestampPara = document.createElement('p');
     timestampPara.classList.add('timestamp');
     timestampPara.textContent = new Date(entry.timestamp).toLocaleString();
@@ -20,7 +26,8 @@ async function loadData() {
     const commentPara = document.createElement('p');
     commentPara.textContent = entry.comment;
 
-    commentDiv.appendChild(usernamePara);
+    usernamePara.appendChild(checkDiv)
+    commentDiv.appendChild(usernamePara)
     commentDiv.appendChild(timestampPara);
     commentDiv.appendChild(commentPara);
     
