@@ -5,4 +5,5 @@ function toggleTheme() {
     } else {
         htmlTag.classList.add('dark');
     }
+    class_change()
 }

@@ -20,7 +20,6 @@ function class_modeCiikiesSeve(){//クラスモード変更検知
     }
 }
 
-
 function convertCookieToObject(cookies){//クッキーの解析
     const cookieItem = cookies.split(';');
     const obj = {};
