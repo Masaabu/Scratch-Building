@@ -1,4 +1,11 @@
-const obj = convertCookieToObject(document.cookie);//クッキーを読み出す
+var obj = convertCookieToObject(document.cookie);//クッキーを読み出す
+if(obj.html_class !== 'dark' || obj.html_class !== 'light'){
+    document.cookie = 'html_class=dark; path=/';
+    console.log('error')
+}
+document.cookie = 'html_class=dark; path=/';
+document.getElementById('html').className = ('dark')
+var obj = convertCookieToObject(document.cookie);//クッキーを読み出す
 let html_class = obj.html_class;//クッキーの中の""html_class"を取得
 document.getElementById('html').className = (html_class)//htmlのclassを変更
 
@@ -6,9 +13,9 @@ document.getElementById('html').className = (html_class)//htmlのclassを変更
 
 function class_change(){
     if(convertCookieToObject(document.cookie).html_class === 'dark'){//クッキーの"html_class"が"dark"なら
-        document.getElementById('html').className = ('light')//"html"のclassを"light"
+        //document.getElementById('html').className = ('light')//"html"のclassを"light"
     }else{//ではない
-    //    document.getElementById('html').className = ('dark')//"html"のclassを"dark"
+        document.getElementById('html').className = ('dark')//"html"のclassを"dark"
     }
     class_modeCiikiesSeve()
 }
