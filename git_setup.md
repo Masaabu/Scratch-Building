@@ -21,6 +21,9 @@ git push -u origin <ブランチ名>
 
 ## 二回目以降 push する場合
 ```
+git add .
+```
+```
 git commit -m <コミットメッセージ>
 ```
 ```
