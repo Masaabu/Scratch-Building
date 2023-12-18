@@ -23,7 +23,7 @@
             "src": "./assets/image/banner.png",
             "sizes": "1640x2207",
             "type": "image/png",
-            "platform": "pc / ipad",
+            "platform": "pc",
             "label": "game image"
         }
     ],
