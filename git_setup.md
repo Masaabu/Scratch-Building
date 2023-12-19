@@ -15,6 +15,11 @@ git commit -m "<コミットメッセージ>"
 
 # step4
 ```
+git remote add origin <GitUrl>
+```
+
+# step5
+```
 git push -u origin <ブランチ名>
 ```
 
