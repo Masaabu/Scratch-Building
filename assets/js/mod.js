@@ -80,8 +80,8 @@ function generateList() {
             projectElement.classList.add('project');
             projectElement.innerHTML = `
               <img src="https://cdn2.scratch.mit.edu/get_image/project/${project.id}_480x360.png">
-              <div class="project-desc">
-                <h2>${project.title}</h2>
+              <div class="project-desc" style="margin:5px;">
+                <h2 style="padding-top:0;">${project.title}</h2>
                 ${project.tag?`<div class=${project.tag}/div>`:''}
               </div>
               <p>${project.description}</p>
