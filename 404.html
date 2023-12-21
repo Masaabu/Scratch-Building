@@ -34,6 +34,12 @@
             windowFileDirectlyPass = `.`;
         };
 
+        if (windowUrl.startsWith("/Scratch-Building/play/")) {
+            var newUrl = windowUrl.replace('play/', 'pages/game/play/');
+            window.location.href = newUrl;
+            
+        }
+
         // Configuration of link elements in this directory
         let file_path_data = [
             {
