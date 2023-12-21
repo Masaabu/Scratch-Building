@@ -103,24 +103,44 @@
             </div>
         </div>
         <!-- メインエリア -->
-        <div id="main_box" class="e_main">
-            <br><br><br>
-            <div class="section_bg" id="SBads">
-                <h2>最新のページ</h2>
-                <ul>
-                    <li><a href="./content/mods/sbmod/">SB MODの使い方<a></li>
-                    <li><a href="./content/qa/">よくある質問<a></li>
-                    <li><a href="./content/changelog/v7/">ビル経営ゲームv7.0 更新履歴<a></li>
-                </ul>
-            </div>
-    
-            <div class="section_bg" id="SBads">
-                <h2>ページ一覧</h2>
-                <ul>
-                    <li><a href="./content/mods/sbmod/">SB MODの使い方<a></li>
-                    <li><a href="./content/qa/">よくある質問<a></li>
-                    <li><a href="./content/changelog/v7/">ビル経営ゲームv7.0 更新履歴<a></li>
-                </ul>
+        <div id="main_box" class="e_main" style="width: 100%; height: 100%; margin: auto;">
+            <div style="width: 95%;margin: 2% auto;">
+                <!-- 検索ボックス -->
+                <div class="w-full opacity-100" style="transform: none;">
+                    <div class="inset-x-0 z-[42] w-full sm:w-[80%] md:w-[50%] mx-auto rounded-md backdrop-blur-sm bg-[#526E89]/[0.2] mt-10 text-sm md:mt-20 flex items-center" style="margin-bottom: 5rem;">
+                        <input id="searchFormTextBar" placeholder="wikiの情報を検索" class="border-blue-200 border border-opacity-50 rounded-md pl-4 py-3 bg-transparent w-full text-white focus:outline-none focus:shadow-xl focus:shadow-blue-500/[0.1] placeholder:text-xs sm:placeholder:text-base text-sm sm:text-lag md:text-lg" name="input" value="">
+                    </div>
+                </div>
+                <!-- wiki情報リスト -->
+                <div class="DiscussionFormListBackArea">
+                    <section>
+                        <h1 id="search_not_found_text" class="section_bg" style="display: none;"></h1>
+                        <div class="box" id="SBads" style="max-width: 800px;margin: 20px auto;padding: 20px;background-color: var(--background);border-radius: 5px;box-shadow: 0 0 10px var(--shadow-1);color: var(--text-1);">
+                            <a href="./content/qa/">
+                                <h1 style="font-size: 30px;">よくある質問</h1>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="box" id="SBads" style="max-width: 800px;margin: 20px auto;padding: 20px;background-color: var(--background);border-radius: 5px;box-shadow: 0 0 10px var(--shadow-1);color: var(--text-1);">
+                            <a href="./content/mods/sbmod/">
+                                <h1 style="font-size: 30px;">SB MODの使い方</h1>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="box" id="SBads" style="max-width: 800px;margin: 20px auto;padding: 20px;background-color: var(--background);border-radius: 5px;box-shadow: 0 0 10px var(--shadow-1);color: var(--text-1);">
+                            <a href="./content/changelog/v7/">
+                                <h1 style="font-size: 30px;">ビル経営ゲームv7.0 更新履歴</h1>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </a>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
         <!-- footerエリア -->
@@ -178,6 +198,66 @@
             </div>
         </div>
     </body>
+    <style> /*フィルター要素隠す*/
+        .is-hidden { display: none; }
+    </style>
+    <script>
+        var content_count = 0;
+        // ページロード時に検索フォーム 検索フォームをパラメーターの値に更新
+        function searchFormBarPlaceholder(){
+            let param = window.location.search;
+            param = param.substring(2);
+            let parameters = param.split('&');
+            let searchText = ""
+            for (let i = 0; i < parameters.length; i++) {
+                let element = parameters[i].split('=');
+                //let name = decodeURIComponent(element[0]);
+                let value = decodeURIComponent(element[1]);
+                //console.log(name);
+                searchText = searchText + value
+                break;
+            }
+            if(searchText !== ""){
+                document.getElementById('searchFormTextBar').value = searchText;
+            }
+        }
+
+        //  検索フィルター機能
+        let cards = document.querySelectorAll('.box')
+        window.setInterval(liveSearch, 500);
+
+        function liveSearch() {
+            let search_query = document.getElementById("searchFormTextBar").value;
+            //Use innerText if all contents are visible
+            //Use textContent for including hidden elements
+            content_count = 0;
+            for (var i = 0; i < cards.length; i++) {
+                if(cards[i].textContent.toLowerCase()
+                    .includes(search_query.toLowerCase())) {
+                    cards[i].classList.remove("is-hidden");
+                    content_count = content_count + 1;
+                } else {
+                    cards[i].classList.add("is-hidden");
+                }
+            };
+            if(content_count < 1){
+                document.getElementById('search_not_found_text').innerHTML=(`No "${search_query}" was found.`);
+                document.getElementById('search_not_found_text').style.display = ('block');
+            }else{
+                document.getElementById('search_not_found_text').style.display = ('none');
+            }
+        }
+
+        //A little delay
+        let typingTimer;
+        let typeInterval = 500;
+        let searchInput = document.getElementById('searchFormTextBar');
+
+        searchInput.addEventListener('keyup', () => {
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(liveSearch, typeInterval);
+        });
+    </script>
     <script>
         // Set the file path for this directory
         var windowUrl = window.location.pathname;
