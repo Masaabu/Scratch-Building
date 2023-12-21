@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="html" class="dark">
     <head>
         <title>ビル経営ゲーム wiki - ビル経営ゲームv7 更新履歴</title>
         <link rel="stylesheet" href="../../../../../assets/css/style.css">
@@ -41,7 +41,7 @@
             <div class="block md:hidden">
                 <div id="headerMobBoxsMaser" class="fixed top-4 w-full z-50 ">
                     <div class="items-center justify-between px-4 w-full flex">
-                        <div class="w-full flex items-center justify-between  backdrop-blur-md border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-full ">
+                        <div class="w-full flex items-center justify-between  backdrop-blur-md border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-full" style="backdrop-filter: blur(10px) brightness(var(--blur-brightness));">
                             <a id="link_href_header_mobile_home_logo" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="#">
                                 <img id="link_href_header_mobile_app_logo" alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="#">
                                 <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
@@ -97,8 +97,15 @@
                 </div>
             </div>
         </div>
+        <!-- トップ画像 -->
+        <div class="banner-container">
+            <img class="homebanner" src="../../../../../assets/image/banner.png" alt="Banner Image">
+            <div class="overlay">
+                <p class="overlay-text">ビル経営ゲームv7.0<br>Scratchで公開中！<br><a class="nav" href='https://scratch.mit.edu/projects/927111186/'>Scratchでプレイ</a>
+            </div>
+        </div>
         <!-- メインエリア -->
-        <div>
+        <div class="e_main">
             <br><br>
             <div class="section_bg" id="SBads">
                 <h1>ビル経営ゲームv7 更新履歴</h1>
@@ -253,6 +260,6 @@
             document.getElementById('link_href_header_mobile_discord').setAttribute('href',file_path_data.link_discord);
         }
     </script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/cookie.js"></script>
+    <script src="../../../../../assets/js/main.js"></script>
+    <script src="../../../../../assets/js/cookie.js"></script>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="html" class="dark">
     <head>
         <title>ビル経営ゲーム wiki - SB MOD</title>
         <link rel="stylesheet" href="../../../../../assets/css/style.css">
@@ -12,7 +12,7 @@
             }
 
             .section_bg h2 {
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--background);
             margin-top: 20px;
             padding-top: 20px;
             }
@@ -23,7 +23,7 @@
             display: flex;
             }
             .section_bg main {
-            background-color: #e9e9e9;
+            background-color: var(--background);
             padding: 1px 15px;
             margin-top: 10px;
             border-radius: 5px;
@@ -35,7 +35,7 @@
             margin-left: 10px;
             font-size: inherit;
             font-weight: bold;
-            color: white;
+            color: var(--text-1);
             position: relative;
             top: -5px
             }
@@ -81,7 +81,7 @@
             <div class="block md:hidden">
                 <div id="headerMobBoxsMaser" class="fixed top-4 w-full z-50 ">
                     <div class="items-center justify-between px-4 w-full flex">
-                        <div class="w-full flex items-center justify-between  backdrop-blur-md border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-full ">
+                        <div class="w-full flex items-center justify-between  backdrop-blur-md border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-full" style="backdrop-filter: blur(10px) brightness(var(--blur-brightness));">
                             <a id="link_href_header_mobile_home_logo" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="#">
                                 <img id="link_href_header_mobile_app_logo" alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="#">
                                 <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
@@ -137,16 +137,23 @@
                 </div>
             </div>
         </div>
+        <!-- トップ画像 -->
+        <div class="banner-container">
+            <img class="homebanner" src="../../../../../assets/image/banner.png" alt="Banner Image">
+            <div class="overlay">
+                <p class="overlay-text">ビル経営ゲームv7.0<br>Scratchで公開中！<br><a class="nav" href='https://scratch.mit.edu/projects/927111186/'>Scratchでプレイ</a>
+            </div>
+        </div>
         <!-- メインエリア -->
-        <div>
+        <div class="e_main">
             <br><br>
-            <a class="nav" href="../../../../mods/">MODページを見る</a>
             
             <div class="section_bg">
                 <h1>SB MODの使い方</h1>
                 <p>公開日：2023-12-15<br>最終更新：2023-12-15</p>
+                <br>
+                <a class="nav" href="../../../../mods/">MODページを見る</a>
             </div>
-    
             <div class="section_bg">
                 <h2>初めに</h2>
                 <p>SB MODとは、ビル経営ゲームv7でMODを作成する時に役に立つツールである。<br>スプライトを好きなビル経営ゲームクライアントに追加することで自分の好きな要素を追加できる。</p>
@@ -199,18 +206,18 @@
                 <main>
                     <h3>weather</h3>
                     <p>天候を設定する</p>
-                    <main style="background-color: #c7c7c7;"><p>0:晴れ 1:雨 2:大雨</p></main>
+                    <main style="background-color: var(--background-4)"><p>0:晴れ 1:雨 2:大雨</p></main>
                     <main style="background-color: #d6aa5c;"><p>雨か雪かは地域に依存します。</p></main>
                 </main>
                 <main>
                     <h3>background</h3>
                     <p>背景が曇りかを設定する</p>
-                    <main style="background-color: #c7c7c7;"><p>0:晴れ 1:曇り</p></main>
+                    <main style="background-color: var(--background-4)"><p>0:晴れ 1:曇り</p></main>
                 </main>
                 <main>
                     <h3>map</h3>
                     <p>地域を設定する</p>
-                    <main style="background-color: #c7c7c7;"><p>0:平原 1:雪山 2:砂漠</p></main>
+                    <main style="background-color: var(--background-4)"><p>0:平原 1:雪山 2:砂漠</p></main>
                 </main>
                 <main>
                     <h3>tablet [SB-page]</h3>
@@ -233,7 +240,7 @@
                 <main>
                     <h3>cat</h3>
                     <p>猫に関する動作</p>
-                    <main style="background-color: #c7c7c7;">
+                    <main style="background-color: var(--background-4)">
                         <p>spawn: 猫をスポーンする</p>
                         <p>despawn: 全ての猫をデスポーンさせる</p>
                     </main>
@@ -243,7 +250,7 @@
                 <main>
                     <h3>mouse</h3>
                     <p>マウスに関する動作</p>
-                    <main style="background-color: #c7c7c7;">
+                    <main style="background-color: var(--background-4)">
                         <p>lock: マウスを無効化</p>
                         <p>unlock: 無効化を解除</p>
                     </main>
@@ -253,13 +260,13 @@
                 <main>
                     <h3>toast</h3>
                     <p>トーストを表示する</p>
-                    <main style="background-color: #c7c7c7;"><p>toast [コスチューム] [効果音]</p></main>
+                    <main style="background-color: var(--background-4)"><p>toast [コスチューム] [効果音]</p></main>
                     <div class="blocks">SB MOD[post][toast][3][1]::custom</div>
                 </main>
                 <main>
                     <h3>dialog</h3>
                     <p>ダイアログを表示して待つ</p>
-                    <main style="background-color: #c7c7c7;"><p>dialog [コスチューム] [ボタン]</p></main>
+                    <main style="background-color: var(--background-4)"><p>dialog [コスチューム] [ボタン]</p></main>
                     <main style="background-color: #d6aa5c;"><p>マウスをロックしてから実行することを推奨します。</p></main>
                     <p style="display: flex;">戻り値は<span class="blocks">(SBmod: return)</span>に表示される。</p>
                     <div class="blocks">

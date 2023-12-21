@@ -4,7 +4,7 @@ body {
 }
 
 .game-version-group {
-    background-color:#c3c3c3;
+    background-color:var(--background);
     padding: 10px;
     border-radius: 10px;
     margin: 10px;
@@ -16,7 +16,7 @@ body {
 }
 
 .version-group {
-    background-color: #f0f0f0;
+    background-color: var(--background);
     padding: 15px;
     border-radius: 10px;
     margin: 5px;
@@ -41,25 +41,25 @@ a.nav {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--background-4);
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .line {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--background-4);
     margin-bottom: 20px;
     padding-bottom: 20px;
 }
 
 .faq-question {
     font-weight: bold;
-    color: #333;
+    color: var(--text-1);
     margin-bottom: 10px;
 }
 
 .faq-answer {
     padding-left: 20px;
-    color: #666;
+    color: var(--text-2);
     line-height: 1.6;
 }

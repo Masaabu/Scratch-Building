@@ -1,3 +1,148 @@
+/* その場で */
+.fadeIn{
+    animation-name:fadeInAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+@keyframes fadeInAnime{
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* 下から */
+
+.fadeUp{
+    animation-name:fadeUpAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+@keyframes fadeUpAnime{
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 上から */
+
+.fadeDown{
+    animation-name:fadeDownAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+.fadeDown1{
+    animation-name:fadeDownAnime;
+    animation-duration:0.65s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+.fadeDown2{
+    animation-name:fadeDownAnime;
+    animation-duration:0.75s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+.fadeDown3{
+    animation-name:fadeDownAnime;
+    animation-duration:0.85s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+.fadeDown4{
+    animation-name:fadeDownAnime;
+    animation-duration:0.95s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+.fadeDown5{
+    animation-name:fadeDownAnime;
+    animation-duration:1.05s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+.fadeDown6{
+    animation-name:fadeDownAnime;
+    animation-duration:1.15s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+@keyframes fadeDownAnime{
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 左から */
+
+.fadeLeft{
+    animation-name:fadeLeftAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+@keyframes fadeLeftAnime{
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 右から */
+
+.fadeRight{
+    animation-name:fadeRightAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+@keyframes fadeRightAnime{
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
 /* ! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com */
 
 *, :after, :before {
@@ -5519,4 +5664,8 @@ a.button {
     font-size: inherit;
     color: white;
     font-weight: bold;
-  }
+}
+
+.e_main {
+	margin: auto 1%;
+}
