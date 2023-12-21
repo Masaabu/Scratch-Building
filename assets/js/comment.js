@@ -11,7 +11,9 @@ async function loadData() {
     i = i +  1;
     const commentDiv1 = document.createElement('div');
     commentDiv1.classList.add('relative','p-px','rounded-2xl','mt-4','bg-gradient-to-b','from-[#2A3D63]/[0.5]','to-[#070A0F]/[0.5]','shadow-[0px_10px_40px_0px_rgba(0,0,0,0.04)]','max-w-xl','mx-auto','w-full','wi450px');
+    commentDiv1.style.overflow = ('scroll');
     const commentDiv2 = document.createElement('div');
+    commentDiv2.style.width = ('100%');
     commentDiv2.classList.add('rounded-[15px]','bg-gradient-to-b','from-[#101521]/[0.8]','to-[#101521]/[0.1]','p-8');
     const commentDiv3 = document.createElement('div');
     commentDiv3.classList.add('flex','items-start','justify-between');
@@ -30,6 +32,7 @@ async function loadData() {
     commentDiv6.classList.add('mt-4');
     const comment = document.createElement('div');
     comment.classList.add('text-[#FFFFFF]/[0.64]');
+    comment.style.overflow = ('scroll');
     comment.textContent = entry.comment;
     const certification_badge = document.createElement('span');
     certification_badge.setAttribute(`id`,`certification_badge_svg_${i}`);

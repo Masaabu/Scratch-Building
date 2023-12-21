@@ -30,16 +30,16 @@
             <div class="hidden md:block">
                 <div class="fixed inset-x-0 top-4 z-50 w-full">
                     <div class="flex justify-between text-white max-w-7xl gap-4 mx-auto border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-lg w-[95%] inset-x-0 backdrop-blur-md z-50">
-                        <a class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="../../../">
-                            <img alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="../../../assets/image/@Masaabu-YT_icon.png">
+                        <a id="link_href_header_pc_logo_home" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="#">
+                            <img id="link_href_header_pc_app_logo" alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="#">
                             <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
                         </a>
                         <div class="flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 py-2 space-x-6 text-sm items-center justify-center px-6 font-medium overflow-hidden">
-                            <a rel="noopener noreferrer" href="../../../" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Home</a>
-                            <a rel="noopener noreferrer" href="../../../pages/mods/" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Mod</a>
-                            <a rel="noopener noreferrer" href="../../../pages/guides/mods/sbmod/" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Guides</a>
-                            <a rel="noopener noreferrer" href="../../../pages/qa/" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Q&A</a>
-                            <a target="__blank" rel="noopener noreferrer" href="https://forms.gle/B8GbL3ZYjB9aSuun8" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">お問い合わせ</a>
+                            <a id="link_href_header_pc_home" rel="noopener noreferrer" href="#" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Home</a>
+                            <a id="link_href_header_pc_mods" rel="noopener noreferrer" href="#" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Mod</a>
+                            <a id="link_href_header_pc_guides" rel="noopener noreferrer" href="#" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Guides</a>
+                            <a id="link_href_header_pc_qa" rel="noopener noreferrer" href="#" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Q&A</a>
+                            <a id="link_href_header_pc_inquiry" target="__blank" rel="noopener noreferrer" href="#" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">お問い合わせ</a>
                         </div>
                         <div class="flex space-x-4 items-center">
                             <a href="#" class="text-sm font-medium text-white text-opacity-60 hover:text-opacity-80 transition" onclick="class_change()">
@@ -60,18 +60,18 @@
                 <div id="headerMobBoxsMaser" class="fixed top-4 w-full z-50 ">
                     <div class="items-center justify-between px-4 w-full flex">
                         <div class="w-full flex items-center justify-between  backdrop-blur-md border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-full ">
-                            <a class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="../../../">
-                                <img alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="../../../assets/image/@Masaabu-YT_icon.png">
+                            <a id="link_href_header_mobile_logo_home" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="#">
+                                <img id="link_href_header_mobile_app_logo" alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="#">
                                 <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
                             </a>
-                            <a href="#" onclick="headerMobBoxs()">
+                            <a href="#" onclick="headerMobBoxs();set_file_path_mobile()">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white h-5 w-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path>
                                 </svg>
                             </a>
                         </div>
                     </div>
-                    <div id="headerMobBoxsAA" style="display: none"></div>
+                    <div id="headerMobBoxsAA" style="display: none;"></div>
                     <script>
                         function headerMobBoxs(){
                             if((document.getElementById('headerMobBoxsAA').style.display) === 'none'){
@@ -89,23 +89,20 @@
                                             </svg>
                                         </a>
                                     </div>
-                                    <a class="fadeDown1 relative" href="../../../">
+                                    <a id="link_href_header_mobile_home" class="fadeDown1 relative" href="#">
                                         <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font> </span>
                                     </a>
-                                    <a class="fadeDown2 relative" href="../../../pages/mods/">
+                                    <a id="link_href_header_mobile_mods" class="fadeDown2 relative" href="#">
                                         <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mod</font></font> </span>
                                     </a>
-                                    <a class="fadeDown3 relative" href="../../../pages/guides/mods/sbmod/">
+                                    <a id="link_href_header_mobile_guides" class="fadeDown3 relative" href="#">
                                         <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Guides</font></font> </span>
                                     </a>
-                                    <a class="fadeDown4 relative" href="../../../pages/qa/">
+                                    <a id="link_href_header_mobile_qa" class="fadeDown4 relative" href="#">
                                         <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Q&A</font></font> </span>
                                     </a>
-                                    <a class="fadeDown5 relative" href="https://forms.gle/B8GbL3ZYjB9aSuun8" target="__blank">
+                                    <a id="link_href_header_mobile_inquiry" class="fadeDown5 relative" href="#" target="__blank">
                                         <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">お問い合わせ</font></font> </span>
-                                    </a>
-                                    <a class="fadeDown6 relative" href="https://github.com/Masaabu/Scratch-Building" rel="noopener noreferrer" target="__blank">
-                                        <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GitHub</font></font> </span>
                                     </a>
                                 </div>
                                 `)
@@ -399,8 +396,8 @@
                 <div class="flex md:flex-row flex-col w-full max-w-7xl mx-auto justify-between">
                     <div class="lg:w-[50%] flex flex-col justify-between ">
                         <div>
-                            <a class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="../../../">
-                                <img alt="logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="../../../assets/image/@Masaabu-YT_icon.png">
+                            <a id="link_href_header_footer_logo_home" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="#">
+                                <img id="link_href_header_footer_app_logo" alt="logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="#">
                                 <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
                             </a>
                             <p class="text-[#FFFFFF]/[0.64] text-sm mt-2 max-w-sm font-normal">ビル経営ゲームはScratchで作られたビルを作るシミュレーションゲームです。</p>
@@ -408,10 +405,10 @@
                         <div>
                             <p class="text-[#FFFFFF]/[0.64] text-sm mt-2 max-w-sm font-normal">@Masaabu-YT</p>
                             <div class="flex space-x-2">
-                                <a target="__blank" rel="noopener noreferrer" href="https://github.com/Masaabu" class="font-normal mt-4 text-white/[0.64] flex space-x-2 items-center">
+                                <a id="link_href_header_footer_Masaabu_github" target="__blank" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] flex space-x-2 items-center">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
-                                <a target="__blank" rel="noopener noreferrer" href="https://youtube.com/@masaabu_" class="font-normal mt-4 text-white/[0.64] flex space-x-2 items-center">
+                                <a id="link_href_header_footer_Masaabu_youtube" target="__blank" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] flex space-x-2 items-center">
                                     <i class="fa-brands fa-youtube"></i>
                                 </a>
                             </div>
@@ -419,16 +416,16 @@
                     </div>
                     <div class="grid grid-cols-2  md:flex">
                         <div class="flex flex-col text-sm md:px-4 mb-4">
-                            <a rel="noopener noreferrer" href="../../../" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">Home</a>
-                            <a rel="noopener noreferrer" href="../../../pages/mods/" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">mods</a>
-                            <a rel="noopener noreferrer" href="../../../pages/guides/mods/sbmod/" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">Guides</a>
-                            <a rel="noopener noreferrer" href="../../../pages/qa/" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">Q&A</a>
-                            <a rel="noopener noreferrer" href="../../../pages/changelog/v7/" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">changelog</a>
+                            <a id="link_href_header_footer_home" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">Home</a>
+                            <a id="link_href_header_footer_mods" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">mods</a>
+                            <a id="link_href_header_footer_guides" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">Guides</a>
+                            <a id="link_href_header_footer_qa" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">Q&A</a>
+                            <a id="link_href_header_footer_changelog" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">changelog</a>
                         </div>
                         <div class="flex flex-col text-sm md:px-4 mb-4">
-                            <a target="__blank" rel="noopener noreferrer" href="https://forms.gle/B8GbL3ZYjB9aSuun8" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">お問い合わせ</a>
-                            <a target="__blank" rel="noopener noreferrer" href="https://discord.gg/CeVrs3KM9j" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">開発チームDiscord</a>
-                            <a target="__blank" rel="noopener noreferrer" href="https://github.com/Fun117/Scratch-Building" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">Source code on GitHub</a>
+                            <a id="link_href_header_footer_inquiry" target="__blank" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">お問い合わせ</a>
+                            <a id="link_href_header_footer_discord" target="__blank" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">開発チームDiscord</a>
+                            <a id="link_href_header_footer_source_code_on" target="__blank" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all">Source code on GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -443,5 +440,76 @@
         <!-- page html js -->
         <script src="../../../assets//js/qa.js"></script>
     </body>
+    <script>
+        // Set the file path for this directory
+        var windowUrl = window.location.pathname;
+        var windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 2;
+        var windowFileDirectlyPass = "";
+        if(windowUrlSr > 0){
+            for (let i = 0; i < windowUrlSr; i++) {
+                windowFileDirectlyPass = windowFileDirectlyPass + `./.`;
+            }
+            windowFileDirectlyPass = `.`+windowFileDirectlyPass+`.`;
+        }else{
+            windowFileDirectlyPass = `.`;
+        };
+
+        // Configuration of link elements in this directory
+        let file_path_data = [
+            {
+                "link_Masaabu_github": 'https://github.com/Masaabu',
+                "link_Masaabu_youtube": 'https://youtube.com/@masaabu_',
+                "link_app_logo": (windowFileDirectlyPass + "/assets/image/@Masaabu-YT_icon.png"),
+                "link_home": (windowFileDirectlyPass + "/"),
+                "link_mods": (windowFileDirectlyPass + "/pages/mods/"),
+                "link_guides": (windowFileDirectlyPass + "/pages/guides/mods/sbmod/"),
+                "link_qa": (windowFileDirectlyPass + "/pages/qa/"),
+                "link_changelog": (windowFileDirectlyPass + "/pages/changelog/v7/"),
+                "link_inquiry": ("https://forms.gle/B8GbL3ZYjB9aSuun8"),
+                "link_discord": ("https://discord.gg/CeVrs3KM9j"),
+                "link_source_code_on": ("https://github.com/Fun117/Scratch-Building"),
+            }
+        ];
+        file_path_data=(file_path_data["0"]);
+        console.log(file_path_data)
+
+        // Set link elements for header pc
+        document.getElementById('link_href_header_pc_app_logo').setAttribute('src',file_path_data.link_app_logo);
+        document.getElementById('link_href_header_pc_logo_home').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_pc_home').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_pc_mods').setAttribute('href',file_path_data.link_mods);
+        document.getElementById('link_href_header_pc_guides').setAttribute('href',file_path_data.link_guides);
+        document.getElementById('link_href_header_pc_qa').setAttribute('href',file_path_data.link_qa);
+        document.getElementById('link_href_header_pc_inquiry').setAttribute('href',file_path_data.link_inquiry);
+
+        // Set link elements for header mobile
+        document.getElementById('link_href_header_mobile_app_logo').setAttribute('src',file_path_data.link_app_logo);
+        document.getElementById('link_href_header_mobile_logo_home').setAttribute('href',file_path_data.link_home);
+        
+        // Set link elements for footer
+        document.getElementById('link_href_header_footer_app_logo').setAttribute('src',file_path_data.link_app_logo);
+        document.getElementById('link_href_header_footer_logo_home').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_footer_home').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_footer_mods').setAttribute('href',file_path_data.link_mods);
+        document.getElementById('link_href_header_footer_guides').setAttribute('href',file_path_data.link_guides);
+        document.getElementById('link_href_header_footer_qa').setAttribute('href',file_path_data.link_qa);
+        document.getElementById('link_href_header_footer_changelog').setAttribute('href',file_path_data.link_changelog);
+        document.getElementById('link_href_header_footer_inquiry').setAttribute('href',file_path_data.link_inquiry);
+        document.getElementById('link_href_header_footer_discord').setAttribute('href',file_path_data.link_discord);
+        document.getElementById('link_href_header_footer_Masaabu_github').setAttribute('href',file_path_data.link_Masaabu_github);
+        document.getElementById('link_href_header_footer_Masaabu_youtube').setAttribute('href',file_path_data.link_Masaabu_youtube);
+        document.getElementById('link_href_header_footer_source_code_on').setAttribute('href',file_path_data.link_source_code_on);
+
+
+
+        function set_file_path_mobile() {
+            // Set link elements for header mobile
+            document.getElementById('link_href_header_mobile_home').setAttribute('href',file_path_data.link_home);
+            document.getElementById('link_href_header_mobile_mods').setAttribute('href',file_path_data.link_mods);
+            document.getElementById('link_href_header_mobile_guides').setAttribute('href',file_path_data.link_guides);
+            document.getElementById('link_href_header_mobile_qa').setAttribute('href',file_path_data.link_qa);
+            document.getElementById('link_href_header_mobile_inquiry').setAttribute('href',file_path_data.link_inquiry);
+        }
+    </script>
     <script src="../../../assets/js/cookie.js"></script>
 </html>

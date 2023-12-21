@@ -5268,7 +5268,8 @@ li {
 }
 
 .wi450px{
-    width:400px;
+    width: 360px;
+	margin: 5px auto;
 }
 
 .tagId_0 {
