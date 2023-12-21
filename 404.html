@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html id="html" class="dark">
+    <head>
+        <title>ビル経営ゲーム</title>
+        <link rel="stylesheet" href="./assets/css/color.css">
+        <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
+    </head>
+    <body style="text-align: center; background-color: var(--background); color: var(--text-1);" >
+        <h1>404</h1>
+        <h2>ページが見つかりません!</h2>
+        <h2>12/21にほとんどのページのリンクが変わりました！</h2>
+        <h2><a href="https://masaabu.github.io/Scratch-Building/">ホーム</a></h2>
+    </body>
+
+    <script>
+        // Set the file path for this directory
+        var windowUrl = window.location.pathname;
+        var windowUrlSr = 0;
+        if((window.location.protocol) === 'https:'){
+            windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 3;
+        }else{
+            console.warn('Runs in editor mode because the protocol is not "https".')
+            windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 2;
+        };
+        console.log(windowUrlSr)
+        var windowFileDirectlyPass = "";
+        if(windowUrlSr > 0){
+            for (let i = 0; i < windowUrlSr; i++) {
+                windowFileDirectlyPass = windowFileDirectlyPass + `./.`;
+            }
+            windowFileDirectlyPass = `.`+windowFileDirectlyPass+`.`;
+        }else{
+            windowFileDirectlyPass = `.`;
+        };
+
+        // Configuration of link elements in this directory
+        let file_path_data = [
+            {
+                "link_Masaabu_github": 'https://github.com/Masaabu',
+                "link_Masaabu_youtube": 'https://youtube.com/@masaabu_',
+                "link_app_logo": (windowFileDirectlyPass + "/assets/image/Masaabu_yticon.png"),
+                "link_home": (windowFileDirectlyPass + "/"),
+                "link_play": (windowFileDirectlyPass + "/pages/game/"),
+                "link_mod": (windowFileDirectlyPass + "/pages/mods/"),
+                "link_wiki": (windowFileDirectlyPass + "/pages/wiki/"),
+                "link_discord": ("https://discord.gg/KhAd9zBrBk"),
+                "link_source_code_on": ("https://github.com/Masaabu/Scratch-Building"),
+            }
+        ];
+        file_path_data=(file_path_data["0"]);
+        console.log(file_path_data)
+
+        // Set link elements for header pc
+        document.getElementById('link_href_header_pc_app_logo').setAttribute('src',file_path_data.link_app_logo);
+        document.getElementById('link_href_header_pc_home_logo').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_pc_home').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_pc_play').setAttribute('href',file_path_data.link_play);
+        document.getElementById('link_href_header_pc_mod').setAttribute('href',file_path_data.link_mod);
+        document.getElementById('link_href_header_pc_wiki').setAttribute('href',file_path_data.link_wiki);
+        document.getElementById('link_href_header_pc_discord').setAttribute('href',file_path_data.link_discord);
+
+        // Set link elements for header mobile
+        document.getElementById('link_href_header_mobile_app_logo').setAttribute('src',file_path_data.link_app_logo);
+        document.getElementById('link_href_header_mobile_home_logo').setAttribute('href',file_path_data.link_home);
+        
+        // Set link elements for footer
+        console.log(document.getElementById('link_href_header_footer_app_logo').innerHTML=`HEEE`)
+        document.getElementById('link_href_header_footer_app_logo').setAttribute('src',file_path_data.link_app_logo);
+        document.getElementById('link_href_header_footer_home_logo').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_footer_home').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_footer_play').setAttribute('href',file_path_data.link_play);
+        document.getElementById('link_href_header_footer_mod').setAttribute('href',file_path_data.link_mod);
+        document.getElementById('link_href_header_footer_wiki').setAttribute('href',file_path_data.link_wiki);
+        document.getElementById('link_href_header_footer_discord').setAttribute('href',file_path_data.link_discord);
+        document.getElementById('link_href_header_footer_Masaabu_github').setAttribute('href',file_path_data.link_Masaabu_github);
+        document.getElementById('link_href_header_footer_Masaabu_youtube').setAttribute('href',file_path_data.link_Masaabu_youtube);
+        document.getElementById('link_href_header_footer_source_code_on').setAttribute('href',file_path_data.link_source_code_on);
+
+
+
+        function set_file_path_mobile() {
+            // Set link elements for header mobile
+            document.getElementById('link_href_header_mobile_home').setAttribute('href',file_path_data.link_home);
+            document.getElementById('link_href_header_mobile_play').setAttribute('href',file_path_data.link_play);
+            document.getElementById('link_href_header_mobile_mod').setAttribute('href',file_path_data.link_mod);
+            document.getElementById('link_href_header_mobile_wiki').setAttribute('href',file_path_data.link_wiki);
+            document.getElementById('link_href_header_mobile_discord').setAttribute('href',file_path_data.link_discord);
+        }
+    </script>
+    <script src="./assets/js/cookie.js"></script>
+</html>
