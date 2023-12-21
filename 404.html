@@ -6,11 +6,13 @@
         <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
     </head>
     <body style="text-align: center; background-color: var(--background); color: var(--text-1);" >
-        <h1>404</h1>
-        <h2>ページが見つかりません!</h2>
-        <h2>12/21にほとんどのページのリンクが変わりました！</h2>
-        <h2>この変更はいつか戻るかもしれません。</h2>
-        <h2><a href="https://masaabu.github.io/Scratch-Building/">ホーム</a></h2>
+        <div id="contents">
+            <h1>404</h1>
+            <h2>ページが見つかりません!</h2>
+            <h2>12/21にほとんどのページのリンクが変わりました！</h2>
+            <h2>この変更はいつか戻るかもしれません。</h2>
+            <h2><a href="https://masaabu.github.io/Scratch-Building/">ホーム</a></h2>
+        </div>
     </body>
 
     <script>
@@ -33,11 +35,13 @@
         }else{
             windowFileDirectlyPass = `.`;
         };
-
+        
         if (windowUrl.startsWith("/Scratch-Building/play/")) {
+            var contentsDiv = document.getElementById('contents');
+            contentsDiv.innerHTML = '<h2>リダイレクト中...</h2>';
+
             var newUrl = windowUrl.replace('play/', 'pages/game/play/');
             window.location.href = newUrl;
-            
         }
 
         // Configuration of link elements in this directory
