@@ -174,7 +174,13 @@
     <script>
         // Set the file path for this directory
         var windowUrl = window.location.pathname;
-        var windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 2;
+        var windowUrlSr = 0;
+        if((window.location.protocol) === 'https:'){
+            windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 3;
+        }else{
+            console.warn('Runs in editor mode because the protocol is not "https".')
+            windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 2;
+        };
         var windowFileDirectlyPass = "";
         if(windowUrlSr > 0){
             for (let i = 0; i < windowUrlSr; i++) {
