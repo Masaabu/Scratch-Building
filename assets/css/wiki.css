@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.game-version-group {
+    background-color:#c3c3c3;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 20px;
+    box-shadow: 0px 0px 10px #000000b3
+}
+
+.version-group {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.version-info {
+    font-size: 12px;
+}
+
+a.nav {
+    color: white;
+    text-decoration: none;
+    background-color: rgb(214, 126, 215);
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
+.section_bg {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.line {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.faq-question {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faq-answer {
+    padding-left: 20px;
+    color: #666;
+    line-height: 1.6;
+}
