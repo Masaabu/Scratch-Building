@@ -1,7 +1,7 @@
 const apiURL = 'https://script.google.com/macros/s/AKfycbxm-7lnqXUimeXMYN45Ebj5iY5tyKJW0pL2tWoGi84MKGCiBXr0gXspvuyUQo-JBFraCQ/exec';
 
 var commentCount = 0;
-var commentShowC = 5;
+var commentShowC = 20;
 
 async function loadData() {
   const commentsContainer = document.getElementById('commentsContainer');
@@ -42,8 +42,8 @@ async function loadData() {
     commentsContainer.appendChild(commentLi);
     commentCount = commentCount+1;
   });
-  if(commentCount > 5){
-    loadAddComment('set','5');
+  if(commentCount > 20){
+    loadAddComment('set','20');
   }else{
     loadAddComment('set',commentCount);
   }
