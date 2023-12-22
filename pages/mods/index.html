@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html id="html" class="dark">
+    <head>
+        <title>ビル経営ゲーム - MOD</title>
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../../assets/css/color.css">
+        <style>
+            .project-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding: 20px;
+            }
+
+            .project {
+                width: calc(33% - 10px);
+                margin-bottom: 10px;
+                margin-left: 10px;
+                box-sizing: border-box;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .project img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+            }
+
+            .project h2 {
+                margin: 0;
+                font-size: 22px;
+            }
+
+            .project p {
+                text-align: left;
+                margin: 5px 0;
+            }
+
+            .project-desc {
+                display: flex;
+                align-items: center;
+            }
+
+            .textFrame {
+                border-radius: 5px;
+                padding: 5px 5px;
+                margin-left: 10px;
+                font-size: inherit;
+                color: white;
+                font-weight: bold;
+            }
+
+            .blue {
+                background-color: #23a3de;
+            }
+            .orange {
+                background-color: #f26b30;
+            }
+        </style>
+        <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
+
+        <!-- Font Awesome / website: https://fontawesome.com/ アイコンなどの素材ライブラリを読み込み-->
+        <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- header pc -->
+        <div id="page_header_pc">
+            <div class="hidden md:block">
+                <div class="fixed inset-x-0 top-4 z-50 w-full" >
+                <div class="flex justify-between text-white max-w-7xl gap-4 mx-auto border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-lg w-[95%] inset-x-0 backdrop-blur-md z-50" style="backdrop-filter: blur(10px) brightness(var(--blur-brightness));">
+                    <a id="link_href_header_pc_home_logo" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="#">
+                        <img id="link_href_header_pc_app_logo" alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="#">
+                        <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
+                    </a>
+                    <div class="flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 py-2 space-x-6 text-sm items-center justify-center px-6 font-medium overflow-hidden">
+                        <a id="link_href_header_pc_home" rel="noopener noreferrer" href="#" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">ホーム</a>
+                        <a id="link_href_header_pc_play" rel="noopener noreferrer" href="#" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">プレイ</a>
+                        <a id="link_href_header_pc_mod" rel="noopener noreferrer" href="#" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">MOD</a>
+                        <a id="link_href_header_pc_wiki" rel="noopener noreferrer" href="#" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Wiki</a>
+                        <a id="link_href_header_pc_discord" target="__blank" rel="noopener noreferrer" href="#" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Discord</a>
+                    </div>
+                    <div class="flex space-x-4 items-center">
+                        <a href="#" class="text-sm font-medium text-white text-opacity-60 hover:text-opacity-80 transition" onclick="toggleTheme()">テーマ</a>
+                        <button></button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- header モバイル -->
+        <div id="page_header_mobile">
+            <div class="block md:hidden">
+                <div id="headerMobBoxsMaser" class="fixed top-4 w-full z-50 ">
+                    <div class="items-center justify-between px-4 w-full flex">
+                        <div class="w-full flex items-center justify-between  backdrop-blur-md border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-full" style="backdrop-filter: blur(10px) brightness(var(--blur-brightness));">
+                            <a id="link_href_header_mobile_home_logo" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="#">
+                                <img id="link_href_header_mobile_app_logo" alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="#">
+                                <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
+                            </a>
+                            <a href="#" onclick="headerMobBoxs();set_file_path_mobile()">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white h-5 w-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="headerMobBoxsAA" style="display: none;"></div>
+                    <script>
+                        function headerMobBoxs(){
+                            if((document.getElementById('headerMobBoxsAA').style.display) === 'none'){
+                                document.getElementById('headerMobBoxsAA').style.display = ('block')
+                                document.getElementById('headerMobBoxsAA').innerHTML = (`
+                                <div class="fadeIn fixed inset-0 bg-background z-50 flex flex-col justify-center items-center space-y-10  text-xl font-bold text-zinc-600  hover:text-zinc-800 transition duration-200" style="opacity: 1; height: 100vh;">
+                                    <div class="absolute right-8 top-6 h-5 w-5 text-white/[0.64] flex" style="gap:5px;">
+                                        <a href="#" style="width: 20px;" onclick="class_change()" >
+                                            <i class="fa-solid fa-circle-half-stroke text-sm font-medium text-white hover:text-opacity-80 transition absolute right-8" style="top:2.5px;"></i>
+                                        </a>
+                                        <a href="#" onclick="headerMobBoxs()">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white/[0.64]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M331.3 308.7L278.6 256l52.7-52.7c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-52.7-52.7c-6.2-6.2-15.6-7.1-22.6 0-7.1 7.1-6 16.6 0 22.6l52.7 52.7-52.7 52.7c-6.7 6.7-6.4 16.3 0 22.6 6.4 6.4 16.4 6.2 22.6 0l52.7-52.7 52.7 52.7c6.2 6.2 16.4 6.2 22.6 0 6.3-6.2 6.3-16.4 0-22.6z"></path>
+                                                <path d="M256 76c48.1 0 93.3 18.7 127.3 52.7S436 207.9 436 256s-18.7 93.3-52.7 127.3S304.1 436 256 436c-48.1 0-93.3-18.7-127.3-52.7S76 304.1 76 256s18.7-93.3 52.7-127.3S207.9 76 256 76m0-28C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <a id="link_href_header_mobile_home" class="fadeDown1 relative" href="#">
+                                        <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ホーム</font></font> </span>
+                                    </a>
+                                    <a id="link_href_header_mobile_play" class="fadeDown2 relative" href="#">
+                                        <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">プレイ</font></font> </span>
+                                    </a>
+                                    <a id="link_href_header_mobile_mod" class="fadeDown3 relative" href="#">
+                                        <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MOD</font></font> </span>
+                                    </a>
+                                    <a id="link_href_header_mobile_wiki" class="fadeDown4 relative" href="#">
+                                        <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Wiki</font></font> </span>
+                                    </a>
+                                    <a id="link_href_header_mobile_discord" class="fadeDown5 relative" href="#" target="__blank">
+                                        <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Discord</font></font> </span>
+                                    </a>
+                                </div>
+                                `)
+                            }else{
+                                document.getElementById('headerMobBoxsAA').innerHTML = (``)
+                                document.getElementById('headerMobBoxsAA').style.display = ('none')
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- トップ画像 -->
+        <div class="banner-container">
+            <img class="homebanner" src="../../assets/image/banner.png" alt="Banner Image">
+            <div class="overlay">
+                <p class="overlay-text">ビル経営ゲームv7.0<br>Scratchで公開中！<br><a class="nav" href='https://scratch.mit.edu/projects/927111186/'>Scratchでプレイ</a>
+            </div>
+        </div>
+        <!-- メインエリア -->
+        <div id="main_box" class="e_main">
+            <br><br><br>
+            <div class="section_bg">
+                <h1>ビル経営ゲーム MOD</h1>
+                <p>ビル経営ゲームのMODはゲームをより面白くできる拡張機能のようなものです！<br>自分で作ることもできるので是非 [前提MOD] と書いてあるプロジェクトを見てみてください！</p>
+            </div>
+            <div id="mods"></div>
+        </div>
+        <!-- footerエリア -->
+        <div id="page_footer">
+            <div class="border-t border-[#FFFFFF]/[0.16] bg-[#0B0F17] pt-20 pb-10 px-4 relative overflow-hidden  z-50" style="background-color: var(--background-4);">
+                <svg viewBox="0 0 1024 1024" class="absolute z-30 left-1/2  top-0  h-[100rem] w-[100rem] opacity-50 pointer-events-none -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0" aria-hidden="true">
+                    <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7"></circle>
+                    <defs>
+                        <radialGradient class="blur-lg" id="759c1415-0410-454c-8f7c-9a820de03641">
+                            <stop stop-color="var(--cyan-800)"></stop>
+                            <stop offset="1" stop-color="var(--cyan-800)"></stop>
+                        </radialGradient>
+                    </defs>
+                </svg>
+                <div class="flex md:flex-row flex-col w-full max-w-7xl mx-auto justify-between">
+                    <div class="lg:w-[50%] flex flex-col justify-between ">
+                        <div>
+                            <a id="link_href_header_footer_home_logo" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="#">
+                                <img id="link_href_header_footer_app_logo" alt="logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="#">
+                                <span class="text-lg text-[#CCCCCC] font-medium" style="color: var(--text-1);">ビル経営ゲーム</span>
+                            </a>
+                            <p class="text-[#FFFFFF]/[0.64] text-sm mt-2 max-w-sm font-normal" style="color: var(--text-1);">ビル経営ゲームはScratchで作られたビルを作るシミュレーションゲームです。</p>
+                        </div>
+                        <div>
+                            <p class="text-[#FFFFFF]/[0.64] text-sm mt-2 max-w-sm font-normal" style="color: var(--text-1);">@Masaabu-YT</p>
+                            <div class="flex space-x-2">
+                                <a id="link_href_header_footer_Masaabu_github" target="__blank" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] flex space-x-2 items-center" style="color: var(--text-1);">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a id="link_href_header_footer_Masaabu_youtube" target="__blank" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] flex space-x-2 items-center" style="color: var(--text-1);">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2  md:flex">
+                        <div class="flex flex-col text-sm md:px-4 mb-4">
+                            <a id="link_href_header_footer_home" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all" style="color: var(--text-1);">ホーム</a>
+                            <a id="link_href_header_footer_play" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all" style="color: var(--text-1);">プレイ</a>
+                            <a id="link_href_header_footer_mod" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all" style="color: var(--text-1);">MOD</a>
+                            <a id="link_href_header_footer_wiki" rel="noopener noreferrer" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all" style="color: var(--text-1);">Wiki</a>
+                            <a id="link_href_header_footer_discord" rel="noopener noreferrer" target="_blank" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all" style="color: var(--text-1);">Discord</a>
+                        </div>
+                        <div class="flex flex-col text-sm md:px-4 mb-4">
+                            <a id="link_href_header_footer_source_code_on" rel="noopener noreferrer" target="_blank" href="#" class="font-normal mt-4 text-white/[0.64] hover:text-white transition-all" style="color: var(--text-1);">source code on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-7xl mx-auto pt-20 pb-10">
+                    <div class="h-px w-full bg-gradient-to-r from-transparent via-[#989AA6]/[0.5] to-transparent"></div>
+                    <div class="text-sm pt-4 text-center text-white/[0.64] flex items-center flex-wrap justify-center">
+                        <a target="__blank" rel="noopener noreferrer" href="https://github.com/Fun117" style="color: var(--text-1);">fun117.kun@gmail.com / Made with by<span style="width:3px"></span>Fun117</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        // Set the file path for this directory
+        var windowUrl = window.location.pathname;
+        var windowUrlSr = 0;
+        if((window.location.protocol) === 'https:'){
+            windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 3;
+        }else{
+            console.warn('Runs in editor mode because the protocol is not "https".')
+            windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 2;
+        };
+        var windowFileDirectlyPass = "";
+        if(windowUrlSr > 0){
+            for (let i = 0; i < windowUrlSr; i++) {
+                windowFileDirectlyPass = windowFileDirectlyPass + `./.`;
+            }
+            windowFileDirectlyPass = `.`+windowFileDirectlyPass+`.`;
+        }else{
+            windowFileDirectlyPass = `.`;
+        };
+
+        // Configuration of link elements in this directory
+        let file_path_data = [
+            {
+                "link_Masaabu_github": 'https://github.com/Masaabu',
+                "link_Masaabu_youtube": 'https://youtube.com/@masaabu_',
+                "link_app_logo": (windowFileDirectlyPass + "/assets/image/Masaabu_yticon.png"),
+                "link_home": (windowFileDirectlyPass + "/"),
+                "link_play": (windowFileDirectlyPass + "/pages/game/"),
+                "link_mod": (windowFileDirectlyPass + "/pages/mods/"),
+                "link_wiki": (windowFileDirectlyPass + "/pages/wiki/"),
+                "link_discord": ("https://discord.gg/KhAd9zBrBk"),
+                "link_source_code_on": ("https://github.com/Masaabu/Scratch-Building"),
+            }
+        ];
+        file_path_data=(file_path_data["0"]);
+        console.log(file_path_data)
+
+        // Set link elements for header pc
+        document.getElementById('link_href_header_pc_app_logo').setAttribute('src',file_path_data.link_app_logo);
+        document.getElementById('link_href_header_pc_home_logo').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_pc_home').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_pc_play').setAttribute('href',file_path_data.link_play);
+        document.getElementById('link_href_header_pc_mod').setAttribute('href',file_path_data.link_mod);
+        document.getElementById('link_href_header_pc_wiki').setAttribute('href',file_path_data.link_wiki);
+        document.getElementById('link_href_header_pc_discord').setAttribute('href',file_path_data.link_discord);
+
+        // Set link elements for header mobile
+        document.getElementById('link_href_header_mobile_app_logo').setAttribute('src',file_path_data.link_app_logo);
+        document.getElementById('link_href_header_mobile_home_logo').setAttribute('href',file_path_data.link_home);
+        
+        // Set link elements for footer
+        console.log(document.getElementById('link_href_header_footer_app_logo').innerHTML=`HEEE`)
+        document.getElementById('link_href_header_footer_app_logo').setAttribute('src',file_path_data.link_app_logo);
+        document.getElementById('link_href_header_footer_home_logo').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_footer_home').setAttribute('href',file_path_data.link_home);
+        document.getElementById('link_href_header_footer_play').setAttribute('href',file_path_data.link_play);
+        document.getElementById('link_href_header_footer_mod').setAttribute('href',file_path_data.link_mod);
+        document.getElementById('link_href_header_footer_wiki').setAttribute('href',file_path_data.link_wiki);
+        document.getElementById('link_href_header_footer_discord').setAttribute('href',file_path_data.link_discord);
+        document.getElementById('link_href_header_footer_Masaabu_github').setAttribute('href',file_path_data.link_Masaabu_github);
+        document.getElementById('link_href_header_footer_Masaabu_youtube').setAttribute('href',file_path_data.link_Masaabu_youtube);
+        document.getElementById('link_href_header_footer_source_code_on').setAttribute('href',file_path_data.link_source_code_on);
+
+
+
+        function set_file_path_mobile() {
+            // Set link elements for header mobile
+            document.getElementById('link_href_header_mobile_home').setAttribute('href',file_path_data.link_home);
+            document.getElementById('link_href_header_mobile_play').setAttribute('href',file_path_data.link_play);
+            document.getElementById('link_href_header_mobile_mod').setAttribute('href',file_path_data.link_mod);
+            document.getElementById('link_href_header_mobile_wiki').setAttribute('href',file_path_data.link_wiki);
+            document.getElementById('link_href_header_mobile_discord').setAttribute('href',file_path_data.link_discord);
+        }
+    </script>
+    <script src="../../assets/js/content/mod.js"></script>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/cookie.js"></script>
+</html>
