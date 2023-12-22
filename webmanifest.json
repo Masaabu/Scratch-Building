@@ -1,6 +1,6 @@
 {
-    "name": "ビル経営ゲーム",
-    "short_name": "ビル経営ゲーム",
+    "name": "Scratch Building",
+    "short_name": "Scratch Building",
     "icons": [
         {
             "src": "./assets/image/logo/@Masaabu-YT_icon_192.png",
@@ -36,5 +36,5 @@
     ],
     "display": "standalone",
     "theme_color": "#1a1a1a",
-    "description": "A building management game is a simulation game where you create buildings using Scratch. A building management game is a simulation game where you create buildings using Scratch."
+    "description": "A building management game is a simulation game where you create buildings using Scratch."
 }
