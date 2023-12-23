@@ -20,12 +20,13 @@
 	font-size: 16px;
 	border: solid 1px #333;
 	border-radius: 4px;
+	background-color: var(--background-4);
 }
 .c-form__input:focus-visible {
 	outline: #d67ed7 auto 1px;
 }
 .c-form__required {
-	color: #fff;
+	color: var(--text-1);
 	background-color: #d67ed7;
 	border-radius: 4px;
 	padding: 5px 5px;
@@ -40,7 +41,7 @@ textarea.c-form__input {
 .c-form__submit button {
 	font-size: 18px;
 	font-weight: bold;
-	color: #fff;
+	color: var(--text-t);
 	background-color: #d67ed7;
 	border: solid 1px #d67ed7;
 	border-radius: 4px;

@@ -4,8 +4,9 @@
     --background-3: #a0a0a0;
     --background-4: rgb(27, 28, 30);
     --text-1: #ffffff;
-    --shadow-1: #ffffff4d;
     --text-2: #a9a9a9;
+    --text-t: #000000;
+    --shadow-1: #ffffff4d;
     --blur-brightness: 100%;
 }
 :root {
@@ -15,6 +16,7 @@
     --background-4: rgb(227, 229, 236);
     --text-1: #000000;
     --text-2: #575757;
+    --text-t: #ffffff;
     --shadow-1: #0000004d;
     --blur-brightness: 50%;
 }
