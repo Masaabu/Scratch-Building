@@ -11,7 +11,7 @@ let serverModsData = (JSON.parse(`
     "content_list": [
         {
             "group": "SB MOD [v7]",
-            "description": "使い方は<a href='' class='text-[#6094F8]' target='_blank'>こちら</a>",
+            "description": "使い方は<a href='../wiki/content/sbmod/' class='text-[#6094F8]' target='_blank'>こちら</a>",
             "creator": "@Masaabu-YT",
             "content": [
                 {
