@@ -3,13 +3,42 @@
     "version": "0.0.1",
     "title": "ビル経営ゲーム更新履歴",
     "release_time": "2023-12-02",
-    "last_change_time": "2023-12-04",
+    "last_change_time": "2023-12-25",
     "content_list": [
         {
             "group": "v7",
             "title": "ビル経営ゲームv7 更新履歴",
             "creator": "@Masaabu-YT",
             "content": [
+                {
+                    "version": "v7.0.4",
+                    "release_time": "2023-12-25",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "投資関連のバグの修正"
+                        }
+                    ]
+                },{
+                    "version": "v7.0.3",
+                    "release_time": "2023-12-24",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "投資機能の追加"
+                        },{
+                            "title": "ヘルプを追加"
+                        },{
+                            "title": "猫のコスチュームを変更 (サンタの帽子)"
+                        },{
+                            "title": "背景を変更"
+                        },{
+                            "title": "編集タブを追加(Beta)"
+                        },{
+                            "title": "メールタブを追加(Beta)"
+                        }
+                    ]
+                },
                 {
                     "version": "v7.0.2",
                     "release_time": "2023-12-04",
