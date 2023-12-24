@@ -1,4 +1,14 @@
-const obj = convertCookieToObject(document.cookie);//クッキーを読み出す
+function toggleTheme() {
+    const htmlTag = document.querySelector('html');
+    if (htmlTag.classList.contains('dark')) {
+        htmlTag.classList.remove('dark');
+    } else {
+        htmlTag.classList.add('dark');
+    }
+    class_change()
+}
+
+var obj = convertCookieToObject(document.cookie);//クッキーを読み出す
 let html_class = obj.html_class;//クッキーの中の""html_class"を取得
 document.getElementById('html').className = (html_class)//htmlのclassを変更
 

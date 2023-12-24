@@ -1,0 +1,51 @@
+{
+    "createdBy": "Fun117",
+    "version": "0.0.1",
+    "title": "ビル経営ゲーム更新履歴",
+    "release_time": "2023-12-02",
+    "last_change_time": "2023-12-04",
+    "content_list": [
+        {
+            "group": "v7",
+            "title": "ビル経営ゲームv7 更新履歴",
+            "creator": "@Masaabu-YT",
+            "content": [
+                {
+                    "version": "v7.0.2",
+                    "release_time": "2023-12-04",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "他のユーザーのビルを見る機能を追加"
+                        },
+                        {
+                            "title": "ビル経営ゲームへの参加日表示を更新"
+                        },
+                        {
+                            "title": "チャットの追加"
+                        },
+                        {
+                            "title": "猫の種類(speed) を追加"
+                        },
+                        {
+                            "title": "クリエイティブ-コマンドを追加"
+                        }
+                    ]
+                },
+                {
+                    "version": "v7.0.1",
+                    "release_time": "2023-12-03",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "ビルハブの追加"
+                        },
+                        {
+                            "title": "クリエイティブの仮実装（タブレット）"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

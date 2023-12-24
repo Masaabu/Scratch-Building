@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html id="html" class="dark">
+    <head>
+        <title>ビル経営ゲーム - 開発</title>
+        <link rel="stylesheet" href="../../assets/css/alert.css">
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../../assets/css/color.css">
+        <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
+        <style>
+            h1 {
+                font-size: 25px;
+            }
+        </style>
+        <!-- Font Awesome / website: https://fontawesome.com/ アイコンなどの素材ライブラリを読み込み-->
+        <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- 通知 -->
+        <div>
+            <div data-ml-modal id="modal-10">
+                <a href="#!" class="modal-overlay"></a>
+                <div class="modal-dialog modal-dialog-lg">
+                    <a href="#!" class="modal-close">&times;</a>
+                    <h3><strong>APIの実装</strong></h3>
+                    <div class="modal-content newspaper">
+                        2023年12月24日にAPIの機能を実装しました！<br>現段階では詳細な解説やガイドは作成されていません。最新情報をお待ちください。<br>
+                        詳細は開発者チームに<a href="https://forms.gle/B8GbL3ZYjB9aSuun8" target="_blank" class="text-[#6094F8]">お問い合わせ</a>してください。
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header pc -->
+        <div id="page_header_pc"></div>
+        <!-- header モバイル -->
+        <div id="page_header_mobile"></div>
+        <!-- トップ画像 -->
+        <div id="topGameImage" class="banner-container"></div>
+        <!-- メインエリア -->
+        <div id="main_box" class="e_main">
+            <br><br><br>
+            <div class="section_bg">
+                <h1><strong>開発ページ</strong></h1>
+                <p>公開日：2023-12-24<br>最終更新：2023-12-24</p>
+            </div>
+            <div class="section_bg">
+                <h1><strong>API</strong></h1>
+                <p>APIはMOD情報や更新履歴を取得する事ができる。
+                    <div class="section_bg">
+                        <p>APIの対応状況
+                            <li>更新履歴</li>
+                            <li>MOD情報</li>
+                            <li>よくある質問</li>
+                        </p>
+                    </div>
+                </p>
+            </div>
+            <div class="section_bg">
+                <h1><strong>changelogAPI</strong></h1>
+                <p>このAPIは変更履歴を取得することができる。
+                    <a href="../../data/json/changelog.json" target="_blank" class="text-[#6094F8]">APIページ</a>
+                </p>
+                <details> 
+                    <summary>応答例</summary>
+                    <div class="group_bg2" style="background-color: var(--background-4);overflow: scroll;">
+                        <pre><code>{
+    "createdBy": "Fun117",
+    "version": "0.0.1",
+    "title": "ビル経営ゲーム更新履歴",
+    "release_time": "2023-12-02",
+    "last_change_time": "2023-12-04",
+    "content_list": [
+        {
+            "group": "v7",
+            "title": "ビル経営ゲームv7 更新履歴",
+            "creator": "@Masaabu-YT",
+            "content": [
+                {
+                    "version": "v7.0.2",
+                    "release_time": "2023-12-04",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "他のユーザーのビルを見る機能を追加"
+                        },
+                        {
+                            "title": "ビル経営ゲームへの参加日表示を更新"
+                        },
+                        {
+                            "title": "チャットの追加"
+                        },
+                        {
+                            "title": "猫の種類(speed) を追加"
+                        },
+                        {
+                            "title": "クリエイティブ-コマンドを追加"
+                        }
+                    ]
+                },
+                {
+                    "version": "v7.0.1",
+                    "release_time": "2023-12-03",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "ビルハブの追加"
+                        },
+                        {
+                            "title": "クリエイティブの仮実装（タブレット）"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}</code></pre>
+                    </div>
+                </details>
+            </div>
+            <div class="section_bg">
+                <h1><strong>modsAPI</strong></h1>
+                <p>このAPIはMODの情報を取得することができる。
+                    <a href="../../data/json/mods.json" target="_blank" class="text-[#6094F8]">APIページ</a>
+                </p>
+                <details> 
+                    <summary>応答例</summary>
+                    <div class="group_bg2" style="background-color: var(--background-4);overflow: scroll;">
+                        <pre><code>{
+    "createdBy": "Fun117",
+    "version": "0.0.1",
+    "release_time": "null",
+    "last_change_time": "2023-12-03",
+    "content_list": [
+        {
+            "group": "SB MOD [v7]",
+            "description": "使い方は<a href='../wiki/content/sbmod/' class='text-[#6094F8]' target='_blank'>こちら</a>",
+            "creator": "@Masaabu-YT",
+            "content": [
+                {
+                    "name": "SB MOD v1.0",
+                    "description": "",
+                    "creator": "Masaabu-YT",
+                    "projectId": "940232456",
+                    "tags": [
+                        {
+                            "tagId": "1",
+                            "name": "公式"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "group": "SBAPI [v7]",
+            "description": "使い方は<a href='https://note.com/metaroro/n/n8a8ed937bb04' class='text-[#6094F8]' target='_blank'>こちら</a>",
+            "creator": "@dmmo-com-jp",
+            "content": [
+                {
+                    "name": "SBAPI",
+                    "description": "ビル経営ゲームの拡張性を上げるツール",
+                    "creator": "dmmo-com-jp",
+                    "projectId": "933515639",
+                    "tags": [
+                        {
+                            "tagId": "2",
+                            "name": "前提"
+                        }
+                    ]
+                },
+                {
+                    "name": "cmdplus",
+                    "description": "SBAPIのpostに依存した、コマンド強化modです。",
+                    "creator": "dmmo-com-jp",
+                    "projectId": "939787547",
+                    "tags": [
+                        {
+                            "tagId": "0"
+                        }
+                    ]
+                },
+                {
+                    "name": "隕石経営ゲーム",
+                    "description": "隕石！！",
+                    "creator": "banana_877_",
+                    "projectId": "933713134",
+                    "tags": [
+                        {
+                            "tagId": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "group": "SB Addons [v6]",
+            "description": "GUIがあり、機能のon/offを切り替えられるため、簡単に利用できる。オーバーレイなどもあるため、色々な情報を画面に表示することもできる。",
+            "creator": "@-Masaabu-",
+            "content": [
+                {
+                    "name": "SB Addons",
+                    "description": "ビル経営ゲームの拡張性を上げるツール",
+                    "creator": "Masaabu-YT",
+                    "projectId": "790969288",
+                    "tags": [
+                        {
+                            "tagId": "1",
+                            "name": "公式"
+                        }
+                    ]
+                },
+                {
+                    "name": "SB Addons+",
+                    "description": "",
+                    "creator": "dmmo-com-jp",
+                    "projectId": "791408146",
+                    "tags": [
+                        {
+                            "tagId": "0"
+                        }
+                    ]
+                },
+                {
+                    "name": "隕石アドオン",
+                    "description": "隕石！！",
+                    "creator": "dmmo-com-jp",
+                    "projectId": "792121597",
+                    "tags": [
+                        {
+                            "tagId": "0"
+                        }
+                    ]
+                },
+                {
+                    "name": "Re:BN addon",
+                    "description": "",
+                    "creator": "banana_877_",
+                    "projectId": "817892400",
+                    "tags": [
+                        {
+                            "tagId": "0"
+                        }
+                    ]
+                },
+                {
+                    "name": "SB Addons Remix",
+                    "description": "",
+                    "creator": "yoshikunTA",
+                    "projectId": "795165690",
+                    "tags": [
+                        {
+                            "tagId": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "group": "SB Addon API [v6]",
+            "description": "使い方は<a href='https://note.com/metaroro/n/n8a8ed937bb04' class='text-[#6094F8]' target='_blank'>こちら</a>",
+            "creator": "@dmmo-com-jp",
+            "content": [
+                {
+                    "name": "SBAPI",
+                    "description": "お金の管理や幸福度の管理を簡単に行えます。",
+                    "creator": "dmmo-com-jp",
+                    "projectId": "926411096",
+                    "tags": [
+                        {
+                            "tagId": "2",
+                            "name": "前提"
+                        }
+                    ]
+                },
+                {
+                    "name": "天候復活アドオン",
+                    "description": "天候を6.0に復活させます",
+                    "creator": "dmmo-com-jp",
+                    "projectId": "933340996",
+                    "tags": [
+                        {
+                            "tagId": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}</code></pre>
+                    </div>
+                </details>
+            </div>
+            <div class="section_bg">
+                <h1><strong>qaAPI</strong></h1>
+                <p>このAPIはよくある質問の情報を取得することができる。
+                    <a href="../../data/json/qa.json" target="_blank" class="text-[#6094F8]">APIページ</a>
+                </p>
+                <details> 
+                    <summary>応答例</summary>
+                    <div class="group_bg2" style="background-color: var(--background-4);overflow: scroll;">
+                        <pre><code>{
+    "createdBy": "Fun117",
+    "version": "0.0.1",
+    "title": "ビル経営ゲームよくある質問",
+    "release_time": "2023-12-02",
+    "last_change_time": "2023-12-03",
+    "content_list": [
+        {
+            "group": "v7",
+            "title": "ビル経営ゲームv7のよくある質問",
+            "release_time": "2023-12-02",
+            "last_change_time": "2023-12-03",
+            "creator": "@Masaabu-YT",
+            "content": [
+                {
+                    "q": "トンカチと猫のアイコンの物は何ですか？",
+                    "a": "モードです！それぞれ建築モード、猫モードという名前で、建築モードなら部屋をタップすることで建築ができます！猫モードなら猫をタップするとその猫のステータスを見ることができます！"
+                },
+                {
+                    "q": "電気と水道とは？",
+                    "a": "右下にある黄色と水色のバーは電気と水道の使用量で、部屋ごとに使用量が変わります。使用量がオーバーしてしまうと猫達が部屋を使えなくなってしまいます！上限を増やすには地下に配電室や給水室などを建築しましょう！"
+                },
+                {
+                    "q": "エレベーターとターミナルエレベーターの違いは？",
+                    "a": "猫達が早く移動できるようになります！"
+                },
+                {
+                    "q": "ログインボタンの意味は？",
+                    "a": "ログインをすると設定の「データの管理」ページがサーバーから読み込まれたり自分のプロフィールが読み込まれます！"
+                },
+                {
+                    "q": "プロフィールにある「UP!」ボタンは何ですか？",
+                    "a": "ビルハブで自分のステータスを共有できます！※v7.0.1~※ 共有をすることでギフト※実装予定※ などを受け取れます！"
+                },
+                {
+                    "q": "広告を載せてください！",
+                    "a": "こちらから広告を申請できます！"
+                },
+                {
+                    "q": "レベルとは",
+                    "a": "今後追加する予定の機能です！楽しみに待っていてください！"
+                },
+                {
+                    "q": "他のバージョンのセーブコードは使えますか？",
+                    "a": "いいえ。セーブコード変換機などを使用してください。"
+                }
+            ]
+        }
+    ]
+}</code></pre>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <!-- footerエリア -->
+        <div id="page_footer"></div>
+    </body>
+    <script src="../../assets/js/assets/header.js"></script>
+    <script src="../../assets/js/assets/topGameImage.js"></script>
+    <script src="../../assets/js/assets/footer.js"></script>
+    <script>
+        let newsShowSetMode = "0";//newsの表示モード
+        let newsShowSaveAge = "30";//お知らせを見た状態の保存時間（保存時間が切れると再度お知らせが表示される様になる）
+        var obj = convertCookieToObject(document.cookie);
+        let news_page_development = obj.news_page_development;
+        if(newsShowSetMode === '0'){
+            // cookieにデータがない場合に表示
+            if(news_page_development !== 'christmas_event_true'){
+                if(window.location.hash !== '#modal-10'){
+                    window.location.href=('#modal-10')
+                    document.cookie = `news_page_development=christmas_event_true; max-age=${newsShowSaveAge}; path=/`;
+                }
+            };
+        }else{if(newsShowSetMode==='1'){
+            // ページを読み込んだ時に毎度表示する。
+            if(window.location.hash !== '#modal-10'){
+                window.location.href=('#modal-10')
+                document.cookie = 'news_page_development=christmas_event_true; max-age=30; path=/';
+            }
+        }else{
+            // 表示しない
+        }}
+
+        function convertCookieToObject(cookies){//クッキーの解析
+            const cookieItem = cookies.split(';');
+            const obj = {};
+            cookieItem.forEach((item) => {
+                // 「=」で分解
+                const element = item.split('=');
+                // キーを取得
+                const key = element[0].trim();
+                // バリューを取得
+                const value = decodeURIComponent(element[1]);
+                // 保存
+                obj[key] = value;
+            });
+            return obj;
+        }
+    </script>
+    <script src="../../assets/js/cookie.js"></script>
+</html>

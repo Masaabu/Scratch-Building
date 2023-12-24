@@ -41,7 +41,7 @@ textarea.c-form__input {
 .c-form__submit button {
 	font-size: 18px;
 	font-weight: bold;
-	color: var(--text-t);
+	color: #ddd;
 	background-color: #d67ed7;
 	border: solid 1px #d67ed7;
 	border-radius: 4px;
@@ -70,6 +70,21 @@ textarea.c-form__input {
     margin-bottom: 20px;
     padding: 10px;
     border-bottom: 1px solid #ddd;
+}
+
+.reportSpace {
+	display: block;
+	height: 27px;
+}
+.comment:hover .reportSpace {
+	display: none;
+}
+
+.report {
+	display: none;
+}
+.comment:hover .report {
+	display: block;
 }
 
 .comment p {

@@ -20,7 +20,8 @@ async function loadData() {
 
     const usernamePara = document.createElement('p');
     usernamePara.classList.add('username');
-    usernamePara.textContent = (entry.name+' #'+commentCount);
+    usernamePara.textContent = (entry.name);
+    //usernamePara.textContent = (entry.name+' #'+commentCount);//コメントの読み込み番号を表示
 
     const checkDiv = document.createElement('p');
     if (entry.check) {
@@ -35,8 +36,12 @@ async function loadData() {
     const commentPara = document.createElement('p');
     commentPara.textContent = entry.comment;
 
+    const uuidDivSpe = document.createElement('p');
+    uuidDivSpe.classList.add('reportSpace')
+
     const uuidDiv = document.createElement('p');
     uuidDiv.style.textAlign=('right')
+    uuidDiv.classList.add('report')
 
     const uuidBtn = document.createElement('button');
     uuidBtn.textContent = `通報する`;
@@ -50,6 +55,7 @@ async function loadData() {
     commentDiv.appendChild(usernamePara);
     commentDiv.appendChild(timestampPara);
     commentDiv.appendChild(commentPara);
+    commentDiv.appendChild(uuidDivSpe);
     commentDiv.appendChild(uuidDiv);
     commentLi.appendChild(commentDiv);
     

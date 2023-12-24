@@ -5669,3 +5669,16 @@ a.button {
 .e_main {
 	margin: auto 1%;
 }
+
+#page_header_mobile_checkbox_btn{
+	background-color:#FFBB4E;
+	padding:10px;
+	box-shadow: 2px 0 4px rgba(0, 0, 0, .2);
+}
+#page_header_mobile_show{
+	display: none;
+}
+/*--------動きをつける--------*/
+input[type=checkbox]:checked ~ #page_header_mobile_show{
+	display: block;
+}
