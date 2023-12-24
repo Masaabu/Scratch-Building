@@ -2,7 +2,7 @@
     "createdBy": "Fun117",
     "version": "0.0.1",
     "title": "ビル経営ゲーム更新履歴",
-    "release_time": "2023-12-02",
+    "release_time": "2023-12-01",
     "last_change_time": "2023-12-25",
     "content_list": [
         {
@@ -11,12 +11,25 @@
             "creator": "@Masaabu-YT",
             "content": [
                 {
-                    "version": "v7.0.4",
+                    "version": "v7.1 [Pre-alpha]",
+                    "release_time": "2024年",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "アイテムの追加 (Beta)"
+                        }
+                    ]
+                },{
+                    "version": "v7.0.4 [Pre-alpha]",
                     "release_time": "2023-12-25",
                     "creator": "Masaabu-YT",
                     "log": [
                         {
+                            "title": "設定項目を追加"
+                        },{
                             "title": "投資関連のバグの修正"
+                        },{
+                            "title": "チャットを閉じると通信が止まるバグの修正"
                         }
                     ]
                 },{
@@ -36,6 +49,8 @@
                             "title": "編集タブを追加(Beta)"
                         },{
                             "title": "メールタブを追加(Beta)"
+                        },{
+                            "title": "設定項目を追加"
                         }
                     ]
                 },
