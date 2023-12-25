@@ -9,6 +9,12 @@ var repComments=(JSON.parse(`{}`));
 var allCommentsCount = 0;
 var allComments=(JSON.parse(`{}`));
 
+
+var F_repgroup="";
+var F_repid="";
+var F_box="false";
+
+
 //console.log(repComments)
 
 async function loadData() {
@@ -24,6 +30,9 @@ async function loadData() {
         };
         allCommentsCount=allCommentsCount+1;
     });
+
+    let checkBatchDev=((`<svg style="margin: auto 0;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-500 stroke-white"><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z" fill="currentColor" stroke-width="0"></path></svg>`));
+    let checkBatchCre=((`<svg style="margin: auto 0; color:#f26b30;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-500 stroke-white"><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z" fill="currentColor" stroke-width="0"></path></svg>`));
     //console.log(allComments)
     //console.log(repComments)
     data.reverse().forEach(entry => {});
@@ -43,14 +52,25 @@ async function loadData() {
         
             const usernamePara = document.createElement('p');
             usernamePara.classList.add('username');
-            usernamePara.textContent = (entry.name);
-            //usernamePara.textContent = (entry.name+' #'+commentCount);//コメントの読み込み番号を表示
+            const usernameParaDiv = document.createElement('div');
+            usernameParaDiv.style.display=('flex');
+            var batchCheck = (entry.check);
+            var batchName = (entry.name);
+            var batchDiv = usernameParaDiv;
+            if(batchCheck==='dev') {
+                batchDiv.innerHTML = (`${batchName}${checkBatchDev}`);
+            }else{if(batchCheck==='cre') {
+                batchDiv.innerHTML = (`${batchName}${checkBatchCre}`);
+            }else{
+                batchDiv.innerHTML = (`${batchName}`);
+            };};
+            usernamePara.appendChild(usernameParaDiv);
         
             const checkDiv = document.createElement('p');
-            if (entry.check) {
-                checkDiv.style.color = '#f26b30';
-                checkDiv.textContent = "認証済み";
-            };
+            // if(entry.check) {
+            //     checkDiv.style.color = '#f26b30';
+            //     checkDiv.textContent = "認証済み";
+            // };
         
             const timestampPara = document.createElement('p');
             timestampPara.classList.add('timestamp');
@@ -93,7 +113,6 @@ async function loadData() {
             commentDiv.appendChild(uuidDiv);
             commentLi.appendChild(commentDiv);
             commentLi.appendChild(commentRepDiv);
-            
             commentsContainer.appendChild(commentLi);
             commentCount = commentCount+1;
         };
@@ -112,13 +131,24 @@ async function loadData() {
                 REPcommentRepDiv.id = (`comment_${repComments[i].uuid}`);
                 const REPusernamePara = document.createElement('p');
                 REPusernamePara.classList.add('username');
-                REPusernamePara.textContent = (repComments[i].name);
-                //REPusernamePara.textContent = (repComments[i].name+' #'+repComments[i].rep);//コメントの読み込み番号を表示
+                const REPusernameParaDiv = document.createElement('div');
+                REPusernameParaDiv.style.display=('flex');
+                var batchCheck = (repComments[i].check);
+                var batchName = (repComments[i].name);
+                var batchDiv = REPusernameParaDiv;
+                if(batchCheck==='dev') {
+                    batchDiv.innerHTML = (`${batchName}${checkBatchDev}`);
+                }else{if(batchCheck==='dev') {
+                    batchDiv.innerHTML = (`${batchName}${checkBatchCre}`);
+                }else{
+                    batchDiv.innerHTML = (`${batchName}`);
+                };};
+                REPusernamePara.appendChild(REPusernameParaDiv);
                 const REPcheckDiv = document.createElement('p');
-                if (repComments[i].check) {
-                    REPcheckDiv.style.color = '#f26b30';
-                    REPcheckDiv.textContent = "認証済み";
-                };
+                // if (repComments[i].check) {
+                //     REPcheckDiv.style.color = '#f26b30';
+                //     REPcheckDiv.textContent = "認証済み";
+                // };
                 const REPtimestampPara = document.createElement('p');
                 REPtimestampPara.classList.add('timestamp');
                 REPtimestampPara.textContent = new Date(repComments[i].timestamp).toLocaleString();
@@ -147,8 +177,13 @@ async function loadData() {
                 REPuuidDiv.appendChild(REPuuidBtn);
 
                 const REPcommentRepCommentID = document.createElement('a');
-                REPcommentRepCommentID.classList.add(`text-[#6094F8]`);
-                REPcommentRepCommentID.textContent=`@${allComments[repComments[i].rep].name}`
+                if(allComments[repComments[i].rep]){
+                    REPcommentRepCommentID.classList.add(`text-[#6094F8]`);
+                    REPcommentRepCommentID.textContent=`@${allComments[repComments[i].rep].name}`
+                }else{
+                    REPcommentRepCommentID.style.color=(`var(--red-500)`);
+                    REPcommentRepCommentID.textContent=`返信元のコメントは削除されています`
+                }
 
                 REPcommentDiv.appendChild(REPcommentRepCommentID);
                 REPusernamePara.appendChild(REPcheckDiv);
@@ -206,7 +241,7 @@ setInterval(() => {
         document.getElementById('loadAddComment').style.display=('none');
     }else{
         document.getElementById('loadAddComment').style.display=('block');
-    }
+    };
 }, 500);
 
 // コメントを通報する機能
@@ -228,7 +263,108 @@ function commentReport(id){
 };
 
 function commentRep(repgroup,repid){
-    window.location='#コメント欄';
+    if(F_box!=='false'){
+        //console.warn(repgroup)
+        let F_repForm = document.getElementById(`repForm_${F_box}`);
+        F_repForm.remove();
+        F_box='false';
+    };
+    F_box=repgroup;
+    F_repgroup=repgroup;
+    F_repid=repid;
+
+    document.getElementById('form_rep_data').innerHTML=((allComments[`${repid}`].name)+'のコメントを選択中')
     document.getElementById('field-repgroup').value=`${repgroup}`;
     document.getElementById('field-rep').value=`${repid}`;
+
+    var repForm = document.getElementById(`comment_${repgroup}`);
+
+    let repFormDiv = document.createElement('div');
+    repFormDiv.id=(`repForm_${repgroup}`);
+    repFormDiv.classList.add('fadeUp','comment','commentRep');
+
+    let repFormDivBtnDiv = document.createElement('div');
+    repFormDivBtnDiv.classList.add('c-form__submit');
+
+    let repFormDivCloseBtn = document.createElement('button');
+    repFormDivCloseBtn.style.marginRight=(`8px`)
+    repFormDivCloseBtn.textContent=(`キャンセル`);
+    repFormDivCloseBtn.addEventListener('click', () => {
+        commentRepFormBoxRem(repgroup,repid);
+    });
+    let repFormDivSubmitBtn = document.createElement('button');
+    repFormDivSubmitBtn.style.marginRight=(`8px`)
+    repFormDivSubmitBtn.textContent=(`送信する`);
+    repFormDivSubmitBtn.addEventListener('click', () => {
+        commentRepFormBoxRemSubmit();
+        commentRepFormBoxRem(repgroup,repid);
+    });
+    repFormDivBtnDiv.appendChild(repFormDivSubmitBtn);
+    repFormDivBtnDiv.appendChild(repFormDivCloseBtn);
+
+
+    let repFormDivContent = document.createElement('div');
+    repFormDivContent.innerHTML=(`
+    <form id="rep_commentForm" class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse" method="POST" target="rep_rep_hidden_iframe" onsubmit="submitted=true;">
+        <div class="c-form__item" style="width:100%;"><p class="c-form__input" style="width:100%;" id="rep_form_rep_data"></p></div>
+        <div class="c-form__item" style="width:100%;">
+            <input name="entry.1738713134" style="width:100%;" class="c-form__input" id="rep_field_name" type="text" required="required"  placeholder="名前を入力" autocomplete="nickname"/>
+        </div>
+        <div class="c-form__item" style="width:100%;">
+            <textarea name="entry.975792514" style="width:100%;" class="c-form__input" id="rep_field_message" placeholder="素敵なコメントを入力" required="required" autocomplete="off"></textarea>
+        </div>
+        <div class="c-form__item" style="width:100%;">
+            <input name="entry.537780005" class="c-form__input" style="width:100%;background-color: var(--background-2);align-items: right;display: none;" id="rep_field_repgroup" type="text" required="required" placeholder="返信コメントグループID"/>
+        </div>
+        <div class="c-form__item">
+            <input name="entry.1032562646" class="c-form__input" style="width:100%;background-color: var(--background-2);align-items: right;display: none;" id="rep_field_rep" type="text" required="required" placeholder="返信コメントID" />
+        </div>
+    </form>
+    <iframe name="rep_hidden_iframe" id="rep_hidden_iframe" style="display: none" onload="if(submitted){window.location='./';}"></iframe>
+    `);
+
+    repFormDiv.appendChild(repFormDivContent)
+    repFormDiv.appendChild(repFormDivBtnDiv)
+    repForm.appendChild(repFormDiv);
+
+    document.getElementById('rep_form_rep_data').innerHTML=((allComments[`${repid}`].name)+'のコメントを選択中')
+    document.getElementById('rep_field_repgroup').value=`${repgroup}`;
+    document.getElementById('rep_field_rep').value=`${repid}`;
+    window.location=(`#comment_${F_box}`);
+};
+
+function commentRepReset(){
+    document.getElementById('form_rep_data').innerHTML=('通常コメントモード');
+};
+
+function commentRepFormBoxRemSubmit(){
+    let form_url = (`https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse`);
+    var fetch_url = (`${form_url}?entry.1738713134=${document.getElementById('rep_field_name').value}&entry.975792514=${document.getElementById('rep_field_message').value}&entry.537780005=${document.getElementById('rep_field_repgroup').value}&entry.1032562646=${document.getElementById('rep_field_rep').value}`);
+
+    /// FormData作成
+    const formData = new FormData();
+    formData.append('entry.1738713134', `${document.getElementById('rep_field_name').value}`);
+    formData.append('entry.975792514', `${document.getElementById('rep_field_message').value}`);
+    formData.append('entry.537780005', `${document.getElementById('rep_field_repgroup').value}`);
+    formData.append('entry.1032562646', `${document.getElementById('rep_field_rep').value}`);
+    //console.log(fetch_url)
+    fetch(form_url, {
+        method: 'POST',
+        
+        /// OK : FormDataでパラメータ指定
+        body: formData
+        }).then(async (response)=>{
+        //console.log('response : ',await response.json());
+        }).then((data)=>{
+        //console.log('data : ', data);
+        }).catch((error) => {
+        console.error('error : ', error);
+    });
+    window.location=('#')
+};
+
+function commentRepFormBoxRem(repgroup,repid){
+    var repForm = document.getElementById(`repForm_${repgroup}`);
+    repForm.remove();
+    F_box='false';
 };
