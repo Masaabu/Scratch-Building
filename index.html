@@ -49,16 +49,10 @@
                 <form id="commentForm" class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
                     <div class="c-form__item"><p class="c-form__input" id="form_rep_data">通常コメントモード</p></div>
                     <div class="c-form__item">
-                        <input name="entry.1738713134" class="c-form__input" id="field-name" type="text" required="required"  placeholder="名前を入力" autocomplete="nickname"/>
+                        <input name="entry.1738713134" class="c-form__input" id="field-name" type="text" minlength="3" maxlength="13" required="required"  placeholder="名前を入力" autocomplete="nickname"/>
                     </div>
                     <div  class="c-form__item">
-                        <textarea name="entry.975792514" class="c-form__input" id="field-message" placeholder="素敵なコメントを入力" required="required" autocomplete="off"></textarea>
-                    </div>
-                    <div class="c-form__item">
-                        <input name="entry.537780005" class="c-form__input" style="background-color: var(--background-2);align-items: right;display: none;" id="field-repgroup" type="text" placeholder="返信コメントグループID"/>
-                    </div>
-                    <div class="c-form__item">
-                        <input name="entry.1032562646" class="c-form__input" style="background-color: var(--background-2);align-items: right;display: none;" id="field-rep" type="text" placeholder="返信コメントID" />
+                        <textarea name="entry.975792514" class="c-form__input" id="field-message" placeholder="素敵なコメントを入力" minlength="1" maxlength="100" required="required" autocomplete="off"></textarea>
                     </div>
                     <div class="c-form__submit">
                         <button type="submit" style="margin-top: 5px;">送信</button>
@@ -68,7 +62,7 @@
                 <script type="text/javascript">
                     let submitted = false;
                 </script>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='./';}"></iframe>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){alert('コメントを送信しました');window.location='./';}"></iframe>
                 <div class="wrapper">
                     <h2></h2>
                     <ul class="list" id="commentsContainer"></ul>
