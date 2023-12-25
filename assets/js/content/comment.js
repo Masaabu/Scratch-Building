@@ -273,10 +273,6 @@ function commentRep(repgroup,repid){
     F_repgroup=repgroup;
     F_repid=repid;
 
-    document.getElementById('form_rep_data').innerHTML=((allComments[`${repid}`].name)+'のコメントを選択中')
-    document.getElementById('field-repgroup').value=`${repgroup}`;
-    document.getElementById('field-rep').value=`${repid}`;
-
     var repForm = document.getElementById(`comment_${repgroup}`);
 
     let repFormDiv = document.createElement('div');
@@ -296,8 +292,7 @@ function commentRep(repgroup,repid){
     repFormDivSubmitBtn.style.marginRight=(`8px`)
     repFormDivSubmitBtn.textContent=(`送信する`);
     repFormDivSubmitBtn.addEventListener('click', () => {
-        commentRepFormBoxRemSubmit();
-        commentRepFormBoxRem(repgroup,repid);
+        commentRepFormBoxRemSubmit(repgroup,repid);
     });
     repFormDivBtnDiv.appendChild(repFormDivSubmitBtn);
     repFormDivBtnDiv.appendChild(repFormDivCloseBtn);
@@ -305,20 +300,24 @@ function commentRep(repgroup,repid){
 
     let repFormDivContent = document.createElement('div');
     repFormDivContent.innerHTML=(`
-    <form id="rep_commentForm" class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse" method="POST" target="rep_rep_hidden_iframe" onsubmit="submitted=true;">
+    <form id="rep_commentForm" class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse" method="POST" target="rep_hidden_iframe" onsubmit="submitted=true;">
         <div class="c-form__item" style="width:100%;"><p class="c-form__input" style="width:100%;" id="rep_form_rep_data"></p></div>
         <div class="c-form__item" style="width:100%;">
             <input name="entry.1738713134" style="width:100%;" class="c-form__input" id="rep_field_name" type="text" required="required"  placeholder="名前を入力" autocomplete="nickname"/>
         </div>
+        <p id="rep_name_error" style="color: var(--red-500);font:bold;"></p>
         <div class="c-form__item" style="width:100%;">
             <textarea name="entry.975792514" style="width:100%;" class="c-form__input" id="rep_field_message" placeholder="素敵なコメントを入力" required="required" autocomplete="off"></textarea>
         </div>
+        <p id="rep_message_error" style="color: var(--red-500);font:bold;"></p>
         <div class="c-form__item" style="width:100%;">
             <input name="entry.537780005" class="c-form__input" style="width:100%;background-color: var(--background-2);align-items: right;display: none;" id="rep_field_repgroup" type="text" required="required" placeholder="返信コメントグループID"/>
         </div>
+        <p id="rep_group_error" style="color: var(--red-500);font:bold;"></p>
         <div class="c-form__item">
             <input name="entry.1032562646" class="c-form__input" style="width:100%;background-color: var(--background-2);align-items: right;display: none;" id="rep_field_rep" type="text" required="required" placeholder="返信コメントID" />
         </div>
+        <p id="rep_id_error" style="color: var(--red-500);font:bold;"></p>
     </form>
     <iframe name="rep_hidden_iframe" id="rep_hidden_iframe" style="display: none" onload="if(submitted){window.location='./';}"></iframe>
     `);
@@ -337,30 +336,80 @@ function commentRepReset(){
     document.getElementById('form_rep_data').innerHTML=('通常コメントモード');
 };
 
-function commentRepFormBoxRemSubmit(){
-    let form_url = (`https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse`);
-    var fetch_url = (`${form_url}?entry.1738713134=${document.getElementById('rep_field_name').value}&entry.975792514=${document.getElementById('rep_field_message').value}&entry.537780005=${document.getElementById('rep_field_repgroup').value}&entry.1032562646=${document.getElementById('rep_field_rep').value}`);
-
-    /// FormData作成
-    const formData = new FormData();
-    formData.append('entry.1738713134', `${document.getElementById('rep_field_name').value}`);
-    formData.append('entry.975792514', `${document.getElementById('rep_field_message').value}`);
-    formData.append('entry.537780005', `${document.getElementById('rep_field_repgroup').value}`);
-    formData.append('entry.1032562646', `${document.getElementById('rep_field_rep').value}`);
-    //console.log(fetch_url)
-    fetch(form_url, {
-        method: 'POST',
-        
-        /// OK : FormDataでパラメータ指定
-        body: formData
-        }).then(async (response)=>{
-        //console.log('response : ',await response.json());
-        }).then((data)=>{
-        //console.log('data : ', data);
-        }).catch((error) => {
-        console.error('error : ', error);
-    });
-    window.location=('#')
+function commentRepFormBoxRemSubmit(repgroup,repid){
+    var formError = 0;
+    if(document.getElementById('rep_field_name').value.length > 2){
+    if(document.getElementById('rep_field_name').value.length < 13){
+        document.getElementById('rep_name_error').innerHTML=(``);
+        if(document.getElementById('rep_field_message').value.length > 0){
+        if(document.getElementById('rep_field_message').value.length < 101){
+            document.getElementById('rep_message_error').innerHTML=(``);
+            if(document.getElementById('rep_field_repgroup').value.length > 35){
+            if(document.getElementById('rep_field_repgroup').value.length < 101){
+                document.getElementById('rep_group_error').innerHTML=(``);
+                if(document.getElementById('rep_field_rep').value.length > 35){
+                if(document.getElementById('rep_field_rep').value.length < 101){
+                    document.getElementById('rep_id_error').innerHTML=(``);
+                }else{
+                    formError=formError+1
+                    document.getElementById('rep_id_error').innerHTML=(`返信コメントIDは100文字以内`);
+                };
+                }else{
+                    formError=formError+1
+                    document.getElementById('rep_id_error').innerHTML=(`返信コメントIDは35文字以上`);
+                };
+            }else{
+                formError=formError+1
+                document.getElementById('rep_group_error').innerHTML=(`返信グループIDは100文字以内`);
+            };
+            }else{
+                formError=formError+1
+                document.getElementById('rep_group_error').innerHTML=(`返信グループIDは35文字以上`);
+            };
+        }else{
+            formError=formError+1
+            document.getElementById('rep_message_error').innerHTML=(`メッセージは100文字以内`);
+        };
+        }else{
+            formError=formError+1
+            document.getElementById('rep_message_error').innerHTML=(`メッセージは1文字以上`);
+        };
+    }else{
+        formError=formError+1
+        document.getElementById('rep_name_error').innerHTML=(`名前は13文字以内`);
+    };
+    }else{
+        formError=formError+1
+        document.getElementById('rep_name_error').innerHTML=(`名前は2文字以上`);
+    };
+    if(formError===0){
+        let form_url = (`https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse`);
+        var fetch_url = (`${form_url}?entry.1738713134=${document.getElementById('rep_field_name').value}&entry.975792514=${document.getElementById('rep_field_message').value}&entry.537780005=${document.getElementById('rep_field_repgroup').value}&entry.1032562646=${document.getElementById('rep_field_rep').value}`);
+    
+        /// FormData作成
+        const formData = new FormData();
+        formData.append('entry.1738713134', `${document.getElementById('rep_field_name').value}`);
+        formData.append('entry.975792514', `${document.getElementById('rep_field_message').value}`);
+        formData.append('entry.537780005', `${document.getElementById('rep_field_repgroup').value}`);
+        formData.append('entry.1032562646', `${document.getElementById('rep_field_rep').value}`);
+        //console.log(fetch_url)
+        fetch(form_url,{
+            mode: "no-cors",
+            method: 'POST',
+            
+            /// OK : FormDataでパラメータ指定
+            body: formData
+            }).then(async (response)=>{
+            //console.log('response : ',await response.json());
+            }).then((data)=>{
+            //console.log('data : ', data);
+            }).catch((error) => {
+            console.error('error : ', error);
+        });
+        window.location=('#');
+        alert('返信コメントを送信しました');
+        commentRepFormBoxRem(repgroup,repid);
+    };
 };
 
 function commentRepFormBoxRem(repgroup,repid){
