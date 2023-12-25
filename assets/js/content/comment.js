@@ -46,7 +46,7 @@ async function loadData() {
             commentLi.classList.add('list-item');
         
             const commentDiv = document.createElement('div');
-            commentDiv.classList.add('comment');
+            commentDiv.classList.add('comment','fadeUp');
         
             const commentRepDiv = document.createElement('div');
             commentRepDiv.id = (`comment_${entry.uuid}`)
@@ -88,11 +88,19 @@ async function loadData() {
             uuidDiv.classList.add('report');
 
             const idCopyBtn = document.createElement('button');
-            idCopyBtn.innerHTML = `<span class="tooltip icon-tooltip material-symbols-outlined"><i class="fa-solid fa-copy"><span class="tooltip-content">コメントIDをコピー</span></span></i>`;
+            idCopyBtn.innerHTML = `<span class="tooltip icon-tooltip material-symbols-outlined"><i class="fa-solid fa-copy"><span id="commentIdCopyText_${entry.uuid}" class="tooltip-content">コメントIDをコピー</span></span></i>`;
             idCopyBtn.style.margin = `0 0 0 10px`;
             idCopyBtn.style.color = `var(--text-2)`;
             idCopyBtn.addEventListener('click', () => {
                 copyToClipboard(entry.uuid);
+                document.getElementById(`commentIdCopyText_${entry.uuid}`).innerHTML=(`コピー完了！`);
+                document.getElementById(`commentIdCopyText_${entry.uuid}`).style.color=(`#ffff`);
+                document.getElementById(`commentIdCopyText_${entry.uuid}`).style.backgroundColor=(`#10b981`);
+                window.setTimeout(function(){
+                    document.getElementById(`commentIdCopyText_${entry.uuid}`).innerHTML=(`コメントIDをコピー`);
+                    document.getElementById(`commentIdCopyText_${entry.uuid}`).style.color=(``);
+                    document.getElementById(`commentIdCopyText_${entry.uuid}`).style.backgroundColor=(``);
+                }, 1500);
             });
             uuidDiv.appendChild(idCopyBtn);
         
@@ -135,7 +143,7 @@ async function loadData() {
                 REPcommentLi.id = (`comment_${commentCount}`);
                 REPcommentLi.classList.add('list-item');
                 const REPcommentDiv = document.createElement('div');
-                REPcommentDiv.classList.add('comment','commentRep');
+                REPcommentDiv.classList.add('comment','commentRep','fadeUp0.85');
                 const REPcommentRepDiv = document.createElement('div');
                 REPcommentRepDiv.id = (`comment_${repComments[i].uuid}`);
                 const REPusernamePara = document.createElement('p');
@@ -169,11 +177,19 @@ async function loadData() {
                 REPuuidDiv.style.textAlign=('right');
                 REPuuidDiv.classList.add('report');
                 const REPidCopyBtn = document.createElement('button');
-                REPidCopyBtn.innerHTML = `<span class="tooltip icon-tooltip material-symbols-outlined"><i class="fa-solid fa-copy"><span class="tooltip-content">コメントIDをコピー</span></span></i>`;
+                REPidCopyBtn.innerHTML = `<span class="tooltip icon-tooltip material-symbols-outlined"><i class="fa-solid fa-copy"><span id="rep_commentIdCopyText_${repComments[i].uuid}" class="tooltip-content">コメントIDをコピー</span></span></i>`;
                 REPidCopyBtn.style.margin = `0 0 0 10px`;
                 REPidCopyBtn.style.color = `var(--text-2)`;
                 REPidCopyBtn.addEventListener('click', () => {
                     copyToClipboard(repComments[i].uuid);
+                    document.getElementById(`rep_commentIdCopyText_${repComments[i].uuid}`).innerHTML=(`コピー完了！`);
+                    document.getElementById(`rep_commentIdCopyText_${repComments[i].uuid}`).style.color=(`#ffff`);
+                    document.getElementById(`rep_commentIdCopyText_${repComments[i].uuid}`).style.backgroundColor=(`#10b981`);
+                    window.setTimeout(function(){
+                        document.getElementById(`rep_commentIdCopyText_${repComments[i].uuid}`).innerHTML=(`コメントIDをコピー`);
+                        document.getElementById(`rep_commentIdCopyText_${repComments[i].uuid}`).style.color=(``);
+                        document.getElementById(`rep_commentIdCopyText_${repComments[i].uuid}`).style.backgroundColor=(``);
+                    }, 1500);
                 });
                 REPuuidDiv.appendChild(REPidCopyBtn);
                 const REPrepBtn = document.createElement('button');

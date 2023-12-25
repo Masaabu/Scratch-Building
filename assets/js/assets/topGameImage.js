@@ -20,6 +20,6 @@ if(windowUrlSr > 0){
 document.getElementById('topGameImage').innerHTML=(`
 <img class="homebanner" src="https://cdn.discordapp.com/attachments/1187984825458638859/1188420679423492146/image.png?ex=659a7601&is=65880101&hm=999767d62e8f483b9593e4817941286df5a840fa5977f0939a7406b8761bee72&" alt="Banner Image">
 <div class="overlay">
-    <p class="overlay-text">ビル経営ゲームv7.0<br>Scratchで公開中！<br><a class="nav" href='https://scratch.mit.edu/projects/927111186/'>Scratchでプレイ</a>
+    <p class="overlay-text fadeLeft">ビル経営ゲームv7.0<br>Scratchで公開中！<br><a class="nav" href='https://scratch.mit.edu/projects/927111186/'>Scratchでプレイ</a>
 </div>
 `)  
