@@ -20,12 +20,16 @@
                         }
                     ]
                 },{
-                    "version": "v7.0.4 [Pre-alpha]",
+                    "version": "v7.0.4",
                     "release_time": "2023-12-25",
                     "creator": "Masaabu-YT",
                     "log": [
                         {
                             "title": "設定項目を追加"
+                        },{
+                            "title": "プロフィールデコレーションを追加"
+                        },{
+                            "title": "プレゼントページを追加"
                         },{
                             "title": "投資関連のバグの修正"
                         },{
