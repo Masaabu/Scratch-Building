@@ -3,6 +3,7 @@
     <head>
         <link rel="icon" type="image/x-icon" href="./assets/image/Masaabu_yticon.png">
         <title>ビル経営ゲーム</title>
+        <link rel="stylesheet" href="./assets/css/loading.css">
         <link rel="stylesheet" href="./assets/css/alert.css">
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/color.css">
@@ -65,8 +66,8 @@
                 <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){alert('コメントを送信しました');window.location='./';}"></iframe>
                 <div class="wrapper">
                     <h2></h2>
-                    <ul class="list" id="commentsContainer"></ul>
-                    <div style="max-width: 200px; align-items: center;margin: 2% auto;">
+                    <ul class="list" id="commentsContainer"><div><div class="loader_box"><div class="loader"></div></div></ul>
+                    <div id="commentListAddLoadBox" style="max-width: 200px; align-items: center;margin: 2% auto;display: none;">
                         <a id="loadAddComment" class="button" onclick="loadAddComment('add','20')" style="text-align: center;">もっと見る</a>
                         <p id="commentShowCHtml" style="text-align: center; margin: 20px auto;"></p>
                     </div>
