@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html id="html" class="dark">
     <head>
+        <link rel="icon" type="image/x-icon" href="../../assets/image/Masaabu_yticon.png">
         <title>ビル経営ゲーム - ゲーム選択</title>
+        <link rel="stylesheet" href="../../assets/css/alert.css">
         <link rel="stylesheet" href="../../assets/css/style.css">
         <link rel="stylesheet" href="../../assets/css/color.css">
         <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
@@ -10,6 +12,8 @@
         <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <!-- 通知 -->
+        <div id="news"></div>
         <!-- header pc -->
         <div id="page_header_pc"></div>
         <!-- header モバイル -->
@@ -128,4 +132,10 @@
     <script src="../../assets/js/assets/topGameImage.js"></script>
     <script src="../../assets/js/assets/footer.js"></script>
     <script src="../../assets/js/cookie.js"></script>
+    <script src="../../assets/js/content/news.js"></script>
+    <script>
+        window.setTimeout(function(){
+            jsonListLoad('');
+        }, 10);
+    </script>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html id="html" class="dark">
     <head>
+        <link rel="icon" type="image/x-icon" href="./assets/image/Masaabu_yticon.png">
         <title>ビル経営ゲーム</title>
         <link rel="stylesheet" href="./assets/css/alert.css">
         <link rel="stylesheet" href="./assets/css/style.css">
@@ -19,25 +20,7 @@
     </head>
     <body>
         <!-- 通知 -->
-        <div>
-            <div data-ml-modal id="modal-10">
-                <a href="#!" class="modal-overlay"></a>
-                <div class="modal-dialog modal-dialog-lg">
-                    <a href="#!" class="modal-close">&times;</a>
-                    <h3><strong><a href="https://scratch.mit.edu/projects/927111186" target="_blank">🎄クリスマス イベント開催中</a></strong></h3>
-                    <div class="modal-content newspaper">
-                        <div style="margin-bottom: 10px;">
-                            <h1 class="h1"><strong><a href="https://forms.gle/D2wXB6yzyipJ63Gq8" target="_blank">ビル経営ゲームの広告について</a></strong></h1>
-                            <p>依頼が殺到しているため一時的に広告の受付を止めています！受付が再開するまでもうしばらくお待ちください。</p>
-                        </div>
-                        <div style="margin-bottom: 10px;">
-                            <h2 style="font-size: 23px;"><strong>ウェブサイトでの広告</strong></h2>
-                            <p>現在ウェブサイトで広告を掲示する機能を製作中です。詳しくは制作チームに<a href="https://forms.gle/B8GbL3ZYjB9aSuun8" target="_blank" class="text-[#6094F8]">お問い合わせ</a>ください。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="news"></div>
         <!-- header pc -->
         <div id="page_header_pc"></div>
         <!-- header モバイル -->
@@ -55,17 +38,22 @@
                 <h2>お知らせ</h2>
                 <p>ビル経営ゲームでクラウドセーブを行った人の数が3000人を超えました！<br>これからもビル経営ゲームをよろしくお願いします！</p>
             </div>
-            <div class="section_bg">
+            <div id="コメント欄" class="section_bg">
                 <h2>コメント欄</h2>
-                <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                <form id="commentForm" class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
                     <div class="c-form__item">
                         <input name="entry.1738713134" class="c-form__input" id="field-name" type="text" required="required"  placeholder="名前を入力"/>
                     </div>
                     <div  class="c-form__item">
                         <textarea name="entry.975792514" class="c-form__input" id="field-message" placeholder="素敵なコメントを入力" required="required"></textarea>
                     </div>
+                    <!--
+                    <div class="c-form__item">
+                        <input name="entry.13025857275" class="c-form__input" style="background-color: var(--background-2);align-items: right;" id="field-repCommentId" type="text" required="required"  placeholder="現在準備中" disabled/>
+                    </div>-->
                     <div class="c-form__submit">
-                        <button type="submit" style="color: #ffff;">送信</button>
+                        <button type="submit" style="margin-top: 5px;">送信</button>
+                        <button type="reset" style="margin-top: 5px;">リセット</button>
                     </div>
                 </form>
                 <script type="text/javascript">
@@ -76,7 +64,7 @@
                     <h2></h2>
                     <ul class="list" id="commentsContainer"></ul>
                     <div style="max-width: 200px; align-items: center;margin: 2% auto;">
-                        <a id="loadAddComment" class="button" onclick="loadAddComment('add','20')" style="text-align: center;">もっと見る</a>
+                        <a id="loadAddComment" class="button" onclick="loadAddComment('add','200')" style="text-align: center;">もっと見る</a>
                         <p id="commentShowCHtml" style="text-align: center; margin: 20px auto;"></p>
                     </div>
                 </div>
@@ -88,45 +76,13 @@
     <script src="./assets/js/assets/header.js"></script>
     <script src="./assets/js/assets/topGameImage.js"></script>
     <script src="./assets/js/assets/footer.js"></script>
-    <script>
-        let newsShowSetMode = "0";//newsの表示モード
-        let newsShowSaveAge = "10";//お知らせを見た状態の保存時間（保存時間が切れると再度お知らせが表示される様になる）
-        var obj = convertCookieToObject(document.cookie);
-        let news_page_home = obj.news_page_home;
-        if(newsShowSetMode === '0'){
-            // cookieにデータがない場合に表示
-            if(news_page_home !== 'christmas_event_true'){
-                if(window.location.hash !== '#modal-10'){
-                    window.location.href=('#modal-10')
-                    document.cookie = `news_page_home=christmas_event_true; max-age=${newsShowSaveAge}; path=/`;
-                }
-            };
-        }else{if(newsShowSetMode==='1'){
-            // ページを読み込んだ時に毎度表示する。
-            if(window.location.hash !== '#modal-10'){
-                window.location.href=('#modal-10')
-                document.cookie = 'news_page_home=christmas_event_true; max-age=30; path=/';
-            }
-        }else{
-            // 表示しない
-        }}
-
-        function convertCookieToObject(cookies){//クッキーの解析
-            const cookieItem = cookies.split(';');
-            const obj = {};
-            cookieItem.forEach((item) => {
-                // 「=」で分解
-                const element = item.split('=');
-                // キーを取得
-                const key = element[0].trim();
-                // バリューを取得
-                const value = decodeURIComponent(element[1]);
-                // 保存
-                obj[key] = value;
-            });
-            return obj;
-        }
-    </script>
     <script src="./assets/js/comment.js"></script>
     <script src="./assets/js/cookie.js"></script>
+    <script src="./assets/js/content/news.js"></script>
+    <!---->
+    <script>
+        window.setTimeout(function(){
+            jsonListLoad('');
+        }, 10);
+    </script>
 </html>

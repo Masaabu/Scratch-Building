@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html id="html" class="dark">
     <head>
+        <link rel="icon" type="image/x-icon" href="../../assets/image/Masaabu_yticon.png">
         <title>ビル経営ゲーム - 開発</title>
         <link rel="stylesheet" href="../../assets/css/alert.css">
         <link rel="stylesheet" href="../../assets/css/style.css">
@@ -16,19 +17,7 @@
     </head>
     <body>
         <!-- 通知 -->
-        <div>
-            <div data-ml-modal id="modal-10">
-                <a href="#!" class="modal-overlay"></a>
-                <div class="modal-dialog modal-dialog-lg">
-                    <a href="#!" class="modal-close">&times;</a>
-                    <h3><strong>APIの実装</strong></h3>
-                    <div class="modal-content newspaper">
-                        2023年12月24日にAPIの機能を実装しました！<br>現段階では詳細な解説やガイドは作成されていません。最新情報をお待ちください。<br>
-                        詳細は開発者チームに<a href="https://forms.gle/B8GbL3ZYjB9aSuun8" target="_blank" class="text-[#6094F8]">お問い合わせ</a>してください。
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="news"></div>
         <!-- header pc -->
         <div id="page_header_pc"></div>
         <!-- header モバイル -->
@@ -349,6 +338,80 @@
                     </div>
                 </details>
             </div>
+            <div class="section_bg">
+                <h1><strong>NewsAPI</strong></h1>
+                <p>このAPIはお知らせ情報を取得することができる。
+                    <a href="../../data/json/news.json" target="_blank" class="text-[#6094F8]">APIページ</a>
+                </p>
+                <details> 
+                    <summary>応答例</summary>
+                    <div class="group_bg2" style="background-color: var(--background-4);overflow: scroll;">
+                        <pre><code>{
+    "createdBy": "Fun117",
+    "version": "0.0.1",
+    "title": "お知らせ",
+    "content_list": [
+        {
+            "id": "43e33a56-7172-40b3-b98e-30df4c2f8af1",
+            "title": "<a href='https://scratch.mit.edu/projects/927111186' target='_blank'>🎄クリスマス イベント開催中</a>",
+            "description": "",
+            "saveTime": "10",
+            "start": "nYE12MO24DA0HO0MI0SE",
+            "end": "nYE12MO25DA24HO59MI0SE",
+            "creator": "@Fun117",
+            "page": "",
+            "content": [
+                {
+                    "title": "",
+                    "description": "",
+                    "creator": "@Fun117"
+                }
+            ]
+        },
+        {
+            "id": "13bced92-a1eb-4645-afdf-a54c29d87929",
+            "title": "<a href='https://forms.gle/D2wXB6yzyipJ63Gq8' target='_blank'>ビル経営ゲームの広告について</a>",
+            "description": "",
+            "saveTime": "20",
+            "start": "nYEnMOnDAnHOnMInSE",
+            "end": "nYEnMOnDAnHOnMInSE",
+            "creator": "@Fun117",
+            "page": "",
+            "content": [
+                {
+                    "title": "",
+                    "description": "依頼が殺到しているため一時的に広告の受付を止めています！受付が再開するまでもうしばらくお待ちください。",
+                    "creator": "@Fun117"
+                },
+                {
+                    "title": "ウェブサイトでの広告",
+                    "description": "現在ウェブサイトで広告を掲示する機能を製作中です。詳しくは制作チームに<a href='https://forms.gle/B8GbL3ZYjB9aSuun8' target='_blank' class='text-[#6094F8]''>お問い合わせ</a>ください。",
+                    "creator": "@Fun117"
+                }
+            ]
+        },
+        {
+            "id": "63a5877e-0ea3-48a1-8d93-a41c7978bb02",
+            "title": "APIの実装",
+            "description": "",
+            "saveTime": "60",
+            "start": "nYEnMOnDAnHOnMInSE",
+            "end": "nYEnMOnDAnHOnMInSE",
+            "creator": "@Fun117",
+            "page": "",
+            "content": [
+                {
+                    "title": "",
+                    "description": "2023年12月24日にAPIの機能を実装しました！<br>現段階では詳細な解説やガイドは作成されていません。最新情報をお待ちください。<br>詳細は開発者チームに<a href='https://forms.gle/B8GbL3ZYjB9aSuun8' target='_blank' class='text-[#6094F8]'>お問い合わせ</a>してください。",
+                    "creator": "@Fun117"
+                }
+            ]
+        }
+    ]
+}</code></pre>
+                    </div>
+                </details>
+            </div>
         </div>
         <!-- footerエリア -->
         <div id="page_footer"></div>
@@ -356,44 +419,11 @@
     <script src="../../assets/js/assets/header.js"></script>
     <script src="../../assets/js/assets/topGameImage.js"></script>
     <script src="../../assets/js/assets/footer.js"></script>
-    <script>
-        let newsShowSetMode = "0";//newsの表示モード
-        let newsShowSaveAge = "30";//お知らせを見た状態の保存時間（保存時間が切れると再度お知らせが表示される様になる）
-        var obj = convertCookieToObject(document.cookie);
-        let news_page_development = obj.news_page_development;
-        if(newsShowSetMode === '0'){
-            // cookieにデータがない場合に表示
-            if(news_page_development !== 'christmas_event_true'){
-                if(window.location.hash !== '#modal-10'){
-                    window.location.href=('#modal-10')
-                    document.cookie = `news_page_development=christmas_event_true; max-age=${newsShowSaveAge}; path=/`;
-                }
-            };
-        }else{if(newsShowSetMode==='1'){
-            // ページを読み込んだ時に毎度表示する。
-            if(window.location.hash !== '#modal-10'){
-                window.location.href=('#modal-10')
-                document.cookie = 'news_page_development=christmas_event_true; max-age=30; path=/';
-            }
-        }else{
-            // 表示しない
-        }}
-
-        function convertCookieToObject(cookies){//クッキーの解析
-            const cookieItem = cookies.split(';');
-            const obj = {};
-            cookieItem.forEach((item) => {
-                // 「=」で分解
-                const element = item.split('=');
-                // キーを取得
-                const key = element[0].trim();
-                // バリューを取得
-                const value = decodeURIComponent(element[1]);
-                // 保存
-                obj[key] = value;
-            });
-            return obj;
-        }
-    </script>
     <script src="../../assets/js/cookie.js"></script>
+    <script src="../../assets/js/content/news.js"></script>
+    <script>
+        window.setTimeout(function(){
+            jsonListLoad('');
+        }, 10);
+    </script>
 </html>

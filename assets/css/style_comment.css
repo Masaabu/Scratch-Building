@@ -72,6 +72,17 @@ textarea.c-form__input {
     border-bottom: 1px solid #ddd;
 }
 
+.commentRep {
+	margin-left: 60px;
+    margin-top: -1em;
+	outline: none;
+	top: -150px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
 .reportSpace {
 	display: block;
 	height: 27px;

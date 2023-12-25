@@ -1,0 +1,63 @@
+{
+    "createdBy": "Fun117",
+    "version": "0.0.1",
+    "title": "お知らせ",
+    "content_list": [
+        {
+            "id": "43e33a56-7172-40b3-b98e-30df4c2f8af1",
+            "title": "<a href='https://scratch.mit.edu/projects/927111186' target='_blank'>🎄クリスマス イベント開催中</a>",
+            "description": "",
+            "saveTime": "10",
+            "start": "nYE12MO24DA0HO0MI0SE",
+            "end": "nYE12MO25DA24HO59MI0SE",
+            "creator": "@Fun117",
+            "page": "",
+            "content": [
+                {
+                    "title": "",
+                    "description": "",
+                    "creator": "@Fun117"
+                }
+            ]
+        },
+        {
+            "id": "13bced92-a1eb-4645-afdf-a54c29d87929",
+            "title": "<a href='https://forms.gle/D2wXB6yzyipJ63Gq8' target='_blank'>ビル経営ゲームの広告について</a>",
+            "description": "",
+            "saveTime": "20",
+            "start": "nYEnMOnDAnHOnMInSE",
+            "end": "nYEnMOnDAnHOnMInSE",
+            "creator": "@Fun117",
+            "page": "",
+            "content": [
+                {
+                    "title": "",
+                    "description": "依頼が殺到しているため一時的に広告の受付を止めています！受付が再開するまでもうしばらくお待ちください。",
+                    "creator": "@Fun117"
+                },
+                {
+                    "title": "ウェブサイトでの広告",
+                    "description": "現在ウェブサイトで広告を掲示する機能を製作中です。詳しくは制作チームに<a href='https://forms.gle/B8GbL3ZYjB9aSuun8' target='_blank' class='text-[#6094F8]''>お問い合わせ</a>ください。",
+                    "creator": "@Fun117"
+                }
+            ]
+        },
+        {
+            "id": "63a5877e-0ea3-48a1-8d93-a41c7978bb02",
+            "title": "APIの実装",
+            "description": "",
+            "saveTime": "60",
+            "start": "nYEnMOnDAnHOnMInSE",
+            "end": "nYEnMOnDAnHOnMInSE",
+            "creator": "@Fun117",
+            "page": "",
+            "content": [
+                {
+                    "title": "",
+                    "description": "2023年12月24日にAPIの機能を実装しました！<br>現段階では詳細な解説やガイドは作成されていません。最新情報をお待ちください。<br>詳細は開発者チームに<a href='https://forms.gle/B8GbL3ZYjB9aSuun8' target='_blank' class='text-[#6094F8]'>お問い合わせ</a>してください。",
+                    "creator": "@Fun117"
+                }
+            ]
+        }
+    ]
+}
