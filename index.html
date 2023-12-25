@@ -40,17 +40,25 @@
             </div>
             <div id="コメント欄" class="section_bg">
                 <h2>コメント欄</h2>
+                <script>
+                    function doGet() {
+                        var template = HtmlService.createTemplateFromFile('top');
+                        return template.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME);
+                    };
+                </script>
                 <form id="commentForm" class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
                     <div class="c-form__item">
-                        <input name="entry.1738713134" class="c-form__input" id="field-name" type="text" required="required"  placeholder="名前を入力"/>
+                        <input name="entry.1738713134" class="c-form__input" id="field-name" type="text" required="required"  placeholder="名前を入力" autocomplete="nickname"/>
                     </div>
                     <div  class="c-form__item">
-                        <textarea name="entry.975792514" class="c-form__input" id="field-message" placeholder="素敵なコメントを入力" required="required"></textarea>
+                        <textarea name="entry.975792514" class="c-form__input" id="field-message" placeholder="素敵なコメントを入力" required="required" autocomplete="off"></textarea>
                     </div>
-                    <!--
                     <div class="c-form__item">
-                        <input name="entry.13025857275" class="c-form__input" style="background-color: var(--background-2);align-items: right;" id="field-repCommentId" type="text" required="required"  placeholder="現在準備中" disabled/>
-                    </div>-->
+                        <input name="entry.537780005" class="c-form__input" style="background-color: var(--background-2);align-items: right;display: none;" id="field-repgroup" type="text" required="required" placeholder="返信コメントグループID"/>
+                    </div>
+                    <div class="c-form__item">
+                        <input name="entry.1032562646" class="c-form__input" style="background-color: var(--background-2);align-items: right;display: none;" id="field-rep" type="text" required="required" placeholder="返信コメントID" />
+                    </div>
                     <div class="c-form__submit">
                         <button type="submit" style="margin-top: 5px;">送信</button>
                         <button type="reset" style="margin-top: 5px;">リセット</button>
@@ -59,7 +67,7 @@
                 <script type="text/javascript">
                     let submitted = false;
                 </script>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='index';}"></iframe>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='./';}"></iframe>
                 <div class="wrapper">
                     <h2></h2>
                     <ul class="list" id="commentsContainer"></ul>
@@ -76,7 +84,7 @@
     <script src="./assets/js/assets/header.js"></script>
     <script src="./assets/js/assets/topGameImage.js"></script>
     <script src="./assets/js/assets/footer.js"></script>
-    <script src="./assets/js/comment.js"></script>
+    <script src="./assets/js/content/comment.js"></script>
     <script src="./assets/js/cookie.js"></script>
     <script src="./assets/js/content/news.js"></script>
     <!---->

@@ -94,12 +94,14 @@ function jsonListLoad(page){
                     show='true';
                 }else{
                     if(endDayObj.YE === 'n' && (endDayObj.MO+endDayObj.DA+endDayObj.HO+endDayObj.MI+endDayObj.SE) <= tomorrow.getAllPluDateNnY){
-                        show='false';   
+                        show='false';
                     }else{
                         show='true';
                     };
                 };
             };
+            console.log(`${(endDayObj.MO)-0} / ${tomorrow.getAllPluDateNnY}`)
+            console.log((endDayObj.MO+endDayObj.DA+endDayObj.HO+endDayObj.MI+endDayObj.SE))
         }
         let HtmlNewsGroupDiv = document.createElement('div');
         let HtmlNewsContentGroupDiv = `<div class="modal-content newspaper">`

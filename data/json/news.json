@@ -43,6 +43,23 @@
             ]
         },
         {
+            "id": "bccdacbe-b576-439a-b48f-bd67a0b99d94",
+            "title": "コメント返信機能",
+            "description": "",
+            "saveTime": "30",
+            "start": "nYEnMOnDAnHOnMInSE",
+            "end": "nYEnMOnDAnHOnMInSE",
+            "creator": "@Fun117",
+            "page": "",
+            "content": [
+                {
+                    "title": "",
+                    "description": "コメント返信機能は現在試験導入中です。いままで'@名前'でコメントしている状態でわかりにくかったので、返信ボタンを押してコメントを送信するとメンションが自動的に追加される機能を追加しました。",
+                    "creator": "@Fun117"
+                }
+            ]
+        },
+        {
             "id": "63a5877e-0ea3-48a1-8d93-a41c7978bb02",
             "title": "APIの実装",
             "description": "",
