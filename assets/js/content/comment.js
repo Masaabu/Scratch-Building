@@ -36,6 +36,7 @@ async function loadData() {
     //console.log(allComments)
     //console.log(repComments)
     data.reverse().forEach(entry => {});
+    commentsContainer.innerHTML=(``);
     data.reverse().forEach(entry => {
         //console.log(entry);
         if(entry.rep){
@@ -85,7 +86,15 @@ async function loadData() {
             const uuidDiv = document.createElement('p');
             uuidDiv.style.textAlign=('right');
             uuidDiv.classList.add('report');
-        
+
+            const idCopyBtn = document.createElement('button');
+            idCopyBtn.innerHTML = `<span class="tooltip icon-tooltip material-symbols-outlined"><i class="fa-solid fa-copy"><span class="tooltip-content">コメントIDをコピー</span></span></i>`;
+            idCopyBtn.style.margin = `0 0 0 10px`;
+            idCopyBtn.style.color = `var(--text-2)`;
+            idCopyBtn.addEventListener('click', () => {
+                copyToClipboard(entry.uuid);
+            });
+            uuidDiv.appendChild(idCopyBtn);
         
             const repBtn = document.createElement('button');
             repBtn.textContent = `返信する`;
@@ -159,6 +168,14 @@ async function loadData() {
                 const REPuuidDiv = document.createElement('p');
                 REPuuidDiv.style.textAlign=('right');
                 REPuuidDiv.classList.add('report');
+                const REPidCopyBtn = document.createElement('button');
+                REPidCopyBtn.innerHTML = `<span class="tooltip icon-tooltip material-symbols-outlined"><i class="fa-solid fa-copy"><span class="tooltip-content">コメントIDをコピー</span></span></i>`;
+                REPidCopyBtn.style.margin = `0 0 0 10px`;
+                REPidCopyBtn.style.color = `var(--text-2)`;
+                REPidCopyBtn.addEventListener('click', () => {
+                    copyToClipboard(repComments[i].uuid);
+                });
+                REPuuidDiv.appendChild(REPidCopyBtn);
                 const REPrepBtn = document.createElement('button');
                 REPrepBtn.textContent = `返信する`;
                 REPrepBtn.style.margin = `0 0 0 10px`;
@@ -204,6 +221,7 @@ async function loadData() {
     }else{
         loadAddComment('set',commentCount);
     };
+    document.getElementById('commentListAddLoadBox').style.display=(`block`);
 };
 
 
@@ -417,3 +435,24 @@ function commentRepFormBoxRem(repgroup,repid){
     repForm.remove();
     F_box='false';
 };
+
+
+function copyToClipboard(text){
+    // テキストコピー用の一時要素を作成
+    const pre = document.createElement('pre');
+
+    // テキストを選択可能にしてテキストセット
+    pre.style.webkitUserSelect = 'auto';
+    pre.style.userSelect = 'auto';
+    pre.textContent = text;
+
+    // 要素を追加、選択してクリップボードにコピー
+    document.body.appendChild(pre);
+    document.getSelection().selectAllChildren(pre);
+    const result = document.execCommand('copy');
+
+    // 要素を削除
+    document.body.removeChild(pre);
+
+    return result;
+}
