@@ -160,11 +160,11 @@ function jsonListLoad(page){
         };
         HtmlNewsContentGroupDiv=HtmlNewsContentGroupDiv+'</div>';
         HtmlNewsGroupDiv.innerHTML=(`
-            <div data-ml-modal id="${serverJsonData.content_list[content_list_i].id}" class="fadeDown">
+            <div data-ml-modal id="${serverJsonData.content_list[content_list_i].id}" class="fadeIn">
                 <audio src="${windowFileDirectlyPass}/assets/sounds/cursor.mp3" id="btn-sound"></audio>
                 <audio src="${windowFileDirectlyPass}/assets/sounds/checkBtn40.mp3" id="pushSound"></audio>
                 <a id="news_url_1_${serverJsonData.content_list[content_list_i].id}" href="#!" class="modal-overlay"></a>
-                <div class="modal-dialog modal-dialog-lg">
+                <div class="fadeDown modal-dialog modal-dialog-lg">
                     <a id="news_url_2_${serverJsonData.content_list[content_list_i].id}" href="#!" class="modal-close">&times;</a>
                     <h3><strong>${serverJsonData.content_list[content_list_i].title}</strong></h3>
                     <div>${HtmlNewsContentGroupDiv}</div>

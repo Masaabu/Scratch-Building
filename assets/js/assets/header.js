@@ -36,7 +36,7 @@ file_path_data=(file_path_data["0"]);
 document.getElementById('page_header_pc').innerHTML=(`
 <div class="hidden md:block">
     <div class="fixed inset-x-0 top-4 z-50 w-full" >
-        <div class="flex justify-between text-white max-w-7xl gap-4 mx-auto border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-lg w-[95%] inset-x-0 backdrop-blur-md z-50" style="backdrop-filter: blur(10px) brightness(var(--blur-brightness));">
+        <div class="fadeDown flex justify-between text-white max-w-7xl gap-4 mx-auto border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-lg w-[95%] inset-x-0 backdrop-blur-md z-50" style="backdrop-filter: blur(10px) brightness(var(--blur-brightness));">
             <a id="link_href_header_pc_home_logo" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="${file_path_data.link_home}">
                 <img id="link_href_header_pc_app_logo" alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="${file_path_data.link_app_logo}">
                 <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
@@ -61,7 +61,7 @@ document.getElementById('page_header_mobile').innerHTML=(`
 <div class="block md:hidden">
     <div id="headerMobBoxsMaser" class="fixed top-4 w-full z-50 ">
         <div class="items-center justify-between px-4 w-full flex">
-            <div class="w-full flex items-center justify-between  backdrop-blur-md border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-full" style="backdrop-filter: blur(10px) brightness(var(--blur-brightness));">
+            <div class="fadeDown w-full flex items-center justify-between  backdrop-blur-md border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-full" style="backdrop-filter: blur(10px) brightness(var(--blur-brightness));">
                 <a id="link_href_header_mobile_home_logo" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="${file_path_data.link_home}">
                     <img id="link_href_header_mobile_app_logo" alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="${file_path_data.link_app_logo}">
                     <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
@@ -76,7 +76,7 @@ document.getElementById('page_header_mobile').innerHTML=(`
         <div id="headerMobBoxsAA" style="display: none;">
             <div class="fadeIn fixed inset-0 bg-background z-50 flex flex-col justify-center items-center space-y-10  text-xl font-bold text-zinc-600  hover:text-zinc-800 transition duration-200" style="opacity: 1; height: 100vh;">
                 <div class="absolute right-8 top-6 h-5 w-5 text-white/[0.64] flex" style="gap:5px;">
-                    <a href="#" style="width: 20px;" onclick="class_change()" >
+                    <a href="#" style="width: 20px;" onclick="class_change();headerMobBoxs()">
                         <i class="fa-solid fa-circle-half-stroke text-sm font-medium text-white hover:text-opacity-80 transition absolute right-8" style="top:2.5px;"></i>
                     </a>
                     <a href="#" onclick="headerMobBoxs()">

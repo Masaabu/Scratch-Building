@@ -58,7 +58,7 @@ function modsListLoad(){
             };
             };
             var modsProject = document.createElement('div');
-            modsProject.classList.add('project');
+            modsProject.classList.add('project','fadeUp');
             modsProject.addEventListener('click', () => {
                 openProject(serverModsData.content_list[i].content[i2].projectId);
             });
