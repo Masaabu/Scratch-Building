@@ -19,8 +19,29 @@ if(windowUrlSr > 0){
 
 if(navigator.cookieEnabled){
     var SettingCookieObj = convertCookieToObject(document.cookie);
-    SettingCookieObj=(JSON.parse(SettingCookieObj.USERSETTINGDATA));
+    if(SettingCookieObj.USERSETTINGDATA==='' || SettingCookieObj.USERSETTINGDATA===undefined){
+        var cookieObj = convertCookieToObject(document.cookie);
+        // データを取得
+        var req = new XMLHttpRequest();// XMLHttpRequest オブジェクトを生成する
+        req.onreadystatechange = function() {// XMLHttpRequest オブジェクトの状態が変化した際に呼び出されるイベントハンドラ
+            if(req.readyState == 4 && req.status == 200){// サーバーからのレスポンスが完了し、かつ、通信が正常に終了した場合
+                serverJsonData_settingJs = (JSON.parse(req.responseText));// 取得した JSON を変数に
+            }
+        };
+        req.open("GET", `${windowFileDirectlyPass}/data/json/setting.json`, false);// HTTPメソッドとアクセスするサーバーの　URL　を指定
+        req.send(null);	
 
+        //console.log(serverJsonData_settingJs);
+        var settingJson = (JSON.parse(`{}`));
+        settingJson[`version`]=(`${serverJsonData_settingJs.version}`);
+        for(let settingJsonCountChe = 0; settingJsonCountChe < (serverJsonData_settingJs.content_list.length); settingJsonCountChe++){
+            settingJson[`${serverJsonData_settingJs.content_list[settingJsonCountChe].id}`]=({"release":serverJsonData_settingJs.content_list[settingJsonCountChe].release,"initial_value":serverJsonData_settingJs.content_list[settingJsonCountChe].initial_value,"checked":serverJsonData_settingJs.content_list[settingJsonCountChe].initial_value});
+        };
+        console.log(`${JSON.stringify(settingJson)}`)
+        document.cookie = `USERSETTINGDATA=${JSON.stringify(settingJson)}; path=/`;
+        window.location.href=(`./`)
+    }
+    SettingCookieObj=(JSON.parse(SettingCookieObj.USERSETTINGDATA));
     var newsJSsetting_news = (SettingCookieObj[`ae71d4c5-8c8c-4e1c-85fe-a25276e3c243`].checked)
 }else{
     console.error('cookieを許可してください')
