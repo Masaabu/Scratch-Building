@@ -1,7 +1,6 @@
 .loader_box {
     width: 95%;
     height: 250px;
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -12,14 +11,14 @@
 .loader,
 .loader:before,
 .loader:after {
-    background: var(--background-6);
+    background: var(--background-4);
     -webkit-animation: load1 1s infinite ease-in-out;
     animation: load1 1s infinite ease-in-out;
     width: 1em;
     height: 4em;
 }
 .loader {
-    color: var(--background-6);
+    color: var(--background-4);
     text-indent: -9999em;
     margin: 88px auto;
     position: relative;

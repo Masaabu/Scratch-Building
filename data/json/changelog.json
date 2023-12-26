@@ -1,0 +1,99 @@
+{
+    "createdBy": "Fun117",
+    "version": "0.0.1",
+    "title": "ビル経営ゲーム更新履歴",
+    "release_time": "2023-12-01",
+    "last_change_time": "2023-12-25",
+    "content_list": [
+        {
+            "group": "v7",
+            "title": "ビル経営ゲームv7 更新履歴",
+            "creator": "@Masaabu-YT",
+            "content": [
+                {
+                    "version": "v7.1 [Pre-alpha]",
+                    "release_time": "2024年",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "アイテムの追加 (Beta)"
+                        }
+                    ]
+                },{
+                    "version": "v7.0.4",
+                    "release_time": "2023-12-25",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "設定項目を追加"
+                        },{
+                            "title": "プロフィールデコレーションを追加"
+                        },{
+                            "title": "プレゼントページを追加"
+                        },{
+                            "title": "投資関連のバグの修正"
+                        },{
+                            "title": "チャットを閉じると通信が止まるバグの修正"
+                        }
+                    ]
+                },{
+                    "version": "v7.0.3",
+                    "release_time": "2023-12-24",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "投資機能の追加"
+                        },{
+                            "title": "ヘルプを追加"
+                        },{
+                            "title": "猫のコスチュームを変更 (サンタの帽子)"
+                        },{
+                            "title": "背景を変更"
+                        },{
+                            "title": "編集タブを追加(Beta)"
+                        },{
+                            "title": "メールタブを追加(Beta)"
+                        },{
+                            "title": "設定項目を追加"
+                        }
+                    ]
+                },
+                {
+                    "version": "v7.0.2",
+                    "release_time": "2023-12-04",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "他のユーザーのビルを見る機能を追加"
+                        },
+                        {
+                            "title": "ビル経営ゲームへの参加日表示を更新"
+                        },
+                        {
+                            "title": "チャットの追加"
+                        },
+                        {
+                            "title": "猫の種類(speed) を追加"
+                        },
+                        {
+                            "title": "クリエイティブ-コマンドを追加"
+                        }
+                    ]
+                },
+                {
+                    "version": "v7.0.1",
+                    "release_time": "2023-12-03",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "ビルハブの追加"
+                        },
+                        {
+                            "title": "クリエイティブの仮実装（タブレット）"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

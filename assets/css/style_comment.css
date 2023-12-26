@@ -1,0 +1,112 @@
+.c-form {
+	max-width: 600px;
+	margin: 0 auto;
+}
+.c-form__item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-bottom: 10px;
+}
+.c-form__label,
+.c-form__input {
+	padding: 5px;
+}
+.c-form__label {
+	width: 90%;
+}
+.c-form__input {
+	width: 90%;
+	font-size: 16px;
+	border: solid 1px #333;
+	border-radius: 4px;
+	background-color: var(--background-4);
+}
+.c-form__input:focus-visible {
+	outline: #d67ed7 auto 1px;
+}
+.c-form__required {
+	color: var(--text-1);
+	background-color: #d67ed7;
+	border-radius: 4px;
+	padding: 5px 5px;
+	margin: 0 0 0 18px;
+}
+textarea.c-form__input {
+	height: 130px;
+}
+.c-form__submit {
+	text-align: center;
+}
+.c-form__submit button {
+	font-size: 18px;
+	font-weight: bold;
+	color: #ddd;
+	background-color: #d67ed7;
+	border: solid 1px #d67ed7;
+	border-radius: 4px;
+	padding: 5px 32px;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.c-form__submit button:hover {
+	color: #d67ed7;
+	background-color: transparent;
+}
+
+@media (min-width: 640px) {
+	.c-form__item {
+		flex-wrap: nowrap;
+	}
+	.c-form__label {
+		width: 40%;
+	}
+	.c-form__input {
+		width: 55%;
+	}
+}
+
+.comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.commentRep {
+	margin-left: 60px;
+    margin-top: -1em;
+	outline: none;
+	top: -150px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.reportSpace {
+	display: block;
+	height: 27px;
+}
+.comment:hover .reportSpace {
+	display: none;
+}
+
+.report {
+	display: none;
+}
+.comment:hover .report {
+	display: block;
+}
+
+.comment p {
+    margin: 5px 0;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #666;
+}

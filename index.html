@@ -1,95 +1,88 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html id="html" class="dark">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- icon -->
-        <link rel="icon" type="image/x-icon" href="./assets/image/@Masaabu-YT_icon.png">
-        <!-- Title -->
+        <link rel="icon" type="image/x-icon" href="./assets/image/Masaabu_yticon.png">
         <title>ビル経営ゲーム</title>
-        <!-- .webmanifest--> 
-        <meta name="theme-color" content="#1a1a1a"/>
-        <link rel="manifest" href="./webmanifest.json" />
-        <!-- assets -->
-        <link rel="stylesheet" href="./assets/css/button.css">
-        <link rel="stylesheet" href="./assets/css//animation.css">
-        <link rel="stylesheet" href="./assets/css/6f685b7ddc297010.css" />
+        <link rel="stylesheet" href="./assets/css/loading.css">
+        <link rel="stylesheet" href="./assets/css/alert.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/color.css">
+        <link rel="stylesheet" href="./assets/css/style_comment.css">
         <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
+        <style>
+            .h1 {
+                font-size: 25px;
+            }
+        </style>
+        <!-- Font Awesome / website: https://fontawesome.com/ アイコンなどの素材ライブラリを読み込み-->
+        <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     </head>
     <body>
-        <!-- page -->
-        <div id="page_home_main">
-            <main class="min-h-screen antialiased bg-background overflow-hidden relative __className_76c1ff">
-                <div style="transform:translateY(-300px) translateZ(0)">
-                    <img alt="left gradient" loading="lazy" width="1023" height="1052" decoding="async" data-nimg="1" class="transition duration-1000 opacity-1 absolute left-0 select-none pointer-events-none bg-transparent border-none" style="color:transparent" srcset="https://cursor.sh/_next/image?url=%2Flanding%2Fgradients%2Fleft-gradient%401x.png&w=1080&q=75 1x, https://cursor.sh/_next/image?url=%2Flanding%2Fgradients%2Fleft-gradient%401x.png&w=1080&q=75 2x" src="https://cursor.sh/_next/image?url=%2Flanding%2Fgradients%2Fleft-gradient%401x.png&w=1080&q=75">
-                    <img alt="left gradient" loading="lazy" width="1023" height="1052" decoding="async" data-nimg="1" class="transition duration-1000 opacity-1 absolute right-0 select-none pointer-events-none bg-transparent border-none" style="color:transparent" srcset="https://cursor.sh/_next/image?url=%2Flanding%2Fgradients%2Fright-gradient%401x.png&w=1080&q=75 1x, https://cursor.sh/_next/image?url=%2Flanding%2Fgradients%2Fright-gradient%401x.png&w=1080&q=75 2x" src="https://cursor.sh/_next/image?url=%2Flanding%2Fgradients%2Fright-gradient%401x.png&w=1080&q=75">
+        <!-- 通知 -->
+        <div id="news"></div>
+        <!-- header pc -->
+        <div id="page_header_pc"></div>
+        <!-- header モバイル -->
+        <div id="page_header_mobile"></div>
+        <!-- トップ画像 -->
+        <div id="topGameImage" class="banner-container"></div>
+        <!-- メインエリア -->
+        <div id="main_box" class="e_main">
+            <div class="section_bg" id="SBads">
+                <h2>気軽にMOD開発！</h2>
+                <p style="margin-bottom: 10px;">ビル経営ゲームのMODを作りたいと思ったことはありませんか？<br>そんなあなたへ！誰でも簡単にMODを作れるプロジェクトを見てみましょう！</p>
+                <a class="button" href="pages/mods/">ページを見る</a>
+            </div>
+            <div class="section_bg" id="SBads">
+                <h2>お知らせ</h2>
+                <p>ビル経営ゲームでクラウドセーブを行った人の数が3000人を超えました！<br>これからもビル経営ゲームをよろしくお願いします！</p>
+            </div>
+            <div id="コメント欄" class="section_bg">
+                <h2>コメント欄</h2>
+                <script>
+                    function doGet() {
+                        var template = HtmlService.createTemplateFromFile('top');
+                        return template.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME);
+                    };
+                </script>
+                <form id="commentForm" class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                    <div class="c-form__item"><p class="c-form__input" id="form_rep_data">通常コメントモード</p></div>
+                    <div class="c-form__item">
+                        <input name="entry.1738713134" class="c-form__input" id="field-name" type="text" minlength="3" maxlength="13" required="required"  placeholder="名前を入力" autocomplete="nickname"/>
                     </div>
-                    <div class=" pt-32 md:pt-48 pb-10 md:pb-24 px-8 relative z-40">
-                    <div class="max-w-7xl mx-auto flex flex-col items-center">
-                        <div class="z-50" style="opacity: 1;">
-                            <div class="fadeDown6 w-full flex justify-center">
-                                <div class="py-1 flex items-center space-x-2 border rounded-full border-[#8C8C8C]/[0.4] w-fit px-4 bg-[#8C8C8C]/[0.3] mb-8">
-                                    <span class="bg-clip-text text-transparent bg-white text-xs md:text-sm flex space-x-2 items-center">
-                                        <span>&copy; Created by Masaabu-YT & Fun117</span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div>
-                                <h1 class="fadeIn __className_2272f2 text-white text-center text-3xl md:text-6xl mb-4 font-bold">サイトの公開を停止しました</h1><!-- Title -->
-                            </div>
-                            <div>
-                                <div class="fadeIn text-center font-medium text-base md:text-lg text-[#FFFFFF]/[.48] mb-8">当サイトの製作者は公式サイトの制作担当に昇格した為、当サイトの公開を停止します。</div><!-- sub title -->
-                            </div>
-                            <div class="w-full">
-                                <div class="flex md:flex-row flex-col space-x-0 space-y-4 md:space-y-0 items-center justify-center md:space-x-4 pb-20 w-full relative z-40">
-                                    <button class="group md:w-fit group w-fit flex justify-center relative rounded-full p-px text-[0.8125rem] font-semibold leading-6 shadow-xl shadow-zinc-950 text-white">
-                                        <span class="absolute inset-0 overflow-hidden rounded-lg">
-                                            <span class="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
-                                        </span>
-                                        <a class="fadeIn" href="https://masaabu.github.io/Scratch-Building/">
-                                            <div class="relative z-10 w-full flex justify-center rounded-lg bg-[#3887FD] bg-opacity-50 hover:bg-opacity-60 transition py-3 px-6 ring-1 items-center space-x-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fill-white h-4 w-4">
-                                                    <path d="M9 7c-3 0 -4 3 -4 5.5c0 3 2 7.5 4 7.5c1.088 -.046 1.679 -.5 3 -.5c1.312 0 1.5 .5 3 .5s4 -3 4 -5c-.028 -.01 -2.472 -.403 -2.5 -3c-.019 -2.17 2.416 -2.954 2.5 -3c-1.023 -1.492 -2.951 -1.963 -3.5 -2c-1.433 -.111 -2.83 1 -3.5 1c-.68 0 -1.9 -1 -3 -1z"></path>
-                                                    <path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2"></path>
-                                                </svg>
-                                                <span>公式ページを見る</span>
-                                            </div>    
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="fadeUp relative w-full opacity-100" style="transform: none;">
-                            <div>
-                                <img alt="Product Preview" loading="lazy" width="1200" height="600" decoding="async" data-nimg="1" class="img_ma invisible sm:visible mx-auto [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 h-full relative z-40 opacity-100" style="color:transparent">
-                            </div>
-                        </div>
+                    <div  class="c-form__item">
+                        <textarea name="entry.975792514" class="c-form__input" id="field-message" placeholder="素敵なコメントを入力" minlength="1" maxlength="100" required="required" autocomplete="off"></textarea>
+                    </div>
+                    <div class="c-form__submit">
+                        <button type="submit" style="margin-top: 5px;">送信</button>
+                        <button type="reset" style="margin-top: 5px;" onclick="commentRepReset()">リセット</button>
+                    </div>
+                </form>
+                <script type="text/javascript">
+                    let submitted = false;
+                </script>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){alert('コメントを送信しました');window.location='./';}"></iframe>
+                <div class="wrapper">
+                    <h2></h2>
+                    <ul class="list" id="commentsContainer" ontouchstart=""><div><div class="loader_box"><div class="loader"></div></div></ul>
+                    <div id="commentListAddLoadBox" style="max-width: 200px; align-items: center;margin: 2% auto;display: none;">
+                        <a id="loadAddComment" class="button" onclick="loadAddComment('add','20')" style="text-align: center;">もっと見る</a>
+                        <p id="commentShowCHtml" style="text-align: center; margin: 20px auto;"></p>
                     </div>
                 </div>
-            </main>
+            </div>
         </div>
+        <!-- footerエリア -->
+        <div id="page_footer"></div>
     </body>
-    <script>
-        // Set the file path for this directory
-        var windowUrl = window.location.pathname;
-        var windowUrlSr = 0;
-        if((window.location.protocol) === 'https:'){
-            windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 3;
-        }else{
-            console.warn('Runs in editor mode because the protocol is not "https".')
-            windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 2;
-        };
-        var windowFileDirectlyPass = "";
-        if(windowUrlSr > 0){
-            for (let i = 0; i < windowUrlSr; i++) {
-                windowFileDirectlyPass = windowFileDirectlyPass + `./.`;
-            }
-            windowFileDirectlyPass = `.`+windowFileDirectlyPass+`.`;
-        }else{
-            windowFileDirectlyPass = `.`;
-        };
-        if(windowFileDirectlyPass!=='.'){
-            window.location.href=(`${windowFileDirectlyPass}/`)
-        };
-    </script>
+    <script src="./assets/js/assets/header.js"></script>
+    <script src="./assets/js/assets/topGameImage.js"></script>
+    <script src="./assets/js/assets/footer.js"></script>
+    <script src="./assets/js/content/comment.js"></script>
+    <script src="./assets/js/cookie.js"></script>
+    <script src="./assets/js/content/setting.js"></script>
+    <script src="./assets/js/content/news.js"></script>
+    <script>jsonListLoad('');settingDataLoad()</script>
 </html>

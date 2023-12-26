@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html id="html" class="dark">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../../assets/image/Masaabu_yticon.png">
+        <title>ビル経営ゲーム - MOD</title>
+        <link rel="stylesheet" href="../../assets/css/alert.css">
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../../assets/css/color.css">
+        <style>
+            .project-container {
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: flex-start;
+                padding: 20px;
+            }
+
+            .project {
+                width: 230px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                box-sizing: border-box;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .project img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+            }
+
+            .project h2 {
+                margin: 0;
+                font-size: 22px;
+            }
+
+            .project p {
+                text-align: left;
+                margin: 5px 0;
+            }
+
+            .project-desc {
+                display: flex;
+                align-items: center;
+            }
+
+            .textFrame {
+                border-radius: 5px;
+                padding: 5px 5px;
+                margin-left: 10px;
+                font-size: inherit;
+                color: white;
+                font-weight: bold;
+            }
+
+            .blue {
+                background-color: #23a3de;
+            }
+            .orange {
+                background-color: #f26b30;
+            }
+        </style>
+        <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
+
+        <!-- Font Awesome / website: https://fontawesome.com/ アイコンなどの素材ライブラリを読み込み-->
+        <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- 通知 -->
+        <div id="news"></div>
+        <!-- header pc -->
+        <div id="page_header_pc"></div>
+        <!-- header モバイル -->
+        <div id="page_header_mobile"></div>
+        <!-- トップ画像 -->
+        <div id="topGameImage" class="banner-container"></div>
+        <!-- メインエリア -->
+        <div id="main_box" class="e_main">
+            <br><br><br>
+            <div class="section_bg">
+                <h1>ビル経営ゲーム MOD</h1>
+                <p>ビル経営ゲームのMODはゲームをより面白くできる拡張機能のようなものです！<br>自分で作ることもできるので是非 [前提MOD] と書いてあるプロジェクトを見てみてください！</p>
+            </div>
+            <div id="mods"></div>
+        </div>
+        <!-- footerエリア -->
+        <div id="page_footer"></div>
+    </body>
+    <script src="../../assets/js/assets/header.js"></script>
+    <script src="../../assets/js/assets/topGameImage.js"></script>
+    <script src="../../assets/js/assets/footer.js"></script>
+    <script src="../../assets/js/content/mod.js"></script>
+    <script src="../../assets/js/cookie.js"></script>
+    <script src="../../assets/js/content/news.js"></script>
+    <script src="../../assets/js/content/setting.js"></script>
+    <script>jsonListLoad('');settingDataLoad()</script>
+</html>

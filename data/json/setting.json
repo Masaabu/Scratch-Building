@@ -1,0 +1,55 @@
+{
+    "createdBy": "Fun117",
+    "version": "0.0.1",
+    "title": "設定",
+    "content_list": [
+        {
+            "title": "通知",
+            "id": "5135d1a2-579c-482c-81a6-966cf877f9e5",
+            "release": "false",
+            "initial_value": "checked",
+            "creator": "@Fun117",
+            "content": [
+                {
+                    "title": "サイト内通知を有効化"
+                }
+            ]
+        },
+        {
+            "title": "サウンド",
+            "id": "ae71d4c5-8c8c-4e1c-85fe-a25276e3c243",
+            "release": "true",
+            "initial_value": "checked",
+            "creator": "@Fun117",
+            "content": [
+                {
+                    "title": "サウンドの再生を有効化"
+                }
+            ]
+        },
+        {
+            "title": "アニメーション",
+            "id": "a8088870-f250-4e45-ab2f-88a47733fa1c",
+            "release": "false",
+            "initial_value": "checked",
+            "creator": "@Fun117",
+            "content": [
+                {
+                    "title": "アニメーションの再生を有効化"
+                }
+            ]
+        },
+        {
+            "title": "試験的機能",
+            "id": "9948b366-53fe-42f6-b7dd-eafeafad0e65",
+            "release": "false",
+            "initial_value": "",
+            "creator": "@Fun117",
+            "content": [
+                {
+                    "title": "試験的機能を有効化"
+                }
+            ]
+        }
+    ]
+}
