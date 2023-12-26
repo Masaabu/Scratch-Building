@@ -177,7 +177,7 @@ async function loadData() {
                 REPuuidDiv.style.textAlign=('right');
                 REPuuidDiv.classList.add('report');
                 const REPidCopyBtn = document.createElement('button');
-                REPidCopyBtn.innerHTML = `<span class="tooltip icon-tooltip material-symbols-outlined"><i class="fa-solid fa-copy"><span id="rep_commentIdCopyText_${repComments[i].uuid}" class="tooltip-content">コメントIDをコピー</span></span></i>`;
+                REPidCopyBtn.innerHTML = `<span class="tooltip icon-tooltip material-symbols-outlined"><i class="fa-solid fa-copy"><span id="rep_commentIdCopyText_${repComments[i].uuid}" class="tooltip-content">コメントIDをコピー</span></i></span>`;
                 REPidCopyBtn.style.margin = `0 0 0 10px`;
                 REPidCopyBtn.style.color = `var(--text-2)`;
                 REPidCopyBtn.addEventListener('click', () => {

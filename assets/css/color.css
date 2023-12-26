@@ -1,6 +1,7 @@
 :root.dark {
     --background: #2c2c2c;
     --background-1: #262525;
+    --background-1-0: #964f4f7b;
     --background-2: #656565;
     --background-3: #a0a0a0;
     --background-4: rgb(27, 28, 30);
@@ -12,7 +13,8 @@
 }
 :root {
     --background: #ffffff;
-    --background-1: #dfcfcf;
+    --background-1: #eeeeee;
+    --background-1-0: #9350507c;
     --background-2: #c3c3c3;
     --background-3: #f0f0f0;
     --background-4: rgb(227, 229, 236);
