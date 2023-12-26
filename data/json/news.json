@@ -7,11 +7,11 @@
             "id": "43e33a56-7172-40b3-b98e-30df4c2f8af1",
             "title": "<a href='https://scratch.mit.edu/projects/927111186' target='_blank'>🎄クリスマス イベント開催中</a>",
             "description": "",
-            "saveTime": "10",
+            "saveTime": "600",
             "start": "nYE12MO24DA0HO0MI0SE",
             "end": "nYE12MO25DA24HO59MI0SE",
             "creator": "@Fun117",
-            "page": "",
+            "page": "all",
             "content": [
                 {
                     "title": "",
@@ -24,11 +24,11 @@
             "id": "13bced92-a1eb-4645-afdf-a54c29d87929",
             "title": "<a href='https://forms.gle/D2wXB6yzyipJ63Gq8' target='_blank'>ビル経営ゲームの広告について</a>",
             "description": "",
-            "saveTime": "20",
+            "saveTime": "600",
             "start": "nYEnMOnDAnHOnMInSE",
             "end": "nYEnMOnDAnHOnMInSE",
             "creator": "@Fun117",
-            "page": "",
+            "page": "all",
             "content": [
                 {
                     "title": "",
@@ -46,11 +46,11 @@
             "id": "bccdacbe-b576-439a-b48f-bd67a0b99d94",
             "title": "コメント返信機能",
             "description": "",
-            "saveTime": "30",
+            "saveTime": "600",
             "start": "nYEnMOnDAnHOnMInSE",
             "end": "nYEnMOnDAnHOnMInSE",
             "creator": "@Fun117",
-            "page": "",
+            "page": "all",
             "content": [
                 {
                     "title": "",
@@ -68,15 +68,32 @@
             "id": "63a5877e-0ea3-48a1-8d93-a41c7978bb02",
             "title": "APIの実装",
             "description": "",
-            "saveTime": "60",
+            "saveTime": "600",
             "start": "nYEnMOnDAnHOnMInSE",
             "end": "nYEnMOnDAnHOnMInSE",
             "creator": "@Fun117",
-            "page": "",
+            "page": "development",
             "content": [
                 {
                     "title": "",
                     "description": "2023年12月24日にAPIの機能を実装しました！<br>現段階では詳細な解説やガイドは作成されていません。最新情報をお待ちください。<br>詳細は開発者チームに<a href='https://forms.gle/B8GbL3ZYjB9aSuun8' target='_blank' class='text-[#6094F8]'>お問い合わせ</a>してください。",
+                    "creator": "@Fun117"
+                }
+            ]
+        },
+        {
+            "id": "c7eddd9d-2429-4919-a4f5-485df1fd77d9",
+            "title": "サイト設定機能",
+            "description": "",
+            "saveTime": "0",
+            "start": "nYEnMOnDAnHOnMInSE",
+            "end": "nYEnMOnDAnHOnMInSE",
+            "creator": "@Fun117",
+            "page": "user_setting",
+            "content": [
+                {
+                    "title": "",
+                    "description": "サイトに実装されてる機能を有効にするかを設定することができます。<br>現在一部項目のみ設定可能です。",
                     "creator": "@Fun117"
                 }
             ]

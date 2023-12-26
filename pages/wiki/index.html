@@ -34,6 +34,14 @@
                     <section>
                         <h1 id="search_not_found_text" class="section_bg" style="display: none;"></h1>
                         <div class="fadeUp box" id="SBads" style="max-width: 800px;margin: 20px auto;padding: 20px;background-color: var(--background);border-radius: 5px;box-shadow: 0 0 10px var(--shadow-1);color: var(--text-1);">
+                            <a href="./content/guide/site/">
+                                <h1 style="font-size: 30px;">サイトの使い方ガイド</h1>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="fadeUp box" id="SBads" style="max-width: 800px;margin: 20px auto;padding: 20px;background-color: var(--background);border-radius: 5px;box-shadow: 0 0 10px var(--shadow-1);color: var(--text-1);">
                             <a href="./content/qa/">
                                 <h1 style="font-size: 30px;">よくある質問</h1>
                                 <ul>
@@ -129,9 +137,6 @@
     </script>
     <script src="../../assets/js/cookie.js"></script>
     <script src="../../assets/js/content/news.js"></script>
-    <script>
-        window.setTimeout(function(){
-            jsonListLoad('');
-        }, 10);
-    </script>
+    <script src="../../assets/js/content/setting.js"></script>
+    <script>jsonListLoad('');settingDataLoad()</script>
 </html>

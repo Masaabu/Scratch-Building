@@ -3,10 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>404 not found</title>
+        <title>ビル経営ゲーム - ページが見つかりません</title>
     </head>
-    <body>
+    <body style="text-align: center; background-color: var(--background); color: var(--text-1);">
+        <div id="contents">
+            <h1>404</h1>
+            <h2>ページが見つかりません!</h2>
+            <h2>12/21にほとんどのページのリンクが変わりました！</h2>
+            <h2>この変更はいつか戻るかもしれません。</h2>
+            <h2><a id="homeBtn1" href="">ホーム</a></h2>
+        </div>
     </body>
+    <script src="../../assets/js/content/news.js"></script>
+    <script src="../../assets/js/content/setting.js"></script>
     <script>
         // Set the file path for this directory
         var windowUrl = window.location.pathname;
@@ -26,6 +35,8 @@
         }else{
             windowFileDirectlyPass = `.`;
         };
-        window.location.href=(`${windowFileDirectlyPass}/pages/404/`);
+        jsonListLoad('404');
+        settingDataLoad();
+        document.getElementById('homeBtn1').setAttribute('href',`${windowFileDirectlyPass}/`)
     </script>
 </html>

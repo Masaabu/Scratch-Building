@@ -10,12 +10,13 @@
             .project-container {
                 display: flex;
                 flex-wrap: wrap;
+                text-align: center;
                 justify-content: flex-start;
                 padding: 20px;
             }
 
             .project {
-                width: calc(33% - 10px);
+                width: 230px;
                 margin-bottom: 10px;
                 margin-left: 10px;
                 box-sizing: border-box;
@@ -94,9 +95,6 @@
     <script src="../../assets/js/content/mod.js"></script>
     <script src="../../assets/js/cookie.js"></script>
     <script src="../../assets/js/content/news.js"></script>
-    <script>
-        window.setTimeout(function(){
-            jsonListLoad('');
-        }, 10);
-    </script>
+    <script src="../../assets/js/content/setting.js"></script>
+    <script>jsonListLoad('');settingDataLoad()</script>
 </html>

@@ -27,6 +27,7 @@ var file_path_data = [
         "link_play": (windowFileDirectlyPass + "/pages/game/"),
         "link_mod": (windowFileDirectlyPass + "/pages/mods/"),
         "link_wiki": (windowFileDirectlyPass + "/pages/wiki/"),
+        "link_setting": (windowFileDirectlyPass + "/pages/user/setting/"),
         "link_discord": ("https://discord.gg/KhAd9zBrBk"),
         "link_source_code_on": ("https://github.com/Masaabu/Scratch-Building"),
     }
@@ -46,7 +47,7 @@ document.getElementById('page_header_pc').innerHTML=(`
                 <a id="link_href_header_pc_play" rel="noopener noreferrer" href="${file_path_data.link_play}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">プレイ</a>
                 <a id="link_href_header_pc_mod" rel="noopener noreferrer" href="${file_path_data.link_mod}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">MOD</a>
                 <a id="link_href_header_pc_wiki" rel="noopener noreferrer" href="${file_path_data.link_wiki}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Wiki</a>
-                <a id="link_href_header_pc_discord" target="__blank" rel="noopener noreferrer" href="${file_path_data.link_discord}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Discord</a>
+                <a id="link_href_header_pc_wiki" rel="noopener noreferrer" href="${file_path_data.link_setting}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">設定</a>
             </div>
             <div class="flex space-x-4 items-center">
                 <a href="#" class="text-sm font-medium text-white text-opacity-60 hover:text-opacity-80 transition" onclick="toggleTheme()">テーマ</a>
@@ -97,6 +98,9 @@ document.getElementById('page_header_mobile').innerHTML=(`
                 </a>
                 <a id="link_href_header_mobile_wiki" class="fadeDown4 relative" href="${file_path_data.link_wiki}">
                     <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Wiki</font></font> </span>
+                </a>
+                <a id="link_href_header_mobile_wiki" class="fadeDown4 relative" href="${file_path_data.link_setting}">
+                    <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">設定</font></font> </span>
                 </a>
                 <a id="link_href_header_mobile_discord" class="fadeDown5 relative" href="${file_path_data.link_discord}" target="__blank">
                     <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Discord</font></font> </span>

@@ -17,6 +17,15 @@ if(windowUrlSr > 0){
     windowFileDirectlyPass = `.`;
 };
 
+if(navigator.cookieEnabled){
+    var SettingCookieObj = convertCookieToObject(document.cookie);
+    SettingCookieObj=(JSON.parse(SettingCookieObj.USERSETTINGDATA));
+
+    var newsJSsetting_news = (SettingCookieObj[`ae71d4c5-8c8c-4e1c-85fe-a25276e3c243`].checked)
+}else{
+    console.error('cookieを許可してください')
+}
+
 // js 処理
 var serverJsonData = "";
 var newsObj=(JSON.parse(`
@@ -24,12 +33,7 @@ var newsObj=(JSON.parse(`
 
 }
 `));
-
 function jsonListLoad(page){
-    if(page===''){
-        page='true';
-    };
-
     var tomorrow={};
     var tomorrowD = new Date()
     tomorrow.getFullYear=(tomorrowD.getFullYear());
@@ -172,18 +176,21 @@ function jsonListLoad(page){
             </div>
         `);
 
-        //console.log(HtmlNewsGroupDiv)
-        if(page === 'true'){
-            if(show==='true'){
+        const sample = window.location.pathname;
+        const result = sample.indexOf('/page/user/setting/');
+        //console.log(result);
+        //console.log(window.location)
+        if(show==='true' || show===true){
+            if((serverJsonData.content_list[content_list_i].page) === 'all'){
                 HtmlNewsDiv.appendChild(HtmlNewsGroupDiv);
                 newsObj[`${news_i}`] = {id:serverJsonData.content_list[content_list_i].id,show:show,saveTime:serverJsonData.content_list[content_list_i].saveTime};
                 news_i = news_i+1;
-            }
-        }else{
-            if(show==='true' && serverJsonData.content_list[content_list_i].page === page){
-                HtmlNewsDiv.appendChild(HtmlNewsGroupDiv);
-                newsObj[`${news_i}`] = {id:serverJsonData.content_list[content_list_i].id,show:show,saveTime:serverJsonData.content_list[content_list_i].saveTime};
-                news_i = news_i+1;
+            }else{
+                if(serverJsonData.content_list[content_list_i].page === page){
+                    HtmlNewsDiv.appendChild(HtmlNewsGroupDiv);
+                    newsObj[`${news_i}`] = {id:serverJsonData.content_list[content_list_i].id,show:show,saveTime:serverJsonData.content_list[content_list_i].saveTime};
+                    news_i = news_i+1;
+                }
             }
         }
     };
@@ -211,15 +218,13 @@ function newsload(){
                 btnC2.setAttribute(`href`,`#!`);
             };
             btnC1.addEventListener('click', () => {
-                document.getElementById('btn-sound').currentTime = 0;
-                document.getElementById('btn-sound').play();
+                audioPlay('btn-sound','0');
                 if(newsObj[news_si].show === 'true'){
                     document.cookie = `news_pop_${newsObj[news_si].id}=true; max-age=${newsObj[news_si].saveTime}; path=/`;
                 }
             });
             btnC2.addEventListener('click', () => {
-                document.getElementById('btn-sound').currentTime = 0;
-                document.getElementById('btn-sound').play();
+                audioPlay('btn-sound','0');
                 if(newsObj[news_si].show === 'true'){
                     document.cookie = `news_pop_${newsObj[news_si].id}=true; max-age=${newsObj[news_si].saveTime}; path=/`;
                 }
@@ -233,8 +238,7 @@ function newsload(){
             if(SeOneHash!==(window.location.hash)){
                 if(puC > 0){
                     SeOneHash = (window.location.hash);
-                    document.getElementById('pushSound').currentTime = 0;
-                    document.getElementById('pushSound').play();
+                    audioPlay('pushSound','0');
                     puC=puC-1;
                 };
             };
@@ -244,6 +248,20 @@ function newsload(){
     };
 };
 
+function audioPlay(id,time){
+    if(navigator.cookieEnabled){
+        var SettingCookieObj = convertCookieToObject(document.cookie);
+        SettingCookieObj=(JSON.parse(SettingCookieObj.USERSETTINGDATA));
+    
+        var newsJSsetting_news = (SettingCookieObj[`ae71d4c5-8c8c-4e1c-85fe-a25276e3c243`].checked)
+    }else{
+        console.error('cookieを許可してください')
+    };
+    if(newsJSsetting_news==='checked'){
+        document.getElementById(id).currentTime = time;
+        document.getElementById(id).play();
+    };
+};
 
 function convertCookieToObject(cookies){//クッキーの解析
     const cookieItem = cookies.split(';');
