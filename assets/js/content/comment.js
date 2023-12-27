@@ -112,7 +112,7 @@ async function loadData() {
             const commentPara = document.createElement('p');
             if(linkCheck(entry.comment)){
                 if(batchCheck==='dev') {
-                    commentPara.innerHTML = (`${linkCheck(entry.comment)} / ${autoLink(entry.comment,`text-[#6094F8]`)}`);
+                    commentPara.innerHTML = (`${autoLink(entry.comment,`text-[#6094F8]`)}`);
                 }else{
                     if(contentSafety()===true){
                         commentPara.style.color=(`red`)
@@ -216,7 +216,7 @@ async function loadData() {
                 const REPcommentPara = document.createElement('p');
                 if(linkCheck(repComments[i].comment)){
                     if(batchCheck==='dev') {
-                        REPcommentPara.innerHTML = (`${linkCheck(repComments[i].comment)} / ${autoLink(repComments[i].comment,`text-[#6094F8]`)}`);
+                        REPcommentPara.innerHTML = (`${autoLink(repComments[i].comment,`text-[#6094F8]`)}`);
                     }else{
                         if(contentSafety()===true){
                             REPcommentPara.style.color=(`red`)
