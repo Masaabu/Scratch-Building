@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html id="html" class="dark">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../../assets/image/Masaabu_yticon.png">
+        <title>ビル経営ゲーム</title>
+        <link rel="stylesheet" href="../../assets/css/loading.css">
+        <link rel="stylesheet" href="../../assets/css/alert.css">
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../../assets/css/color.css">
+        <link rel="stylesheet" href="../../assets/css/style_comment.css">
+        <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
+        <!-- .webmanifest--> 
+        <meta name="theme-color" content="#1a1a1a"/>
+        <link rel="manifest" href="../../webmanifest.json" />
+        <style>
+            .h1 {
+                font-size: 25px;
+            }
+        </style>
+        <!-- Font Awesome / website: https://fontawesome.com/ アイコンなどの素材ライブラリを読み込み-->
+        <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- 通知 -->
+        <div id="news"></div>
+        <!-- header pc -->
+        <div id="page_header_pc"></div>
+        <!-- header モバイル -->
+        <div id="page_header_mobile"></div>
+        <!-- トップ画像 -->
+        <div id="topGameImage" class="banner-container"></div>
+        <!-- メインエリア -->
+        <div id="main_box" class="e_main">
+            <div id="コメント欄" class="section_bg">
+                <div class="wrapper">
+                    <h2></h2>
+                    <ul class="list" id="commentsContainer" ontouchstart=""><div><div class="loader_box"><div class="loader"></div></div></ul>
+                    <div id="commentListAddLoadBox" style="max-width: 200px; align-items: center;margin: 2% auto;display: none;">
+                        <a id="loadAddComment" class="button" onclick="loadAddComment('add','20')" style="text-align: center;">もっと見る</a>
+                        <p id="commentShowCHtml" style="text-align: center; margin: 20px auto;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footerエリア -->
+        <div id="page_footer"></div>
+    </body>
+    <script src="../../assets/js/assets/header.js"></script>
+    <script src="../../assets/js/assets/topGameImage.js"></script>
+    <script src="../../assets/js/assets/footer.js"></script>
+    <script src="../../assets/js/cookie.js"></script>
+    <script src="../../assets/js/content/setting.js"></script>
+    <script>settingDataLoad()</script>
+    <script src="../../assets/js/content/comment.js"></script>
+</html>
