@@ -43,6 +43,7 @@ var repCommentsCount = 0;
 var repComments=(JSON.parse(`{}`));
 var allCommentsCount = 0;
 var allComments=(JSON.parse(`{}`));
+var LinkLocationCommentContent = (window.location.hash);
 
 
 var F_repgroup="";
@@ -82,6 +83,10 @@ async function loadData() {
         
             const commentDiv = document.createElement('div');
             commentDiv.classList.add('comment','fadeUp');
+            commentDiv.id=(`commentContent_${entry.uuid}`);
+            if(LinkLocationCommentContent===`#commentContent_${entry.uuid}`){
+                commentDiv.style.backgroundColor=(`var(--blue-100)`);
+            };
         
             const commentRepDiv = document.createElement('div');
             commentRepDiv.id = (`comment_${entry.uuid}`)
@@ -188,6 +193,10 @@ async function loadData() {
                 REPcommentLi.classList.add('list-item');
                 const REPcommentDiv = document.createElement('div');
                 REPcommentDiv.classList.add('comment','commentRep','fadeUp0.85');
+                REPcommentDiv.id=(`commentContent_${repComments[i].uuid}`);
+                if(LinkLocationCommentContent===`#commentContent_${repComments[i].uuid}`){
+                    REPcommentDiv.style.backgroundColor=(`red`);
+                };
                 const REPcommentRepDiv = document.createElement('div');
                 REPcommentRepDiv.id = (`comment_${repComments[i].uuid}`);
                 const REPusernamePara = document.createElement('p');
@@ -309,6 +318,7 @@ function loadAddComment(mode,value){
     if(mode === 'set'){
         commentShowC = value - 0;
         for (let i = commentShowC; i < commentCount; i++) {
+            console.log(i)
             document.getElementById(`comment_${i}`).style.display=('none');
         };
     }else{if(mode === 'add'){
@@ -339,19 +349,7 @@ setInterval(() => {
 // コメントを通報する機能
 
 function commentReport(id){
-    var name = prompt(`コメントを通報する場合、名前等が必要です。このフィールドにEmailを記入することで早期に対応することができます。\n（匿名可、英数字のみ）`, "名前またはメールアドレス").replace(/[^0-9a-z]/gi, '');
-    if(name !== ''){
-        var report = prompt(`コメントID: ${id}\nを通報しようとしています。`, "スパムに該当する");
-        if(report!==null){
-        var isBoss = confirm(`本当に通報しますか？`);
-        if(isBoss===true){
-            var url = (`https://script.google.com/macros/s/AKfycbzxk7ZaOOHWp3R_2EanQDC5PXgciDt4U3h9xvV9ZNPVQ859ZcDp8lSR9vekT9ZCPImn/exec?mode=post&name=${name}&report=${report}&reportId=${id}`);
-            fetch(url, { mode: 'no-cors' });
-        };
-        };
-    }else{
-        alert('入力値が正しくありません！');
-    }
+    window.open(`https://docs.google.com/forms/d/e/1FAIpQLSeFAxN_udXf9poLY-WpVBAppy6F_MTDkjJr4bUXvP6B56Xzzg/viewform?entry.749474196=${id}`);
 };
 
 function commentRep(repgroup,repid){
@@ -421,6 +419,19 @@ function commentRep(repgroup,repid){
     document.getElementById('rep_form_rep_data').innerHTML=((allComments[`${repid}`].name)+'のコメントを選択中')
     document.getElementById('rep_field_repgroup').value=`${repgroup}`;
     document.getElementById('rep_field_rep').value=`${repid}`;
+
+    var field_name = document.getElementById("rep_field_name");
+    field_name.addEventListener('change', function(){
+        document.getElementById('rep_field_name').setAttribute(`minlength`,`3`);
+        document.getElementById('rep_field_name').setAttribute(`maxlength`,`13`);
+        document.getElementById('rep_field_name').value=((document.getElementById('rep_field_name').value).replace(/\s+/g, ""));
+    });
+    var field_message = document.getElementById("rep_field_message");
+    field_message.addEventListener('change', function(){
+        document.getElementById('rep_field_message').setAttribute(`minlength`,`1`);
+        document.getElementById('rep_field_message').setAttribute(`maxlength`,`100`);
+    });
+
     window.location=(`#comment_${F_box}`);
 };
 
@@ -431,50 +442,59 @@ function commentRepReset(){
 function commentRepFormBoxRemSubmit(repgroup,repid){
     var formError = 0;
     if(document.getElementById('rep_field_name').value.length > 2){
-    if(document.getElementById('rep_field_name').value.length < 13){
-        document.getElementById('rep_name_error').innerHTML=(``);
-        if(document.getElementById('rep_field_message').value.length > 0){
-        if(document.getElementById('rep_field_message').value.length < 101){
-            document.getElementById('rep_message_error').innerHTML=(``);
-            if(document.getElementById('rep_field_repgroup').value.length > 35){
-            if(document.getElementById('rep_field_repgroup').value.length < 101){
-                document.getElementById('rep_group_error').innerHTML=(``);
-                if(document.getElementById('rep_field_rep').value.length > 35){
-                if(document.getElementById('rep_field_rep').value.length < 101){
-                    document.getElementById('rep_id_error').innerHTML=(``);
+        if(document.getElementById('rep_field_name').value.length < 13){
+            document.getElementById('rep_name_error').innerHTML=(``);
+            
+            if(document.getElementById('rep_field_message').value.length > 0){
+                if(document.getElementById('rep_field_message').value.length < 101){
+                    if(((document.getElementById('rep_field_message').value).replace(/\s|/g, "").length) > 0){
+                        document.getElementById('rep_message_error').innerHTML=(``);
+
+                        if(document.getElementById('rep_field_repgroup').value.length > 35){
+                            if(document.getElementById('rep_field_repgroup').value.length < 101){
+                                document.getElementById('rep_group_error').innerHTML=(``);
+    
+                                if(document.getElementById('rep_field_rep').value.length > 35){
+                                    if(document.getElementById('rep_field_rep').value.length < 101){
+                                        document.getElementById('rep_id_error').innerHTML=(``);
+                                    }else{
+                                        formError=formError+1
+                                        document.getElementById('rep_id_error').innerHTML=(`返信コメントIDは100文字以内`);
+                                    };
+                                }else{
+                                    formError=formError+1
+                                    document.getElementById('rep_id_error').innerHTML=(`返信コメントIDは35文字以上`);
+                                };
+                            }else{
+                                formError=formError+1
+                                document.getElementById('rep_group_error').innerHTML=(`返信グループIDは100文字以内`);
+                            };
+                        }else{
+                            formError=formError+1
+                            document.getElementById('rep_group_error').innerHTML=(`返信グループIDは35文字以上`);
+                        };
+                    }else{
+                        formError=formError+1
+                        document.getElementById('rep_message_error').innerHTML=(`スペース以外の文字を最低1文字入力してください`);
+                    };
                 }else{
                     formError=formError+1
-                    document.getElementById('rep_id_error').innerHTML=(`返信コメントIDは100文字以内`);
-                };
-                }else{
-                    formError=formError+1
-                    document.getElementById('rep_id_error').innerHTML=(`返信コメントIDは35文字以上`);
+                    document.getElementById('rep_message_error').innerHTML=(`メッセージは100文字以内`);
                 };
             }else{
                 formError=formError+1
-                document.getElementById('rep_group_error').innerHTML=(`返信グループIDは100文字以内`);
-            };
-            }else{
-                formError=formError+1
-                document.getElementById('rep_group_error').innerHTML=(`返信グループIDは35文字以上`);
+                document.getElementById('rep_message_error').innerHTML=(`メッセージは1文字以上`);
             };
         }else{
             formError=formError+1
-            document.getElementById('rep_message_error').innerHTML=(`メッセージは100文字以内`);
-        };
-        }else{
-            formError=formError+1
-            document.getElementById('rep_message_error').innerHTML=(`メッセージは1文字以上`);
+            document.getElementById('rep_name_error').innerHTML=(`名前は13文字以内`);
         };
     }else{
         formError=formError+1
-        document.getElementById('rep_name_error').innerHTML=(`名前は13文字以内`);
-    };
-    }else{
-        formError=formError+1
-        document.getElementById('rep_name_error').innerHTML=(`名前は2文字以上`);
+        document.getElementById('rep_name_error').innerHTML=(`名前は3文字以上`);
     };
     if(formError===0){
+        document.getElementById("rep_commentForm").onsubmit = function(){ return true };
         let form_url = (`https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse`);
         var fetch_url = (`${form_url}?entry.1738713134=${document.getElementById('rep_field_name').value}&entry.975792514=${document.getElementById('rep_field_message').value}&entry.537780005=${document.getElementById('rep_field_repgroup').value}&entry.1032562646=${document.getElementById('rep_field_rep').value}`);
     
@@ -501,7 +521,9 @@ function commentRepFormBoxRemSubmit(repgroup,repid){
         window.location=('#');
         alert('返信コメントを送信しました');
         commentRepFormBoxRem(repgroup,repid);
-    };
+    }else{
+        document.getElementById("rep_commentForm").onsubmit = function(){ return false };
+    }
 };
 
 function commentRepFormBoxRem(repgroup,repid){
@@ -594,3 +616,32 @@ function convertCookieToObject(cookies){//クッキーの解析
     });
     return obj;
 };
+
+
+//document.getElementById('formBtn').addEventListener('click', () => {});
+function offadadw(){
+    document.getElementById('formBtn').addEventListener('click', () => {
+        document.getElementById("commentForm").onsubmit = function(){ return false };
+        var formErrorCount = 0;
+        document.getElementById('field_name').value=((document.getElementById('field_name').value).replace(/\s+/g, ""));
+        if(((document.getElementById('field_name').value).replace(/\s|/g, "").length) > 2){
+
+            document.getElementById('form_name_error').innerHTML=(``);
+        }else{
+            formErrorCount+=1;
+            document.getElementById('form_name_error').innerHTML=(`スペース以外の文字を最低3文字入力してください`);
+        };
+        if(((document.getElementById('field_message').value).replace(/\s|/g, "").length) > 0){
+            document.getElementById('form_message_error').innerHTML=(``);
+        }else{
+            formErrorCount+=1;
+            document.getElementById('form_message_error').innerHTML=(`スペース以外の文字を最低一文字入力してください`);
+        };
+        if(formErrorCount===0){
+            document.getElementById("commentForm").onsubmit = function(){ return true };
+            alert('コメントを送信しました');window.location='./';
+        }else{
+            document.getElementById("commentForm").onsubmit = function(){ return false };
+        };
+    });
+}
