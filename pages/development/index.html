@@ -412,6 +412,84 @@
                     </div>
                 </details>
             </div>
+            <div class="section_bg">
+                <h1><strong>SettingAPI</strong></h1>
+                <p>このAPIは設定項目の情報を取得することができますが、利用者の設定項目を取得することはできません。
+                    <a href="../../data/json/setting.json" target="_blank" class="text-[#6094F8]">APIページ</a>
+                </p>
+                <details> 
+                    <summary>応答例</summary>
+                    <div class="group_bg2" style="background-color: var(--background-4);overflow: scroll;">
+                        <pre><code>{
+    "createdBy": "Fun117",
+    "version": "0.0.1.1",
+    "title": "設定",
+    "content_list": [
+        {
+            "title": "安全な情報のみ表示",
+            "id": "f7056b58-05c9-464c-be1c-770d0060e8b8",
+            "release": "true",
+            "initial_value": "checked",
+            "creator": "@Fun117",
+            "content": [
+                {
+                    "title": "認証がされていないコメントに含まれるURLなどを非表示にします。"
+                }
+            ]
+        },
+        {
+            "title": "通知",
+            "id": "5135d1a2-579c-482c-81a6-966cf877f9e5",
+            "release": "false",
+            "initial_value": "checked",
+            "creator": "@Fun117",
+            "content": [
+                {
+                    "title": "サイト内通知を有効化"
+                }
+            ]
+        },
+        {
+            "title": "サウンド",
+            "id": "ae71d4c5-8c8c-4e1c-85fe-a25276e3c243",
+            "release": "true",
+            "initial_value": "checked",
+            "creator": "@Fun117",
+            "content": [
+                {
+                    "title": "サウンドの再生を有効化"
+                }
+            ]
+        },
+        {
+            "title": "アニメーション",
+            "id": "a8088870-f250-4e45-ab2f-88a47733fa1c",
+            "release": "false",
+            "initial_value": "checked",
+            "creator": "@Fun117",
+            "content": [
+                {
+                    "title": "アニメーションの再生を有効化"
+                }
+            ]
+        },
+        {
+            "title": "試験的機能",
+            "id": "9948b366-53fe-42f6-b7dd-eafeafad0e65",
+            "release": "false",
+            "initial_value": "",
+            "creator": "@Fun117",
+            "content": [
+                {
+                    "title": "試験的機能を有効化"
+                }
+            ]
+        }
+    ]
+}</code></pre>
+                    </div>
+                </details>
+            </div>
         </div>
         <!-- footerエリア -->
         <div id="page_footer"></div>
@@ -420,7 +498,7 @@
     <script src="../../assets/js/assets/topGameImage.js"></script>
     <script src="../../assets/js/assets/footer.js"></script>
     <script src="../../assets/js/cookie.js"></script>
-    <script src="../../assets/js/content/news.js"></script>
     <script src="../../assets/js/content/setting.js"></script>
+    <script src="../../assets/js/content/news.js"></script>
     <script>jsonListLoad('development');settingDataLoad()</script>
 </html>

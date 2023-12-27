@@ -1,8 +1,20 @@
 {
     "createdBy": "Fun117",
-    "version": "0.0.1",
+    "version": "0.0.1.1",
     "title": "設定",
     "content_list": [
+        {
+            "title": "安全な情報のみ表示",
+            "id": "f7056b58-05c9-464c-be1c-770d0060e8b8",
+            "release": "true",
+            "initial_value": "checked",
+            "creator": "@Fun117",
+            "content": [
+                {
+                    "title": "認証がされていないコメントに含まれるURLなどを非表示にします。"
+                }
+            ]
+        },
         {
             "title": "通知",
             "id": "5135d1a2-579c-482c-81a6-966cf877f9e5",

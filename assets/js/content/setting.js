@@ -50,8 +50,8 @@ function settingDataLoad(){
             USERSETTINGDATA = ((settingJson));
         };
         if((USERSETTINGDATA.version).replace(/\./g,'') < (serverJsonData_settingJs.version).replace(/\./g,'')){
-            document.cookie = `USERSETTINGDATA=${JSON.stringify(settingJson)}; path=/`;
-            USERSETTINGDATA = (JSON.parse(settingJson));
+            settingDataReset();
+            alert('設定項目がアップデートされた為、過去に設定を行なったデータが削除されました')
             console.warn('settingJsonUpdate');
         }else{
             if(cookieObj.USERSETTINGDATA==='' || cookieObj.USERSETTINGDATA === undefined){
@@ -69,6 +69,7 @@ function settingDataLoad(){
 }
 
 function settingLListLoad(){
+    settingDataLoad();
     if(navigator.cookieEnabled){
         var cookieObj = convertCookieToObject(document.cookie);
         // データを取得

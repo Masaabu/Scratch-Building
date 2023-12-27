@@ -1,53 +1,53 @@
-> [English](./README/README_en.md) / [日本語](./README/README_ja.md)
+> [English](./README_en.md) / [日本語](./README_ja.md)
 
 # ビル経営ゲーム
 
-ビル経営ゲームはScratchで作られたビルを作るシミュレーションゲームです。
+Building Management Game is a building simulation game made in Scratch.
 
 ## [公式ホームページ](https://masaabu.github.io/Scratch-Building/)
 source code on [GitHub](https://github.com/Masaabu/Scratch-Building)
 
-# コメント - ガイド
-データに保存されているコメントを取得し、コメントを表示したり、管理することができる。コメントのセキュリティーは保護されていません。スパム対策などの対策機能は未実装
+# Comments - Guide
+You can retrieve comments stored in the data, view and manage comments. Comments are not secured. Anti-spam and other functions are not yet implemented.
 
-## コメントをさらに読み込むボタンの追加
+## Add button to read comments
 
 ```html
-<a id="loadAddComment" class="button" onclick="loadAddComment('add','5')" style="text-align: center;">もっと見る</a>
+<a id="loadAddComment" class="button" onclick="loadAddComment('add','5')" style="text-align: center;">See more</a>
 ```
 
-### onclick要素の解説
+### Description of the onclick element
 ```js
 loadAddComment('add','5')
 ```
-> 上のコードでは、コメント表示欄に表示するコメント数を```5```個```増やす```というfunctionを実行している。
+> The code above executes a FUNCTION that increases the number of comments displayed in the comment display field by ```5```.
 
-現在```add```と書かれているところはモードを入力し、現在```5```と書かれているところは、```value```を設定することができる。
+Where it currently says `add`, you can enter the mode, and where it currently says `5`, you can set the value.
 
-### モード一覧
-- ```set``` / コメント表示欄に表示するコメント数を設定することができる。
-- ```add``` / コメント表示欄に表示するコメント数を増やすことができる。
+### Mode List
+- ```set``` / The number of comments to be displayed in the comment display field can be set.
+- ```add``` / The number of comments displayed in the comment display section can be increased.
 
-# MOD - ガイド
-データに保存されているMODの情報を解析、表示することができる。データベースは現在実装されてない為、オブジェクト変数にデータを保存している。
+# MOD - Guide
+The information on the mods stored in the data can be analyzed and displayed. Since no database is currently implemented, data is stored in object variables.
 
-## MODの情報を表示する
+## Display mod information
 ```html
 <div id="mods"></div>
 ```
-> 上のコードの様に```id=mods```の要素にMOD情報が追加される。
+> The mod information is added to the ``id=mods`` element as shown in the code above.
 
-## TAGIDの説明
-```tagId```には、```0``` ```1``` ```2```があります。
-- ```0``` / ```一般```（tagが表示されることはない）
-- ```1``` / ```公式```（tagが表示され```name```がタグの名前として表示される。）
-- ```2``` / ```前提```（tagが表示され```name```がタグの名前として表示される。）
+## TAGID Description
+There are 0, 1, and 2 in tagId.
+- ``0`` / ``general`` (tags will never be displayed)
+- ``1`` / ``official`` (the tag is displayed and ``name`` is displayed as the name of the tag).
+- ``2`` / ``premise`` (the tag is displayed and ``name`` is displayed as the name of the tag).
 
 # API
-GETリクエストを送信するとJson形式で情報が取得できます。
+Send a GET request to obtain information in Json format.
 
-# API - 変更履歴
-ゲームの変更履歴をJSON形式で取得することができる。
+# API - changelog
+You can get the game change history in JSON format.
 ```json
 {
     "createdBy": "Fun117",
@@ -76,8 +76,8 @@ GETリクエストを送信するとJson形式で情報が取得できます。
     ]
 }
 ```
-# API - MOD情報
-登録されているMODの情報をJSON形式で取得することができる。
+# API - MOD Information
+Information on registered mods can be obtained in JSON format.
 ```json
 {
     "createdBy": "Fun117",
@@ -107,34 +107,8 @@ GETリクエストを送信するとJson形式で情報が取得できます。
     ]
 }
 ```
-# API - Q&A情報
-登録されている質問と回答の情報をJSON形式で取得することができる。
-```json
-{
-    "createdBy": "Fun117",
-    "version": "0.0.1",
-    "title": "ビル経営ゲームよくある質問",
-    "release_time": "2023-12-02",
-    "last_change_time": "2023-12-03",
-    "content_list": [
-        {
-            "group": "v7",
-            "title": "ビル経営ゲームv7のよくある質問",
-            "release_time": "2023-12-02",
-            "last_change_time": "2023-12-03",
-            "creator": "@Masaabu-YT",
-            "content": [
-                {
-                    "q": "トンカチと猫のアイコンの物は何ですか？",
-                    "a": "モードです！それぞれ建築モード、猫モードという名前で、建築モードなら部屋をタップすることで建築ができます！猫モードなら猫をタップするとその猫のステータスを見ることができます！"
-                }
-            ]
-        }
-    ]
-}
-```
-# API - Q&A情報
-登録されている質問と回答の情報をJSON形式で取得することができる。
+# API - Q&A Information
+Registered question and answer information can be retrieved in JSON format.
 ```json
 {
     "createdBy": "Fun117",
@@ -160,7 +134,7 @@ GETリクエストを送信するとJson形式で情報が取得できます。
 }
 ```
 # API - News
-お知らせの情報をJSON形式で取得することができる。
+Information about notifications can be obtained in JSON format.
 ```json
 {
     "createdBy": "Fun117",
@@ -187,8 +161,8 @@ GETリクエストを送信するとJson形式で情報が取得できます。
     ]
 }
 ```
-# API - 設定項目
-サイトに実装されている設定項目の情報をJSON形式で取得することができる。
+# API - Configuration Items
+Information on configuration items implemented on the site can be obtained in JSON format.
 ```json
 {
     "createdBy": "Fun117",

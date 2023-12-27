@@ -97,6 +97,23 @@
                     "creator": "@Fun117"
                 }
             ]
+        },
+        {
+            "id": "f9e5789d-4d44-41ed-8078-ff12984e185c",
+            "title": "危険な情報をブロックする設定",
+            "description": "",
+            "saveTime": "600",
+            "start": "nYEnMOnDAnHOnMInSE",
+            "end": "nYEnMOnDAnHOnMInSE",
+            "creator": "@Fun117",
+            "page": "",
+            "content": [
+                {
+                    "title": "",
+                    "description": "設定項目に安全ではない情報を非表示にする項目を追加しました。この項目はデフォルトで有効になっている為、すべての情報を表示したい方は設定の変更をしてください。",
+                    "creator": "@Fun117"
+                }
+            ]
         }
     ]
 }
