@@ -1,4 +1,4 @@
-> [English](./README/README_en.md) / [日本語](./README/README_ja.md)
+> [English](./README_en.md) / [日本語](./README_ja.md)
 
 # ビル経営ゲーム
 

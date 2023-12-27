@@ -45,7 +45,7 @@ if(navigator.cookieEnabled){
     var newsJSsetting_news = (SettingCookieObj[`ae71d4c5-8c8c-4e1c-85fe-a25276e3c243`].checked)
 }else{
     console.error('cookieを許可してください')
-}
+};
 
 // js 処理
 var serverJsonData = "";

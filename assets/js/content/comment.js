@@ -1,3 +1,38 @@
+if(navigator.cookieEnabled){
+    var SettingCookieObj = convertCookieToObject(document.cookie);
+    if(SettingCookieObj.USERSETTINGDATA==='' || SettingCookieObj.USERSETTINGDATA===undefined){
+        var cookieObj = convertCookieToObject(document.cookie);
+        // データを取得
+        var req = new XMLHttpRequest();// XMLHttpRequest オブジェクトを生成する
+        req.onreadystatechange = function() {// XMLHttpRequest オブジェクトの状態が変化した際に呼び出されるイベントハンドラ
+            if(req.readyState == 4 && req.status == 200){// サーバーからのレスポンスが完了し、かつ、通信が正常に終了した場合
+                serverJsonData_settingJs = (JSON.parse(req.responseText));// 取得した JSON を変数に
+            }
+        };
+        req.open("GET", `${windowFileDirectlyPass}/data/json/setting.json`, false);// HTTPメソッドとアクセスするサーバーの　URL　を指定
+        req.send(null);	
+
+        //console.log(serverJsonData_settingJs);
+        var settingJson = (JSON.parse(`{}`));
+        settingJson[`version`]=(`${serverJsonData_settingJs.version}`);
+        for(let settingJsonCountChe = 0; settingJsonCountChe < (serverJsonData_settingJs.content_list.length); settingJsonCountChe++){
+            settingJson[`${serverJsonData_settingJs.content_list[settingJsonCountChe].id}`]=({"release":serverJsonData_settingJs.content_list[settingJsonCountChe].release,"initial_value":serverJsonData_settingJs.content_list[settingJsonCountChe].initial_value,"checked":serverJsonData_settingJs.content_list[settingJsonCountChe].initial_value});
+        };
+        console.log(`${JSON.stringify(settingJson)}`)
+        document.cookie = `USERSETTINGDATA=${JSON.stringify(settingJson)}; path=/`;
+        window.location.href=(`./`)
+    }
+    SettingCookieObj=(JSON.parse(SettingCookieObj.USERSETTINGDATA));
+    if(SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`]==='' || SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`]===undefined){
+        var commentJSsetting_ContentSafety = false
+    }else{
+        var commentJSsetting_ContentSafety = (SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`].checked)
+    }
+}else{
+    console.error('cookieを許可してください')
+};
+
+
 const apiURL = 'https://script.google.com/macros/s/AKfycbxIpIEEnwh2STkLNqF7yHzb_wD6RosNN_l7DgIYeqtM6oyJF_Lw2RJkkbcoEJl2AnE48Q/exec';
 
 var commentCount = 0;
@@ -53,6 +88,8 @@ async function loadData() {
         
             const usernamePara = document.createElement('p');
             usernamePara.classList.add('username');
+
+
             const usernameParaDiv = document.createElement('div');
             usernameParaDiv.style.display=('flex');
             var batchCheck = (entry.check);
@@ -67,19 +104,27 @@ async function loadData() {
             };};
             usernamePara.appendChild(usernameParaDiv);
         
-            const checkDiv = document.createElement('p');
-            // if(entry.check) {
-            //     checkDiv.style.color = '#f26b30';
-            //     checkDiv.textContent = "認証済み";
-            // };
         
             const timestampPara = document.createElement('p');
             timestampPara.classList.add('timestamp');
             timestampPara.textContent = new Date(entry.timestamp).toLocaleString();
         
             const commentPara = document.createElement('p');
-            commentPara.textContent = entry.comment;
-        
+            if(linkCheck(entry.comment)){
+                if(batchCheck==='dev') {
+                    commentPara.innerHTML = (`${linkCheck(entry.comment)} / ${autoLink(entry.comment,`text-[#6094F8]`)}`);
+                }else{
+                    if(contentSafety()===true){
+                        commentPara.style.color=(`red`)
+                        commentPara.innerHTML=(`URLが検出された為コメントを非表示にしています`);
+                    }else{
+                        commentPara.textContent = ((entry.comment));
+                    }
+                };
+            }else{
+                commentPara.textContent = ((entry.comment));
+            };
+
             const uuidDivSpe = document.createElement('p');
             uuidDivSpe.classList.add('reportSpace');
         
@@ -122,7 +167,6 @@ async function loadData() {
             });
             uuidDiv.appendChild(uuidBtn);
         
-            usernamePara.appendChild(checkDiv);
             commentDiv.appendChild(usernamePara);
             commentDiv.appendChild(timestampPara);
             commentDiv.appendChild(commentPara);
@@ -170,7 +214,21 @@ async function loadData() {
                 REPtimestampPara.classList.add('timestamp');
                 REPtimestampPara.textContent = new Date(repComments[i].timestamp).toLocaleString();
                 const REPcommentPara = document.createElement('p');
-                REPcommentPara.textContent = repComments[i].comment;
+                if(linkCheck(repComments[i].comment)){
+                    if(batchCheck==='dev') {
+                        REPcommentPara.innerHTML = (`${linkCheck(repComments[i].comment)} / ${autoLink(repComments[i].comment,`text-[#6094F8]`)}`);
+                    }else{
+                        if(contentSafety()===true){
+                            REPcommentPara.style.color=(`red`)
+                            REPcommentPara.innerHTML=(`URLが検出された為コメントを非表示にしています`);
+                        }else{
+                            REPcommentPara.textContent = ((repComments[i].comment));
+                        }
+                    };
+                }else{
+                    REPcommentPara.textContent = ((repComments[i].comment));
+                };
+
                 const REPuuidDivSpe = document.createElement('p');
                 REPuuidDivSpe.classList.add('reportSpace');
                 const REPuuidDiv = document.createElement('p');
@@ -471,4 +529,68 @@ function copyToClipboard(text){
     document.body.removeChild(pre);
 
     return result;
-}
+};
+
+function autoLink(str,liClass) {
+    const regexp_url = /(https?|ftp):\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#\u3001-\u30FE\u4E00-\u9FA0\uFF01-\uFFE3]+/g;
+    var regexp_makeLink = function(url) {
+        return '<a class="'+liClass+'" href="' + url + '" target="_blank" rel="noopener">' + url + '</a>';
+    }
+    if (str.match(regexp_url) != null) {
+        const urlAllMatches = str.match(regexp_url);
+        if(urlAllMatches){
+            const urlMatches = new Set(urlAllMatches);
+            urlMatches.forEach(url => {
+                str = str.replaceAll(url, regexp_makeLink(url));
+            });
+        }
+    }
+    return str;
+};
+
+function linkCheck(str) {
+    var linkCheckCount = false;
+    const regexp_url = /(https?|ftp):\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#\u3001-\u30FE\u4E00-\u9FA0\uFF01-\uFFE3]+/g;
+    var regexp_makeLink = function(url) {
+        return '<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>';
+    }
+    if (str.match(regexp_url) != null) {
+        linkCheckCount=true;
+    }
+    return linkCheckCount;
+};
+
+function contentSafety(id){
+    if(navigator.cookieEnabled){
+        var SettingCookieObj = convertCookieToObject(document.cookie);
+        SettingCookieObj=(JSON.parse(SettingCookieObj.USERSETTINGDATA));
+        if(SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`]==='' || SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`]===undefined){
+            var commentJSsetting_ContentSafety = false
+        }else{
+            var commentJSsetting_ContentSafety = (SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`].checked)
+        }
+    }else{
+        console.error('cookieを許可してください');
+    };
+    if(commentJSsetting_ContentSafety==='checked'){
+        return true;
+    }else{
+        return false;
+    };
+};
+
+function convertCookieToObject(cookies){//クッキーの解析
+    const cookieItem = cookies.split(';');
+    const obj = {};
+    cookieItem.forEach((item) => {
+        // 「=」で分解
+        const element = item.split('=');
+        // キーを取得
+        const key = element[0].trim();
+        // バリューを取得
+        const value = decodeURIComponent(element[1]);
+        // 保存
+        obj[key] = value;
+    });
+    return obj;
+};
