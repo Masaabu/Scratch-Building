@@ -620,24 +620,28 @@ function convertCookieToObject(cookies){//クッキーの解析
 
 //document.getElementById('formBtn').addEventListener('click', () => {});
 function offadadw(){
-    document.getElementById("commentForm").onsubmit = function(){ return false };
-    var formErrorCount = 0;
-    if(((document.getElementById('field_name').value).replace(/\s|/g, "").length) > 2){
-        document.getElementById('form_name_error').innerHTML=(``);
-    }else{
-        formErrorCount+=1;
-        document.getElementById('form_name_error').innerHTML=(`スペース以外の文字を最低3文字入力してください`);
-    };
-    if(((document.getElementById('field_message').value).replace(/\s|/g, "").length) > 0){
-        document.getElementById('form_message_error').innerHTML=(``);
-    }else{
-        formErrorCount+=1;
-        document.getElementById('form_message_error').innerHTML=(`スペース以外の文字を最低一文字入力してください`);
-    };
-    if(formErrorCount===0){
-        document.getElementById("commentForm").onsubmit = function(){ return true };
-        alert('コメントを送信しました');window.location='./';
-    }else{
+    document.getElementById('formBtn').addEventListener('click', () => {
         document.getElementById("commentForm").onsubmit = function(){ return false };
-    };
+        var formErrorCount = 0;
+        document.getElementById('field_name').value=((document.getElementById('field_name').value).replace(/\s+/g, ""));
+        if(((document.getElementById('field_name').value).replace(/\s|/g, "").length) > 2){
+
+            document.getElementById('form_name_error').innerHTML=(``);
+        }else{
+            formErrorCount+=1;
+            document.getElementById('form_name_error').innerHTML=(`スペース以外の文字を最低3文字入力してください`);
+        };
+        if(((document.getElementById('field_message').value).replace(/\s|/g, "").length) > 0){
+            document.getElementById('form_message_error').innerHTML=(``);
+        }else{
+            formErrorCount+=1;
+            document.getElementById('form_message_error').innerHTML=(`スペース以外の文字を最低一文字入力してください`);
+        };
+        if(formErrorCount===0){
+            document.getElementById("commentForm").onsubmit = function(){ return true };
+            alert('コメントを送信しました');window.location='./';
+        }else{
+            document.getElementById("commentForm").onsubmit = function(){ return false };
+        };
+    });
 }
