@@ -1,10 +1,10 @@
 > [English](./README_en.md) / [日本語](./README_ja.md)
 
-# ビル経営ゲーム
+# Scratch Building
 
 Building Management Game is a building simulation game made in Scratch.
 
-## [公式ホームページ](https://masaabu.github.io/Scratch-Building/)
+## [Home page](https://masaabu.github.io/Scratch-Building/)
 source code on [GitHub](https://github.com/Masaabu/Scratch-Building)
 
 # Comments - Guide

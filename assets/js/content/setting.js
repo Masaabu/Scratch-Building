@@ -22,7 +22,7 @@ var allSettingData=(JSON.parse(`{}`));
 let USERSETTINGDATA = "{}";
 // js 処理
 var serverJsonData_settingJs = "";
-
+settingDataLoad()
 function settingDataLoad(){
     if(navigator.cookieEnabled){
         var cookieObj = convertCookieToObject(document.cookie);
@@ -243,6 +243,20 @@ function funcLocalStorage(mode,key,value){
     }else{if(mode==='set'){
         localStorage.setItem(key,value);
     };};
+};
+
+function getCookieSettingContent(key){
+    if(navigator.cookieEnabled){
+        var getCookieSetting = convertCookieToObject(document.cookie);
+        getCookieSetting=(JSON.parse(getCookieSetting.USERSETTINGDATA));
+        if((getCookieSetting[`${key}`].checked)==='checked'){
+            return true;
+        }else{
+            return false;
+        };
+    }else{
+        return false;
+    };
 };
 
 function convertCookieToObject(cookies){//クッキーの解析
