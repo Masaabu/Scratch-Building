@@ -1,36 +1,25 @@
-if(navigator.cookieEnabled){
-    var SettingCookieObj = convertCookieToObject(document.cookie);
-    if(SettingCookieObj.USERSETTINGDATA==='' || SettingCookieObj.USERSETTINGDATA===undefined){
-        var cookieObj = convertCookieToObject(document.cookie);
-        // データを取得
-        var req = new XMLHttpRequest();// XMLHttpRequest オブジェクトを生成する
-        req.onreadystatechange = function() {// XMLHttpRequest オブジェクトの状態が変化した際に呼び出されるイベントハンドラ
-            if(req.readyState == 4 && req.status == 200){// サーバーからのレスポンスが完了し、かつ、通信が正常に終了した場合
-                serverJsonData_settingJs = (JSON.parse(req.responseText));// 取得した JSON を変数に
-            }
-        };
-        req.open("GET", `${windowFileDirectlyPass}/data/json/setting.json`, false);// HTTPメソッドとアクセスするサーバーの　URL　を指定
-        req.send(null);	
-
-        //console.log(serverJsonData_settingJs);
-        var settingJson = (JSON.parse(`{}`));
-        settingJson[`version`]=(`${serverJsonData_settingJs.version}`);
-        for(let settingJsonCountChe = 0; settingJsonCountChe < (serverJsonData_settingJs.content_list.length); settingJsonCountChe++){
-            settingJson[`${serverJsonData_settingJs.content_list[settingJsonCountChe].id}`]=({"release":serverJsonData_settingJs.content_list[settingJsonCountChe].release,"initial_value":serverJsonData_settingJs.content_list[settingJsonCountChe].initial_value,"checked":serverJsonData_settingJs.content_list[settingJsonCountChe].initial_value});
-        };
-        console.log(`${JSON.stringify(settingJson)}`)
-        document.cookie = `USERSETTINGDATA=${JSON.stringify(settingJson)}; path=/`;
-        window.location.href=(`./`)
-    }
-    SettingCookieObj=(JSON.parse(SettingCookieObj.USERSETTINGDATA));
-    if(SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`]==='' || SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`]===undefined){
-        var commentJSsetting_ContentSafety = false
-    }else{
-        var commentJSsetting_ContentSafety = (SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`].checked)
-    }
+// Set the file path for this directory
+var windowUrl = window.location.pathname;
+var windowUrlSr = 0;
+if((window.location.protocol) === 'https:'){
+    windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 3;
 }else{
-    console.error('cookieを許可してください')
+    console.warn('Runs in editor mode because the protocol is not "https".')
+    windowUrlSr =  ( windowUrl.match( /[/]/g ) || [] ).length - 2;
 };
+var windowFileDirectlyPass = "";
+if(windowUrlSr > 0){
+    for (let i = 0; i < windowUrlSr; i++) {
+        windowFileDirectlyPass = windowFileDirectlyPass + `./.`;
+    }
+    windowFileDirectlyPass = `.`+windowFileDirectlyPass+`.`;
+}else{
+    windowFileDirectlyPass = `.`;
+};
+
+var commentJSsetting_ContentSafety=getCookieSettingContent(`f7056b58-05c9-464c-be1c-770d0060e8b8`);
+var commentJSsetting_preReleaseContent=getCookieSettingContent(`9948b366-53fe-42f6-b7dd-eafeafad0e65`);
+
 
 
 const apiURL = 'https://script.google.com/macros/s/AKfycbxIpIEEnwh2STkLNqF7yHzb_wD6RosNN_l7DgIYeqtM6oyJF_Lw2RJkkbcoEJl2AnE48Q/exec';
@@ -43,6 +32,8 @@ var repCommentsCount = 0;
 var repComments=(JSON.parse(`{}`));
 var allCommentsCount = 0;
 var allComments=(JSON.parse(`{}`));
+var commentShowIdObjC = 0;
+var commentShowIdObj=(JSON.parse(`{}`));
 var LinkLocationCommentContent = (window.location.hash);
 
 
@@ -53,7 +44,7 @@ var F_box="false";
 
 //console.log(repComments)
 
-async function loadData() {
+async function loadCommentListData(Load_mode,Load_value) {
     const commentsContainer = document.getElementById('commentsContainer');
     const response = await fetch(apiURL);
     var data = await response.json();
@@ -77,6 +68,7 @@ async function loadData() {
         //console.log(entry);
         if(entry.rep){
         }else{
+            commentShowIdObj[`${entry.uuid}`]={showId:commentCount};
             const commentLi = document.createElement('li');
             commentLi.id = (`comment_${commentCount}`);
             commentLi.classList.add('list-item');
@@ -85,7 +77,9 @@ async function loadData() {
             commentDiv.classList.add('comment','fadeUp');
             commentDiv.id=(`commentContent_${entry.uuid}`);
             if(LinkLocationCommentContent===`#commentContent_${entry.uuid}`){
-                commentDiv.style.backgroundColor=(`var(--blue-100)`);
+                commentDiv.style.backgroundColor=(`var(--background-1)`);
+                commentDiv.style.border=(`solid`);
+                commentDiv.style.borderColor=(`rgb(96 148 248)`)
             };
         
             const commentRepDiv = document.createElement('div');
@@ -98,14 +92,19 @@ async function loadData() {
             const usernameParaDiv = document.createElement('div');
             usernameParaDiv.style.display=('flex');
             var batchCheck = (entry.check);
-            var batchName = (entry.name);
+            var batchName = (`${entry.name}`);
+            if(commentJSsetting_preReleaseContent){
+                var commentCountId=`<p style="margin:auto 8px;color:var(--background-2);">#${commentCount}</p>`;
+            }else{
+                var commentCountId=``
+            }
             var batchDiv = usernameParaDiv;
             if(batchCheck==='dev') {
-                batchDiv.innerHTML = (`${batchName}${checkBatchDev}`);
+                batchDiv.innerHTML = (`${batchName}${checkBatchDev}${(commentCountId)}`);
             }else{if(batchCheck==='cre') {
-                batchDiv.innerHTML = (`${batchName}${checkBatchCre}`);
+                batchDiv.innerHTML = (`${batchName}${checkBatchCre}${(commentCountId)}`);
             }else{
-                batchDiv.innerHTML = (`${batchName}`);
+                batchDiv.innerHTML = (`${batchName}${commentCountId}`);
             };};
             usernamePara.appendChild(usernameParaDiv);
         
@@ -119,7 +118,7 @@ async function loadData() {
                 if(batchCheck==='dev') {
                     commentPara.innerHTML = (`${autoLink(entry.comment,`text-[#6094F8]`)}`);
                 }else{
-                    if(contentSafety()===true){
+                    if(commentJSsetting_ContentSafety===true){
                         commentPara.style.color=(`red`)
                         commentPara.innerHTML=(`URLが検出された為コメントを非表示にしています`);
                     }else{
@@ -186,8 +185,8 @@ async function loadData() {
         let repCommentsCountFor=(repCommentsCount-1);
         for(let i = (repCommentsCountFor-1); i > (repCommentsCountFor-repCommentsCount); i--){
             if((repComments[i].repgroup)===entry.uuid){
+                commentShowIdObj[`${repComments[i].uuid}`]={showId:commentCount};
                 const REPcommentsContainer = document.getElementById(`comment_${repComments[i].repgroup}`);
-                //console.warn(`${i} / repG = ${repComments[i].repgroup}`);
                 const REPcommentLi = document.createElement('li');
                 REPcommentLi.id = (`comment_${commentCount}`);
                 REPcommentLi.classList.add('list-item');
@@ -195,7 +194,9 @@ async function loadData() {
                 REPcommentDiv.classList.add('comment','commentRep','fadeUp0.85');
                 REPcommentDiv.id=(`commentContent_${repComments[i].uuid}`);
                 if(LinkLocationCommentContent===`#commentContent_${repComments[i].uuid}`){
-                    REPcommentDiv.style.backgroundColor=(`red`);
+                    REPcommentDiv.style.backgroundColor=(`var(--background-1)`);
+                    REPcommentDiv.style.border=(`solid`);
+                    REPcommentDiv.style.borderColor=(`rgb(96 148 248)`);
                 };
                 const REPcommentRepDiv = document.createElement('div');
                 REPcommentRepDiv.id = (`comment_${repComments[i].uuid}`);
@@ -204,14 +205,19 @@ async function loadData() {
                 const REPusernameParaDiv = document.createElement('div');
                 REPusernameParaDiv.style.display=('flex');
                 var batchCheck = (repComments[i].check);
-                var batchName = (repComments[i].name);
+                var batchName = (`${repComments[i].name}`);
+                if(commentJSsetting_preReleaseContent){
+                    var commentCountId=`<p style="margin:auto 0px;color:var(--background-2);">#${commentCount}</p>`;
+                }else{
+                    var commentCountId=``
+                }
                 var batchDiv = REPusernameParaDiv;
                 if(batchCheck==='dev') {
-                    batchDiv.innerHTML = (`${batchName}${checkBatchDev}`);
-                }else{if(batchCheck==='dev') {
-                    batchDiv.innerHTML = (`${batchName}${checkBatchCre}`);
+                    batchDiv.innerHTML = (`${batchName}${checkBatchDev}${(commentCountId)}`);
+                }else{if(batchCheck==='cre') {
+                    batchDiv.innerHTML = (`${batchName}${checkBatchCre}${(commentCountId)}`);
                 }else{
-                    batchDiv.innerHTML = (`${batchName}`);
+                    batchDiv.innerHTML = (`${batchName}${commentCountId}`);
                 };};
                 REPusernamePara.appendChild(REPusernameParaDiv);
                 const REPcheckDiv = document.createElement('p');
@@ -227,7 +233,7 @@ async function loadData() {
                     if(batchCheck==='dev') {
                         REPcommentPara.innerHTML = (`${autoLink(repComments[i].comment,`text-[#6094F8]`)}`);
                     }else{
-                        if(contentSafety()===true){
+                        if(commentJSsetting_ContentSafety===true){
                             REPcommentPara.style.color=(`red`)
                             REPcommentPara.innerHTML=(`URLが検出された為コメントを非表示にしています`);
                         }else{
@@ -276,16 +282,28 @@ async function loadData() {
                 });
                 REPuuidDiv.appendChild(REPuuidBtn);
 
+                var REPcommentRepCommentIdDiv = document.createElement(`div`);
+                REPcommentRepCommentIdDiv.style.display=('flex');
                 const REPcommentRepCommentID = document.createElement('a');
                 if(allComments[repComments[i].rep]){
                     REPcommentRepCommentID.classList.add(`text-[#6094F8]`);
-                    REPcommentRepCommentID.textContent=`@${allComments[repComments[i].rep].name}`
+                    REPcommentRepCommentID.textContent=`@${(allComments[repComments[i].rep].name)}`;
+                    REPcommentRepCommentIdDiv.appendChild(REPcommentRepCommentID);
                 }else{
                     REPcommentRepCommentID.style.color=(`var(--red-500)`);
-                    REPcommentRepCommentID.textContent=`返信元のコメントは削除されています`
+                    REPcommentRepCommentID.textContent=`返信元のコメントは削除されています`;
+                };
+                if(commentJSsetting_preReleaseContent){
+                    var REPcommentRepCommentShowID=document.createElement(`p`);
+                    REPcommentRepCommentShowID.style.margin=(`auto 3px`);
+                    REPcommentRepCommentShowID.style.color=(`var(--background-2)`);
+                    REPcommentRepCommentShowID.innerHTML=`#${commentShowIdObj[repComments[i].rep].showId}`;
+                }else{
+                    var REPcommentRepCommentShowID=document.createElement(`p`);
                 }
+                REPcommentRepCommentIdDiv.appendChild(REPcommentRepCommentShowID)
 
-                REPcommentDiv.appendChild(REPcommentRepCommentID);
+                REPcommentDiv.appendChild(REPcommentRepCommentIdDiv);
                 REPusernamePara.appendChild(REPcheckDiv);
                 REPcommentDiv.appendChild(REPusernamePara);
                 REPcommentDiv.appendChild(REPtimestampPara);
@@ -299,17 +317,25 @@ async function loadData() {
             };
         };
     });
-    if(commentCount >　commentListLoadSetC){
-        loadAddComment('set',commentListLoadSetC);
+    if(Load_mode){
+        if(Load_value==='max'){
+            loadAddComment('set',commentCount);
+        }else{
+            if(commentCount >　commentListLoadSetC){
+                loadAddComment('set',commentListLoadSetC);
+            }else{
+                loadAddComment('set',commentCount);
+            };
+        }
     }else{
-        loadAddComment('set',commentCount);
-    };
+        if(commentCount >　commentListLoadSetC){
+            loadAddComment('set',commentListLoadSetC);
+        }else{
+            loadAddComment('set',commentCount);
+        };
+    }
     document.getElementById('commentListAddLoadBox').style.display=(`block`);
 };
-
-
-loadData();
-
 
 // コメントをさらに読み込むボタン
 
@@ -318,7 +344,6 @@ function loadAddComment(mode,value){
     if(mode === 'set'){
         commentShowC = value - 0;
         for (let i = commentShowC; i < commentCount; i++) {
-            console.log(i)
             document.getElementById(`comment_${i}`).style.display=('none');
         };
     }else{if(mode === 'add'){
@@ -582,44 +607,9 @@ function linkCheck(str) {
     return linkCheckCount;
 };
 
-function contentSafety(id){
-    if(navigator.cookieEnabled){
-        var SettingCookieObj = convertCookieToObject(document.cookie);
-        SettingCookieObj=(JSON.parse(SettingCookieObj.USERSETTINGDATA));
-        if(SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`]==='' || SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`]===undefined){
-            var commentJSsetting_ContentSafety = false
-        }else{
-            var commentJSsetting_ContentSafety = (SettingCookieObj[`f7056b58-05c9-464c-be1c-770d0060e8b8`].checked)
-        }
-    }else{
-        console.error('cookieを許可してください');
-    };
-    if(commentJSsetting_ContentSafety==='checked'){
-        return true;
-    }else{
-        return false;
-    };
-};
-
-function convertCookieToObject(cookies){//クッキーの解析
-    const cookieItem = cookies.split(';');
-    const obj = {};
-    cookieItem.forEach((item) => {
-        // 「=」で分解
-        const element = item.split('=');
-        // キーを取得
-        const key = element[0].trim();
-        // バリューを取得
-        const value = decodeURIComponent(element[1]);
-        // 保存
-        obj[key] = value;
-    });
-    return obj;
-};
-
-
 //document.getElementById('formBtn').addEventListener('click', () => {});
 function offadadw(){
+    
     document.getElementById('formBtn').addEventListener('click', () => {
         document.getElementById("commentForm").onsubmit = function(){ return false };
         var formErrorCount = 0;

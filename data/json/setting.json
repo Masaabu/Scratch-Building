@@ -1,6 +1,6 @@
 {
     "createdBy": "Fun117",
-    "version": "0.0.1.1",
+    "version": "0.0.1.1.1",
     "title": "設定",
     "content_list": [
         {
@@ -54,7 +54,7 @@
         {
             "title": "試験的機能",
             "id": "9948b366-53fe-42f6-b7dd-eafeafad0e65",
-            "release": "false",
+            "release": "true",
             "initial_value": "",
             "creator": "@Fun117",
             "content": [
