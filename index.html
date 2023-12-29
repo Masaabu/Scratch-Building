@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/color.css">
         <link rel="stylesheet" href="./assets/css/style_comment.css">
+        <link rel="stylesheet" href="./assets/css/account.css">
         <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
         <!-- .webmanifest--> 
         <meta name="theme-color" content="#1a1a1a"/>
@@ -22,7 +23,17 @@
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     </head>
-    <body>
+    <body style="width: 100%;height: 100%;">
+        <!-- popup -->
+        <div>
+            <section id="popAlert">
+                <aside>
+                    <h2 id="popAlert_title"></h2>
+                    <p id="popAlert_description"></p>
+                    <div id="popAlert_button"></div>
+                </aside>
+            </section>
+        </div>
         <!-- 通知 -->
         <div id="news"></div>
         <!-- header pc -->
@@ -50,7 +61,7 @@
                         return template.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME);
                     };
                 </script>
-                <form id="commentForm" class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                <form id="commentForm" class="c-form" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
                     <div class="c-form__item"><p class="c-form__input" id="form_rep_data">通常コメントモード</p></div>
                     <div class="c-form__item">
                         <input name="entry.1738713134" class="c-form__input" id="field_name" type="text" minlength="3" maxlength="13" required="required"  placeholder="名前を入力" autocomplete="nickname"/>
@@ -88,7 +99,7 @@
     <script src="./assets/js/cookie.js"></script>
     <script src="./assets/js/content/setting.js"></script>
     <script src="./assets/js/content/news.js"></script>
-    <script>jsonListLoad('');settingDataLoad()</script>
+    <script>jsonListLoad('');</script>
     <script src="./assets/js/content/comment.js"></script>
     <script>loadCommentListData();offadadw();</script>
 </html>

@@ -35,6 +35,7 @@ var allComments=(JSON.parse(`{}`));
 var commentShowIdObjC = 0;
 var commentShowIdObj=(JSON.parse(`{}`));
 var LinkLocationCommentContent = (window.location.hash);
+var LinkLocationCommentContentON = false;
 
 
 var F_repgroup="";
@@ -77,6 +78,7 @@ async function loadCommentListData(Load_mode,Load_value) {
             commentDiv.classList.add('comment','fadeUp');
             commentDiv.id=(`commentContent_${entry.uuid}`);
             if(LinkLocationCommentContent===`#commentContent_${entry.uuid}`){
+                LinkLocationCommentContentON=true;
                 commentDiv.style.backgroundColor=(`var(--background-1)`);
                 commentDiv.style.border=(`solid`);
                 commentDiv.style.borderColor=(`rgb(96 148 248)`)
@@ -126,7 +128,11 @@ async function loadCommentListData(Load_mode,Load_value) {
                     }
                 };
             }else{
-                commentPara.textContent = ((entry.comment));
+                if(batchCheck==='dev') {
+                    commentPara.innerHTML = (entry.comment);
+                }else{
+                    commentPara.textContent = ((entry.comment));
+                };
             };
 
             const uuidDivSpe = document.createElement('p');
@@ -241,7 +247,11 @@ async function loadCommentListData(Load_mode,Load_value) {
                         }
                     };
                 }else{
-                    REPcommentPara.textContent = ((repComments[i].comment));
+                    if(batchCheck==='dev') {
+                        REPcommentPara.innerHTML = (repComments[i].comment);
+                    }else{
+                        REPcommentPara.textContent = ((entry.comment));
+                    };
                 };
 
                 const REPuuidDivSpe = document.createElement('p');
@@ -294,10 +304,12 @@ async function loadCommentListData(Load_mode,Load_value) {
                     REPcommentRepCommentID.textContent=`返信元のコメントは削除されています`;
                 };
                 if(commentJSsetting_preReleaseContent){
+                    //console.log(commentJSsetting_preReleaseContent)
                     var REPcommentRepCommentShowID=document.createElement(`p`);
                     REPcommentRepCommentShowID.style.margin=(`auto 3px`);
                     REPcommentRepCommentShowID.style.color=(`var(--background-2)`);
-                    REPcommentRepCommentShowID.innerHTML=`#${commentShowIdObj[repComments[i].rep].showId}`;
+                    //console.log(commentShowIdObj)
+                    //REPcommentRepCommentShowID.innerHTML=`#${commentShowIdObj[repComments[i].rep].showId}`;
                 }else{
                     var REPcommentRepCommentShowID=document.createElement(`p`);
                 }
@@ -335,6 +347,9 @@ async function loadCommentListData(Load_mode,Load_value) {
         };
     }
     document.getElementById('commentListAddLoadBox').style.display=(`block`);
+    if(LinkLocationCommentContentON){
+        window.location=(`./${LinkLocationCommentContent}`)
+    }
 };
 
 // コメントをさらに読み込むボタン
@@ -628,10 +643,23 @@ function offadadw(){
             document.getElementById('form_message_error').innerHTML=(`スペース以外の文字を最低一文字入力してください`);
         };
         if(formErrorCount===0){
+            fetch(`https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIJL-coat1Tl92nVowE17bfkMAnAekuWskkGwNd3h8rX-aIg/formResponse?entry.1738713134=${document.getElementById('field_name').value}&entry.975792514=${document.getElementById('field_message').value}`)
             document.getElementById("commentForm").onsubmit = function(){ return true };
             alert('コメントを送信しました');window.location='./';
         }else{
             document.getElementById("commentForm").onsubmit = function(){ return false };
         };
     });
-}
+};
+
+function togglePop(mode,title,description,button) {
+    if(mode==='displayShow'){
+        document.getElementById('popAlert_title').innerHTML=title;
+        document.getElementById('popAlert_description').innerHTML=description;
+        document.getElementById('popAlert_button').innerHTML=button;
+    }else{if(mode==='button'){
+
+    };};
+    let popup = document.getElementById('popAlert');
+    popup.classList.toggle('active');
+};

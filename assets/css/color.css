@@ -9,7 +9,9 @@
     --text-2: #a9a9a9;
     --text-t: #000000;
     --shadow-1: #ffffff4d;
-    --blur-brightness: 100%;
+    --shadow-background-1: rgba(255,255,255,0.3);
+    /*--blur-brightness: 100%;*/
+    --blur-brightness: 50%;
 }
 :root {
     --background: #ffffff;
@@ -22,5 +24,6 @@
     --text-2: #575757;
     --text-t: #ffffff;
     --shadow-1: #0000004d;
+    --shadow-background-1: rgba(0, 0, 0, 0.3);
     --blur-brightness: 50%;
 }

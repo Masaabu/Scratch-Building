@@ -27,6 +27,8 @@ var file_path_data = [
         "link_play": (windowFileDirectlyPass + "/pages/game/"),
         "link_mod": (windowFileDirectlyPass + "/pages/mods/"),
         "link_wiki": (windowFileDirectlyPass + "/pages/wiki/"),
+        "link_login": (windowFileDirectlyPass + "/pages/account/login/"),
+        "link_signup": (windowFileDirectlyPass + "/pages/account/signup/"),
         "link_setting": (windowFileDirectlyPass + "/pages/user/setting/"),
         "link_discord": ("https://discord.gg/KhAd9zBrBk"),
         "link_source_code_on": ("https://github.com/Masaabu/Scratch-Building"),
@@ -50,6 +52,7 @@ document.getElementById('page_header_pc').innerHTML=(`
                 <a id="link_href_header_pc_wiki" rel="noopener noreferrer" href="${file_path_data.link_setting}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">設定</a>
             </div>
             <div class="flex space-x-4 items-center">
+                <a href="${file_path_data.link_login}" class="text-sm font-medium text-white text-opacity-60 hover:text-opacity-80 transition">ログイン</a>
                 <a href="#" class="text-sm font-medium text-white text-opacity-60 hover:text-opacity-80 transition" onclick="toggleTheme()">テーマ</a>
                 <button></button>
             </div>
@@ -67,18 +70,23 @@ document.getElementById('page_header_mobile').innerHTML=(`
                     <img id="link_href_header_mobile_app_logo" alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="${file_path_data.link_app_logo}">
                     <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
                 </a>
-                <a href="#" onclick="headerMobBoxs();set_file_path_mobile()">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white h-5 w-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path>
-                    </svg>
-                </a>
+                <div style="display:flex; gap:10px;">
+                    <a href="#" onclick="headerMobBoxs();set_file_path_mobile()">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white h-5 w-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
         <div id="headerMobBoxsAA" style="display: none;">
             <div class="fadeIn fixed inset-0 bg-background z-50 flex flex-col justify-center items-center space-y-10  text-xl font-bold text-zinc-600  hover:text-zinc-800 transition duration-200" style="opacity: 1; height: 100vh;">
-                <div class="absolute right-8 top-6 h-5 w-5 text-white/[0.64] flex" style="gap:5px;">
-                    <a href="#" style="width: 20px;" onclick="class_change();headerMobBoxs()">
-                        <i class="fa-solid fa-circle-half-stroke text-sm font-medium text-white hover:text-opacity-80 transition absolute right-8" style="top:2.5px;"></i>
+                <div class="absolute right-8 top-6 h-5 w-5 text-white/[0.64] flex" style="gap:10px;right:4rem;">
+                    <a href="#" class="flex items-center space-x-2 flex-shrink-0 relative z-50" onclick="class_change();headerMobBoxs()">
+                        <i class="fa-solid fa-circle-half-stroke text-sm font-medium text-white hover:text-opacity-80 transition"></i>
+                    </a>
+                    <a style="" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="${file_path_data.link_login}">
+                        <i class="fa-solid fa-circle-user text-sm font-medium text-white hover:text-opacity-80 transition"></i>
                     </a>
                     <a href="#" onclick="headerMobBoxs()">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white/[0.64]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
