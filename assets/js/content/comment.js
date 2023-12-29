@@ -50,9 +50,9 @@ async function loadCommentListData(Load_mode,Load_value) {
     const response = await fetch(apiURL);
     var data = await response.json();
     data.reverse().forEach(entry => {
-        allComments[`${entry.uuid}`]=({"timestamp":entry.timestamp,"name":entry.name,"comment":entry.comment,"repgroup":entry.repgroup,"rep":entry.rep,"uuid":entry.uuid,"check":entry.check});
+        allComments[`${entry.uuid}`]=({"timestamp":entry.timestamp,"name":entry.name,"comment":entry.comment,"repgroup":entry.repgroup,"rep":entry.rep,"uuid":entry.uuid,"check":entry.check,"comment_type":entry.comment_type});
         if(entry.rep) {
-            repComments[`${repCommentsCount}`]=({"timestamp":entry.timestamp,"name":entry.name,"comment":entry.comment,"repgroup":entry.repgroup,"rep":entry.rep,"uuid":entry.uuid,"check":entry.check});
+            repComments[`${repCommentsCount}`]=({"timestamp":entry.timestamp,"name":entry.name,"comment":entry.comment,"repgroup":entry.repgroup,"rep":entry.rep,"uuid":entry.uuid,"check":entry.check,"comment_type":entry.comment_type});
             repCommentsCount=repCommentsCount+1;
         }else{
         };
@@ -116,7 +116,7 @@ async function loadCommentListData(Load_mode,Load_value) {
             timestampPara.textContent = new Date(entry.timestamp).toLocaleString();
         
             const commentPara = document.createElement('p');
-            if(linkCheck(entry.comment)){
+            if(linkCheck(entry.comment_type,entry.comment)){
                 if(batchCheck==='dev') {
                     commentPara.innerHTML = (`${autoLink(entry.comment,`text-[#6094F8]`)}`);
                 }else{
@@ -235,7 +235,7 @@ async function loadCommentListData(Load_mode,Load_value) {
                 REPtimestampPara.classList.add('timestamp');
                 REPtimestampPara.textContent = new Date(repComments[i].timestamp).toLocaleString();
                 const REPcommentPara = document.createElement('p');
-                if(linkCheck(repComments[i].comment)){
+                if(linkCheck(repComments[i].comment_type,repComments[i].comment)){
                     if(batchCheck==='dev') {
                         REPcommentPara.innerHTML = (`${autoLink(repComments[i].comment,`text-[#6094F8]`)}`);
                     }else{
@@ -248,9 +248,10 @@ async function loadCommentListData(Load_mode,Load_value) {
                     };
                 }else{
                     if(batchCheck==='dev') {
+                        console.log((repComments[i]))
                         REPcommentPara.innerHTML = (repComments[i].comment);
                     }else{
-                        REPcommentPara.textContent = ((entry.comment));
+                        REPcommentPara.textContent = ((repComments[i].comment));
                     };
                 };
 
@@ -368,7 +369,7 @@ function loadAddComment(mode,value){
         };
         //console.log(commentShowC)
         for (let i = 0; i < commentShowC -1; i++) {
-        document.getElementById(`comment_${i}`).style.display=('block');
+            document.getElementById(`comment_${i}`).style.display=('block');
         };
             //console.log('displayComment = '+commentShowC+'/'+commentCount);
     }else{
@@ -610,14 +611,16 @@ function autoLink(str,liClass) {
     return str;
 };
 
-function linkCheck(str) {
+function linkCheck(type,str) {
     var linkCheckCount = false;
     const regexp_url = /(https?|ftp):\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#\u3001-\u30FE\u4E00-\u9FA0\uFF01-\uFFE3]+/g;
-    var regexp_makeLink = function(url) {
-        return '<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>';
-    }
-    if (str.match(regexp_url) != null) {
-        linkCheckCount=true;
+    if(type!=='img'){
+        var regexp_makeLink = function(url) {
+            return '<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>';
+        }
+        if (str.match(regexp_url) != null) {
+            linkCheckCount=true;
+        }
     }
     return linkCheckCount;
 };
@@ -630,14 +633,23 @@ function offadadw(){
         var formErrorCount = 0;
         document.getElementById('field_name').value=((document.getElementById('field_name').value).replace(/\s+/g, ""));
         if(((document.getElementById('field_name').value).replace(/\s|/g, "").length) > 2){
-
-            document.getElementById('form_name_error').innerHTML=(``);
+            if(((document.getElementById('field_name').value).replace(/\s|/g, "").length) < 14){
+                document.getElementById('form_name_error').innerHTML=(``);
+            }else{
+                formErrorCount+=1;
+                document.getElementById('form_name_error').innerHTML=(`名前は13字まで`);
+            };
         }else{
             formErrorCount+=1;
             document.getElementById('form_name_error').innerHTML=(`スペース以外の文字を最低3文字入力してください`);
         };
         if(((document.getElementById('field_message').value).replace(/\s|/g, "").length) > 0){
-            document.getElementById('form_message_error').innerHTML=(``);
+            if(((document.getElementById('field_message').value).replace(/\s|/g, "").length) < 501){
+                document.getElementById('form_message_error').innerHTML=(``);
+            }else{
+                formErrorCount+=1;
+                document.getElementById('form_message_error').innerHTML=(`コメントの内容は500字まで`);
+            };
         }else{
             formErrorCount+=1;
             document.getElementById('form_message_error').innerHTML=(`スペース以外の文字を最低一文字入力してください`);
