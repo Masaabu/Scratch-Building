@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html id="html" class="dark">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../../../assets/image/Masaabu_yticon.png">
+        <title>ログイン - ビル経営ゲーム</title>
+        <link rel="stylesheet" href="../../../assets/css/loading.css">
+        <link rel="stylesheet" href="../../../assets/css/alert.css">
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" href="../../../assets/css/color.css">
+        <link rel="stylesheet" href="../../../assets/css/style_comment.css">
+        <link rel="stylesheet" href="../../../assets/css/account.css">
+        <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
+        <!-- .webmanifest--> 
+        <meta name="theme-color" content="#1a1a1a"/>
+        <link rel="manifest" href="../../../webmanifest.json" />
+        <!-- Font Awesome / website: https://fontawesome.com/ アイコンなどの素材ライブラリを読み込み-->
+        <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- popup -->
+        <div>
+            <section id="popAlert">
+                <aside>
+                    <h2 id="popAlert_title"></h2>
+                    <p id="popAlert_description"></p>
+                    <div id="popAlert_button"></div>
+                </aside>
+            </section>
+        </div>
+        <!-- header pc -->
+        <div id="page_header_pc"></div>
+        <!-- header モバイル -->
+        <div id="page_header_mobile"></div>
+        <div style="width: 100%;height: 70px;"></div>
+        <!-- メインエリア -->
+        <div id="main_box" class="e_main">
+            <div style="align-items: center;margin: 10px 0;">
+                <div id="account_form_area" class="account_form" ontouchstart="">
+                    <div>
+                        <h1 class="account_form_title">ビル経営ゲーム</h1>
+                    </div>
+                    <div id="account_form_content">
+                        <div class="account_form_input_area">
+                            <input id="account_form_name" type="text" placeholder="名前" class="account_form_input" />
+                            <p id="account_form_name_error" class="account_form_input_error"></p>
+                            <div class="account_form_input" style="position: relative;">
+                                <input id="account_form_password" type="password" placeholder="パスワード" class="account_form_input_password" />
+                                <button id="account_form_passwordShowButton" class="account_form_input_password_Show" onclick="account_form_passwordShow()"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                            <p id="account_form_password_error" class="account_form_input_error"></p>
+                        </div>
+                        <div class="account_form_input_area">
+                            <button class="account_form_button" onclick="accountLogin()">ログイン</button>
+                        </div>
+                        <div class="account_form_input_area" style="text-align: center;">
+                            <p>アカウントをお持ちでない場合は<a href="../signup/" class="text-[#6094F8]">作成</a>をする。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="../../../assets/js/assets/header.js"></script>
+    <script src="../../../assets/js/cookie.js"></script>
+    <script src="../../../assets/js/content/account.js"></script>
+</html>

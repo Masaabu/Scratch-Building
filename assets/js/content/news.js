@@ -210,16 +210,16 @@ function newsload(){
                 btnC2.setAttribute(`href`,`#!`);
             };
             btnC1.addEventListener('click', () => {
-                audioPlay('btn-sound','0');
                 if(newsObj[news_si].show === 'true'){
                     document.cookie = `news_pop_${newsObj[news_si].id}=true; max-age=${newsObj[news_si].saveTime}; path=/`;
-                }
+                };
+                audioPlay('btn-sound','0');
             });
             btnC2.addEventListener('click', () => {
-                audioPlay('btn-sound','0');
                 if(newsObj[news_si].show === 'true'){
                     document.cookie = `news_pop_${newsObj[news_si].id}=true; max-age=${newsObj[news_si].saveTime}; path=/`;
-                }
+                };
+                audioPlay('btn-sound','0');
             });
         };
         window.location.href=(`#${newsObj["0"].id}`);
