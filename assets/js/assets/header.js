@@ -27,6 +27,7 @@ var file_path_data = [
         "link_play": (windowFileDirectlyPass + "/pages/game/"),
         "link_mod": (windowFileDirectlyPass + "/pages/mods/"),
         "link_wiki": (windowFileDirectlyPass + "/pages/wiki/"),
+        "link_tools": (windowFileDirectlyPass + "/pages/tools/"),
         "link_login": (windowFileDirectlyPass + "/pages/account/login/"),
         "link_signup": (windowFileDirectlyPass + "/pages/account/signup/"),
         "link_setting": (windowFileDirectlyPass + "/pages/user/setting/"),
@@ -44,16 +45,17 @@ document.getElementById('page_header_pc').innerHTML=(`
                 <img id="link_href_header_pc_app_logo" alt="Cursor Logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="${file_path_data.link_app_logo}">
                 <span class="text-lg text-[#CCCCCC] font-medium">ビル経営ゲーム</span>
             </a>
-            <div class="flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 py-2 space-x-6 text-sm items-center justify-center px-6 font-medium overflow-hidden">
+            <div class="flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 py-2 space-x-6 text-sm items-center justify-center px-3 font-medium overflow-hidden">
                 <a id="link_href_header_pc_home" rel="noopener noreferrer" href="${file_path_data.link_home}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">ホーム</a>
                 <a id="link_href_header_pc_play" rel="noopener noreferrer" href="${file_path_data.link_play}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">プレイ</a>
                 <a id="link_href_header_pc_mod" rel="noopener noreferrer" href="${file_path_data.link_mod}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">MOD</a>
                 <a id="link_href_header_pc_wiki" rel="noopener noreferrer" href="${file_path_data.link_wiki}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Wiki</a>
+                <a id="link_href_header_pc_wiki" rel="noopener noreferrer" href="${file_path_data.link_tools}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">ツール</a>
                 <a id="link_href_header_pc_wiki" rel="noopener noreferrer" href="${file_path_data.link_setting}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">設定</a>
             </div>
             <div class="flex space-x-4 items-center">
-                <a href="${file_path_data.link_login}" class="text-sm font-medium text-white text-opacity-60 hover:text-opacity-80 transition">ログイン</a>
-                <a href="#" class="text-sm font-medium text-white text-opacity-60 hover:text-opacity-80 transition" onclick="toggleTheme()">テーマ</a>
+                <a href="${file_path_data.link_login}" class="text-sm font-medium text-white text-opacity-60 hover:text-opacity-80 transition" style="font-size:18px;margin:auto 0;"><i class="fa-solid fa-circle-user text-sm font-medium text-white hover:text-opacity-80 transition" style="font-size:18px;margin:auto 0;"></i></a>
+                <a href="#" class="text-sm font-medium text-white text-opacity-60 hover:text-opacity-80 transition" onclick="toggleTheme()" style="font-size:18px;margin-top:auto;margin-bottom:auto"><i class="fa-solid fa-circle-half-stroke" style="font-size:18px;margin:auto 0;"></i></a>
                 <button></button>
             </div>
         </div>
@@ -81,18 +83,15 @@ document.getElementById('page_header_mobile').innerHTML=(`
         </div>
         <div id="headerMobBoxsAA" style="display: none;">
             <div class="fadeIn fixed inset-0 bg-background z-50 flex flex-col justify-center items-center space-y-10  text-xl font-bold text-zinc-600  hover:text-zinc-800 transition duration-200" style="opacity: 1; height: 100vh;">
-                <div class="absolute right-8 top-6 h-5 w-5 text-white/[0.64] flex" style="gap:10px;right:4rem;">
+                <div class="absolute right-8 top-6 h-5 w-5 text-white/[0.64] flex" style="gap:10px;right:5rem;">
                     <a href="#" class="flex items-center space-x-2 flex-shrink-0 relative z-50" onclick="class_change();headerMobBoxs()">
-                        <i class="fa-solid fa-circle-half-stroke text-sm font-medium text-white hover:text-opacity-80 transition"></i>
+                        <i class="fa-solid fa-circle-half-stroke text-sm font-medium text-white hover:text-opacity-80 transition" style="font-size:18px;margin-top:auto;margin-bottom:auto"></i>
                     </a>
                     <a style="" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="${file_path_data.link_login}">
-                        <i class="fa-solid fa-circle-user text-sm font-medium text-white hover:text-opacity-80 transition"></i>
+                        <i class="fa-solid fa-circle-user text-sm font-medium text-white hover:text-opacity-80 transition" style="font-size:18px;margin-top:auto;margin-bottom:auto"></i>
                     </a>
-                    <a href="#" onclick="headerMobBoxs()">
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white/[0.64]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M331.3 308.7L278.6 256l52.7-52.7c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-52.7-52.7c-6.2-6.2-15.6-7.1-22.6 0-7.1 7.1-6 16.6 0 22.6l52.7 52.7-52.7 52.7c-6.7 6.7-6.4 16.3 0 22.6 6.4 6.4 16.4 6.2 22.6 0l52.7-52.7 52.7 52.7c6.2 6.2 16.4 6.2 22.6 0 6.3-6.2 6.3-16.4 0-22.6z"></path>
-                            <path d="M256 76c48.1 0 93.3 18.7 127.3 52.7S436 207.9 436 256s-18.7 93.3-52.7 127.3S304.1 436 256 436c-48.1 0-93.3-18.7-127.3-52.7S76 304.1 76 256s18.7-93.3 52.7-127.3S207.9 76 256 76m0-28C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"></path>
-                        </svg>
+                    <a href="#" class="flex items-center space-x-2 flex-shrink-0 relative z-50" onclick="headerMobBoxs()">
+                        <i class="fa-regular fa-circle-xmark text-sm font-medium text-white hover:text-opacity-80 transition" style="font-size:18px;margin-top:auto;margin-bottom:auto"></i>
                     </a>
                 </div>
                 <a id="link_href_header_mobile_home" class="fadeDown1 relative" href="${file_path_data.link_home}">
@@ -106,6 +105,9 @@ document.getElementById('page_header_mobile').innerHTML=(`
                 </a>
                 <a id="link_href_header_mobile_wiki" class="fadeDown4 relative" href="${file_path_data.link_wiki}">
                     <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Wiki</font></font> </span>
+                </a>
+                <a id="link_href_header_mobile_wiki" class="fadeDown4 relative" href="${file_path_data.link_tools}">
+                    <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ツール</font></font> </span>
                 </a>
                 <a id="link_href_header_mobile_wiki" class="fadeDown4 relative" href="${file_path_data.link_setting}">
                     <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">設定</font></font> </span>
