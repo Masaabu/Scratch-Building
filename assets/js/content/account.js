@@ -44,6 +44,7 @@ function account_form_passwordShow(){
 
 function accountSignup(){
     if(account_form_check()){
+        var request_email = document.getElementById('account_form_email');
         var request_name = document.getElementById('account_form_name');
         var request_password = document.getElementById('account_form_password');
         document.getElementById('account_form_content').innerHTML=(`
@@ -58,7 +59,7 @@ function accountSignup(){
             </div>
         </div>
         `)
-        accountSignupRequest(request_name.value,request_password.value);
+        accountSignupRequest(request_email.value,request_name.value,request_password.value);
     }else{
         togglePop(`displayShow`,`フォームエラー！`,`フォームに正しい記述方法で情報を入力してください。`,`<button type="button" onclick="togglePop('button')">閉じる</button>`);
     };
@@ -66,6 +67,7 @@ function accountSignup(){
 
 function accountLogin(){
     if(account_form_check()){
+        var request_email = document.getElementById('account_form_email');
         var request_name = document.getElementById('account_form_name');
         var request_password = document.getElementById('account_form_password');
         document.getElementById('account_form_content').innerHTML=(`
@@ -80,7 +82,7 @@ function accountLogin(){
             </div>
         </div>
         `)
-        accountLoginRequest(request_name.value,request_password.value);
+        accountLoginRequest(request_email.value,request_name.value,request_password.value);
     }else{
         togglePop(`displayShow`,`フォームエラー！`,`フォームに正しい記述方法で情報を入力してください。`,`<button type="button" onclick="togglePop('button')">閉じる</button>`);
     };
@@ -91,22 +93,40 @@ function accountLogout(){
 };
 
 function account_form_check(){
+    var request_email = document.getElementById('account_form_email');
     var request_name = document.getElementById('account_form_name');
     var request_password = document.getElementById('account_form_password');
+    var request_email_error = document.getElementById('account_form_email_error')
     var request_name_error = document.getElementById('account_form_name_error');
     var request_password_error = document.getElementById('account_form_password_error');
-    //request_name.value=request_name.value.replace(/\s+/g, "|");
+
     request_name.value=request_name.value.replace(/[^0-9a-zA-Z\-_]|\s+/g, "");
     request_password.value=request_password.value.replace(/[^0-9a-z|@]/gi, "");
     var errorCount = 0;
+    if(request_email.value.replace(/^[a-z\d][\w.-]*@[\w.-]+\.[a-z\d]+$/i)){
+        request_email_error.innerHTML=``;
+    }else{
+        request_email_error.innerHTML=`メールアドレスが有効ではありません。`;
+        errorCount+=1;
+    };
     if(request_name.value.length < 3){
         request_name_error.innerHTML=`名前は最低3字必要です。現在${request_name.value.length}文字`;
         errorCount+=1;
-    }else{request_name_error.innerHTML=``;};
+    }else{
+        if(request_name.value.length > 13){
+            request_name_error.innerHTML=`名前は13字以内です。現在${request_name.value.length}文字`;
+            errorCount+=1;
+        }else{request_name_error.innerHTML=``;};
+    };
     if(request_password.value.length < 10){
         request_password_error.innerHTML=`パスワードは最低10字必要です。現在${request_password.value.length}文字`;
         errorCount+=1;
-    }else{request_password_error.innerHTML=``;};
+    }else{
+        if(request_password.value.length > 20){
+            request_password_error.innerHTML=`パスワードは20字以内です。現在${request_password.value.length}文字`;
+            errorCount+=1;
+        }else{request_password_error.innerHTML=``;};
+    };
     if(errorCount<1){
         return true;
     }else{
@@ -114,7 +134,7 @@ function account_form_check(){
     };
 };
 
-async function accountLoginRequest(name,password) {
+async function accountLoginRequest(email,name,password) {
     if(account_apiURL===false){
         togglePop(`displayShow`,`サーバーエラー`,`現在アカウントを管理するサーバーに接続できません。`,`<button type="button" onclick="togglePop('button')">閉じる</button>`);
         document.getElementById('account_form_content').innerHTML=(`
@@ -135,7 +155,7 @@ async function accountLoginRequest(name,password) {
         </div>
         `);
     }else{
-        const response = await fetch(`${account_apiURL}?mode=login&name=${name}&password=${password}`);
+        const response = await fetch(`${account_apiURL}?mode=login&email=${email}&name=${name}&password=${password}`);
         var data = await response.json();
         var requestResponseMode=``;
         var requestResponse=``;
@@ -173,7 +193,7 @@ async function accountLoginRequest(name,password) {
     }
 };
 
-async function accountSignupRequest(name,password) {
+async function accountSignupRequest(email,name,password) {
     if(account_apiURL===false){
         togglePop(`displayShow`,`サーバーエラー`,`現在アカウントを管理するサーバーに接続できません。`,`<button type="button" onclick="togglePop('button')">閉じる</button>`);
         document.getElementById('account_form_content').innerHTML=(`
@@ -194,7 +214,7 @@ async function accountSignupRequest(name,password) {
         </div>
         `);
     }else{
-        const response = await fetch(`${account_apiURL}?mode=signup&name=${name}&password=${password}`);
+        const response = await fetch(`${account_apiURL}?mode=signup&email=${email}&name=${name}&password=${password}`);
         var data = await response.json();
         var requestResponseMode=``;
         var requestResponse=``;
