@@ -20,6 +20,19 @@
                         }
                     ]
                 },{
+                    "version": "v7.0.5",
+                    "release_time": "2023-12-31",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "カウントダウンを追加"
+                        },{
+                            "title": "プレゼントページを追加"
+                        },{
+                            "title": "エフェクトを追加"
+                        }
+                    ]
+                },{
                     "version": "v7.0.4",
                     "release_time": "2023-12-25",
                     "creator": "Masaabu-YT",
