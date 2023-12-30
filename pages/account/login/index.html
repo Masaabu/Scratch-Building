@@ -43,10 +43,12 @@
                     </div>
                     <div id="account_form_content">
                         <div class="account_form_input_area">
-                            <input id="account_form_name" type="text" placeholder="名前" class="account_form_input" />
+                            <input id="account_form_email" type="email" placeholder="メールアドレス" class="account_form_input" autocomplete="email" />
+                            <p id="account_form_email_error" class="account_form_input_error"></p>
+                            <input id="account_form_name" type="text" placeholder="名前" class="account_form_input" autocomplete="nickname" />
                             <p id="account_form_name_error" class="account_form_input_error"></p>
                             <div class="account_form_input" style="position: relative;">
-                                <input id="account_form_password" type="password" placeholder="パスワード" class="account_form_input_password" />
+                                <input id="account_form_password" type="password" placeholder="パスワード" class="account_form_input_password" autocomplete="new-password" />
                                 <button id="account_form_passwordShowButton" class="account_form_input_password_Show" onclick="account_form_passwordShow()"><i class="fa-solid fa-eye"></i></button>
                             </div>
                             <p id="account_form_password_error" class="account_form_input_error"></p>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html id="html" class="dark">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../../../assets/image/Masaabu_yticon.png">
+        <title>ツール - ビル経営ゲーム</title>
+        <link rel="stylesheet" href="../../../assets/css/alert.css">
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" href="../../../assets/css/color.css">
+        <link rel="stylesheet" href="../../../assets/css/account.css">
+        <meta name="google-site-verification" content="0Eep_-m8cnG3TQqtLxVPz0LBkMlmDbojpoOkD28fMho" />
+
+        <!-- Font Awesome / website: https://fontawesome.com/ アイコンなどの素材ライブラリを読み込み-->
+        <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- popup -->
+        <div>
+            <section id="popAlert">
+                <aside>
+                    <h2 id="popAlert_title"></h2>
+                    <p id="popAlert_description"></p>
+                    <div id="popAlert_button"></div>
+                </aside>
+            </section>
+        </div>
+        <!-- header pc -->
+        <div id="page_header_pc"></div>
+        <!-- header モバイル -->
+        <div id="page_header_mobile"></div>
+        <!-- トップ画像 -->
+        <div id="topGameImage" class="banner-container"></div>
+        <!-- メインエリア -->
+        <div id="main_box" class="e_main" style="width: 100%; height: 100%; margin: auto;">
+        </div>
+        <!-- footerエリア -->
+        <div id="page_footer"></div>
+    </body>
+    <script>
+        function togglePop(mode,title,description,button) {
+            if(mode==='displayShow'){
+                document.getElementById('popAlert_title').innerHTML=title;
+                document.getElementById('popAlert_description').innerHTML=description;
+                document.getElementById('popAlert_button').innerHTML=button;
+            }else{if(mode==='button'){
+                if(title==='ooo'){
+                    window.location=(`../`);
+                }
+            };};
+            let popup = document.getElementById('popAlert');
+            popup.classList.toggle('active');
+        };
+        togglePop(`displayShow`,`ページを表示できない！`,`このページは現在準備中の為、アクセスできません。`,`<button type="button" onclick="togglePop('button','ooo')">閉じる</button>`);
+    </script>
+    <script src="../../../assets/js/assets/header.js"></script>
+    <script src="../../../assets/js/assets/topGameImage.js"></script>
+    <script src="../../../assets/js/assets/footer.js"></script>
+    <script src="../../../assets/js/cookie.js"></script>
+</html>

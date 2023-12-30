@@ -32,22 +32,22 @@ var file_path_data = [
     }
 ];
 file_path_data=(file_path_data["0"]);
-
+// relative
 document.getElementById('page_footer').innerHTML=(`
-<div class="border-t border-[#FFFFFF]/[0.16] bg-[#0B0F17] pt-20 pb-10 px-4 relative overflow-hidden  z-50" style="background-color: var(--background-4);">
-    <svg viewBox="0 0 1024 1024" class="absolute z-30 left-1/2  top-0  h-[100rem] w-[100rem] opacity-50 pointer-events-none -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0" aria-hidden="true">
-        <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7"></circle>
-        <defs>
-            <radialGradient class="blur-lg" id="759c1415-0410-454c-8f7c-9a820de03641">
-                <stop stop-color="var(--cyan-800)"></stop>
-                <stop offset="1" stop-color="var(--cyan-800)"></stop>
-            </radialGradient>
-        </defs>
-    </svg>
-    <div class="flex md:flex-row flex-col w-full max-w-7xl mx-auto justify-between">
+<div class="border-t border-[#FFFFFF]/[0.16] bg-[#0B0F17] pt-20 pb-10 px-4  overflow-hidden  z-50" style="background-color: var(--background-4);">
+    <div class="flex md:flex-row flex-col w-full max-w-7xl mx-auto justify-between relative">
+        <svg viewBox="0 0 1024 1024" class="absolute z-30 left-1/2  top-0  h-[100rem] w-[100rem] opacity-50 pointer-events-none -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0" aria-hidden="true">
+            <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7"></circle>
+            <defs>
+                <radialGradient class="blur-lg" id="759c1415-0410-454c-8f7c-9a820de03641">
+                    <stop stop-color="var(--cyan-800)"></stop>
+                    <stop offset="1" stop-color="var(--cyan-800)"></stop>
+                </radialGradient>
+            </defs>
+        </svg>
         <div class="lg:w-[50%] flex flex-col justify-between ">
             <div>
-                <a id="link_href_header_footer_home_logo" class="flex items-center space-x-2 flex-shrink-0 relative z-50" href="${file_path_data.link_home}">
+                <a id="link_href_header_footer_home_logo" class="flex items-center space-x-2 flex-shrink-0  z-50" href="${file_path_data.link_home}">
                     <img id="link_href_header_footer_app_logo" alt="logo" loading="lazy" width="10" height="10" decoding="async" data-nimg="1" class="transition duration-300 transform blur-0 scale-100 h-5 w-5" style="color:transparent" src="${file_path_data.link_app_logo}">
                     <span class="text-lg text-[#CCCCCC] font-medium" style="color: var(--text-1);">ビル経営ゲーム</span>
                 </a>

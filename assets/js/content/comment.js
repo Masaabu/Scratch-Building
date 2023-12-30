@@ -213,7 +213,7 @@ async function loadCommentListData(Load_mode,Load_value) {
                 var batchCheck = (repComments[i].check);
                 var batchName = (`${repComments[i].name}`);
                 if(commentJSsetting_preReleaseContent){
-                    var commentCountId=`<p style="margin:auto 0px;color:var(--background-2);">#${commentCount}</p>`;
+                    var commentCountId=`<p style="margin:auto 8px;color:var(--background-2);">#${commentCount}</p>`;
                 }else{
                     var commentCountId=``
                 }
@@ -248,7 +248,7 @@ async function loadCommentListData(Load_mode,Load_value) {
                     };
                 }else{
                     if(batchCheck==='dev') {
-                        console.log((repComments[i]))
+                        //console.log((repComments[i]))
                         REPcommentPara.innerHTML = (repComments[i].comment);
                     }else{
                         REPcommentPara.textContent = ((repComments[i].comment));
@@ -310,7 +310,9 @@ async function loadCommentListData(Load_mode,Load_value) {
                     REPcommentRepCommentShowID.style.margin=(`auto 3px`);
                     REPcommentRepCommentShowID.style.color=(`var(--background-2)`);
                     //console.log(commentShowIdObj)
-                    //REPcommentRepCommentShowID.innerHTML=`#${commentShowIdObj[repComments[i].rep].showId}`;
+                    if(commentShowIdObj[repComments[i].rep]!==undefined){
+                        REPcommentRepCommentShowID.innerHTML=`#${commentShowIdObj[repComments[i].rep].showId}`;
+                    };
                 }else{
                     var REPcommentRepCommentShowID=document.createElement(`p`);
                 }
@@ -463,14 +465,7 @@ function commentRep(repgroup,repid){
 
     var field_name = document.getElementById("rep_field_name");
     field_name.addEventListener('change', function(){
-        document.getElementById('rep_field_name').setAttribute(`minlength`,`3`);
-        document.getElementById('rep_field_name').setAttribute(`maxlength`,`13`);
         document.getElementById('rep_field_name').value=((document.getElementById('rep_field_name').value).replace(/\s+/g, ""));
-    });
-    var field_message = document.getElementById("rep_field_message");
-    field_message.addEventListener('change', function(){
-        document.getElementById('rep_field_message').setAttribute(`minlength`,`1`);
-        document.getElementById('rep_field_message').setAttribute(`maxlength`,`100`);
     });
 
     window.location=(`#comment_${F_box}`);
@@ -487,7 +482,7 @@ function commentRepFormBoxRemSubmit(repgroup,repid){
             document.getElementById('rep_name_error').innerHTML=(``);
             
             if(document.getElementById('rep_field_message').value.length > 0){
-                if(document.getElementById('rep_field_message').value.length < 101){
+                if(document.getElementById('rep_field_message').value.length < 301){
                     if(((document.getElementById('rep_field_message').value).replace(/\s|/g, "").length) > 0){
                         document.getElementById('rep_message_error').innerHTML=(``);
 
@@ -520,7 +515,7 @@ function commentRepFormBoxRemSubmit(repgroup,repid){
                     };
                 }else{
                     formError=formError+1
-                    document.getElementById('rep_message_error').innerHTML=(`メッセージは100文字以内`);
+                    document.getElementById('rep_message_error').innerHTML=(`最大300字で現在${(document.getElementById('rep_field_message').value).length}字です`);
                 };
             }else{
                 formError=formError+1
@@ -528,7 +523,7 @@ function commentRepFormBoxRemSubmit(repgroup,repid){
             };
         }else{
             formError=formError+1
-            document.getElementById('rep_name_error').innerHTML=(`名前は13文字以内`);
+            document.getElementById('rep_name_error').innerHTML=(`最大13字で現在${(document.getElementById('rep_field_name').value).length}字です`);
         };
     }else{
         formError=formError+1
@@ -637,18 +632,18 @@ function offadadw(){
                 document.getElementById('form_name_error').innerHTML=(``);
             }else{
                 formErrorCount+=1;
-                document.getElementById('form_name_error').innerHTML=(`名前は13字まで`);
+                document.getElementById('form_name_error').innerHTML=(`最大13字で現在${(document.getElementById('field_name').value).length}字`);
             };
         }else{
             formErrorCount+=1;
             document.getElementById('form_name_error').innerHTML=(`スペース以外の文字を最低3文字入力してください`);
         };
         if(((document.getElementById('field_message').value).replace(/\s|/g, "").length) > 0){
-            if(((document.getElementById('field_message').value).replace(/\s|/g, "").length) < 501){
+            if(((document.getElementById('field_message').value).replace(/\s|/g, "").length) < 301){
                 document.getElementById('form_message_error').innerHTML=(``);
             }else{
                 formErrorCount+=1;
-                document.getElementById('form_message_error').innerHTML=(`コメントの内容は500字まで`);
+                document.getElementById('form_message_error').innerHTML=(`最大300字で現在${(document.getElementById('field_message').value).length}字`);
             };
         }else{
             formErrorCount+=1;
