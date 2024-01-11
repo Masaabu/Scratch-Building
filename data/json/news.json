@@ -4,6 +4,23 @@
     "title": "お知らせ",
     "content_list": [
         {
+            "id": "45603a27-a8b0-4ecf-9168-3f93f4104c1a",
+            "title": "サイトのシステム移行",
+            "description": "",
+            "saveTime": "10",
+            "start": "nYEnMOnDAnHOnMInSE",
+            "end": "nYEnMOnDAnHOnMInSE",
+            "creator": "@Fun117",
+            "page": "all",
+            "content": [
+                {
+                    "title": "",
+                    "description": "現在サイトの再構築を行なっています。その為一部システムが利用することができなくなる可能性があります。",
+                    "creator": "@Fun117"
+                }
+            ]
+        },
+        {
             "id": "43e33a56-7172-40b3-b98e-30df4c2f8af1",
             "title": "<a href='https://scratch.mit.edu/projects/927111186' target='_blank'>🎄クリスマス イベント開催中</a>",
             "description": "",
