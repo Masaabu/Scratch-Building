@@ -1,0 +1,82 @@
+/* https://codepen.io/alvarotrigo/pen/NWzKoOV */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+main {
+  padding: 40px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert {
+  width: 512px;
+  padding: 16px;
+  margin: 8px;
+  max-width: 90%;
+}
+
+.alert-1-primary {
+  background-color: rgba(77, 77, 255, 0.05);
+}
+.alert-1-primary .alert-title {
+  color: #4d4dff;
+}
+
+.alert-1-warning {
+  background-color: rgba(255, 186, 0, 0.05);
+}
+.alert-1-warning .alert-title {
+  color: #ffba00;
+}
+
+.alert-2-success {
+  border-left: 4px solid #2ec946;
+  background-color: rgba(46, 201, 70, 0.05);
+}
+.alert-2-success .alert-title {
+  color: #2ec946;
+}
+
+.alert-2-secondary {
+  border-left: 4px solid #666666;
+  background-color: rgba(102, 102, 102, 0.05);
+}
+.alert-2-secondary .alert-title {
+  color: #666666;
+}
+
+.alert-3-primary {
+  border: 1px solid #cdcdff;
+  border-radius: 8px;
+  background-color: rgba(77, 77, 255, 0.05);
+}
+.alert-3-primary .alert-title {
+  color: #4d4dff;
+}
+
+.alert-3-danger {
+  border: 1px solid #ffb8b8;
+  border-radius: 8px;
+  background-color: rgba(255, 56, 56, 0.05);
+}
+.alert-3-danger .alert-title {
+  color: #ff3838;
+}
+
+.alert-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+
+.alert-content {
+  margin: 0;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: #555555;
+}
