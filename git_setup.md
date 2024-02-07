@@ -18,6 +18,11 @@ git commit -m "<コミットメッセージ>"
 git remote add origin <GitUrl>
 ```
 
+## set
+```bash
+git remote set-url origin <GitUrl>
+```
+
 # step5
 ```bash
 git push -u origin <ブランチ名>
