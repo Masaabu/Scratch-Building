@@ -11,12 +11,46 @@
             "creator": "@Masaabu-YT",
             "content": [
                 {
-                    "version": "v7.1 [Pre-alpha]",
-                    "release_time": "2024年",
+                    "version": "v7.1.1",
+                    "release_time": "2024-02-12",
                     "creator": "Masaabu-YT",
                     "log": [
                         {
-                            "title": "アイテムの追加 (Beta)"
+                            "title": "ショップの自動更新を追加"
+                        },{
+                            "title": "部屋を追加"
+                        },{
+                            "title": "カラーの追加"
+                        },{
+                            "title": "ビルハブにカラー表示を追加"
+                        },{
+                            "title": "オートセーブに関する不具合の修正"
+                        },{
+                            "title": "プロフィールに関する不具合の修正"
+                        },{
+                            "title": "その他の細かな不具合の修正"
+                        }
+                    ]
+                },{
+                    "version": "v7.1",
+                    "release_time": "2024-02-09",
+                    "creator": "Masaabu-YT",
+                    "log": [{
+                            "title": "カーソルを追加"
+                        },{
+                            "title": "オートセーブの追加"
+                        },{
+                            "title": "カラーの追加"
+                        },{
+                            "title": "ショップの追加"
+                        },{
+                            "title": "スタート画面の配置の更新"
+                        },{
+                            "title": "ロード画面の変更"
+                        },{
+                            "title": "ビルのレンダリング方法の更新"
+                        },{
+                            "title": "その他の細かな不具合の修正"
                         }
                     ]
                 },{
