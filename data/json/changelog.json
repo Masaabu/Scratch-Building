@@ -11,6 +11,19 @@
             "creator": "@Masaabu-YT",
             "content": [
                 {
+                    "version": "v7.1.1a",
+                    "release_time": "2024-02-16",
+                    "creator": "Masaabu-YT",
+                    "log": [
+                        {
+                            "title": "ショップの自動更新機能を追加 (JST以外では上手く動作しません)"
+                        },{
+                            "title": "デコレーション編集ページでページ移動ができない不具合の修正"
+                        },{
+                            "title": "一部のテキストカラーの変更"
+                        }
+                    ]
+                },{
                     "version": "v7.1.1",
                     "release_time": "2024-02-12",
                     "creator": "Masaabu-YT",
