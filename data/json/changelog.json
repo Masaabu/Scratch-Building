@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "title": "ビル経営ゲーム更新履歴",
     "release_time": "2023-12-01",
-    "last_change_time": "2023-12-25",
+    "last_change_time": "2023-02-16",
     "content_list": [
         {
             "group": "v7",
@@ -26,7 +26,6 @@
                 },{
                     "version": "v7.1.1",
                     "release_time": "2024-02-12",
-                    "creator": "Masaabu-YT",
                     "log": [
                         {
                             "title": "ショップの自動更新を追加"
@@ -47,7 +46,6 @@
                 },{
                     "version": "v7.1",
                     "release_time": "2024-02-09",
-                    "creator": "Masaabu-YT",
                     "log": [{
                             "title": "カーソルを追加"
                         },{
@@ -69,7 +67,6 @@
                 },{
                     "version": "v7.0.5",
                     "release_time": "2023-12-31",
-                    "creator": "Masaabu-YT",
                     "log": [
                         {
                             "title": "カウントダウンを追加"
@@ -82,7 +79,6 @@
                 },{
                     "version": "v7.0.4",
                     "release_time": "2023-12-25",
-                    "creator": "Masaabu-YT",
                     "log": [
                         {
                             "title": "プロフィールデコレーションを追加"
@@ -97,7 +93,6 @@
                 },{
                     "version": "v7.0.3",
                     "release_time": "2023-12-24",
-                    "creator": "Masaabu-YT",
                     "log": [
                         {
                             "title": "投資機能の追加"
@@ -121,7 +116,6 @@
                 {
                     "version": "v7.0.2",
                     "release_time": "2023-12-04",
-                    "creator": "Masaabu-YT",
                     "log": [
                         {
                             "title": "他のユーザーのビルを見る機能を追加"
@@ -143,7 +137,6 @@
                 {
                     "version": "v7.0.1",
                     "release_time": "2023-12-03",
-                    "creator": "Masaabu-YT",
                     "log": [
                         {
                             "title": "ビルハブの追加"

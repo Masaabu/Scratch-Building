@@ -21,23 +21,6 @@
             ]
         },
         {
-            "id": "43e33a56-7172-40b3-b98e-30df4c2f8af1",
-            "title": "<a href='https://scratch.mit.edu/projects/927111186' target='_blank'>🎄クリスマス イベント開催中</a>",
-            "description": "",
-            "saveTime": "600",
-            "start": "nYE12MO24DA0HO0MI0SE",
-            "end": "nYE12MO25DA24HO59MI0SE",
-            "creator": "@Fun117",
-            "page": "all",
-            "content": [
-                {
-                    "title": "",
-                    "description": "",
-                    "creator": "@Fun117"
-                }
-            ]
-        },
-        {
             "id": "13bced92-a1eb-4645-afdf-a54c29d87929",
             "title": "<a href='https://forms.gle/D2wXB6yzyipJ63Gq8' target='_blank'>ビル経営ゲームの広告について</a>",
             "description": "",
@@ -111,23 +94,6 @@
                 {
                     "title": "",
                     "description": "サイトに実装されてる機能を有効にするかを設定することができます。<br>現在一部項目のみ設定可能です。",
-                    "creator": "@Fun117"
-                }
-            ]
-        },
-        {
-            "id": "f9e5789d-4d44-41ed-8078-ff12984e185c",
-            "title": "危険な情報をブロックする設定",
-            "description": "",
-            "saveTime": "600",
-            "start": "nYEnMOnDAnHOnMInSE",
-            "end": "nYEnMOnDAnHOnMInSE",
-            "creator": "@Fun117",
-            "page": "",
-            "content": [
-                {
-                    "title": "",
-                    "description": "設定項目に安全ではない情報を非表示にする項目を追加しました。この項目はデフォルトで有効になっている為、すべての情報を表示したい方は設定の変更をしてください。",
                     "creator": "@Fun117"
                 }
             ]
