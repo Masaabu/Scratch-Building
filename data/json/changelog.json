@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "title": "ビル経営ゲーム更新履歴",
     "release_time": "2023-12-01",
-    "last_change_time": "2023-12-25",
+    "last_change_time": "2023-02-16",
     "content_list": [
         {
             "group": "v7",
@@ -11,22 +11,76 @@
             "creator": "@Masaabu-YT",
             "content": [
                 {
-                    "version": "v7.1 [Pre-alpha]",
-                    "release_time": "2024年",
+                    "version": "v7.1.1a",
+                    "release_time": "2024-02-16",
                     "creator": "Masaabu-YT",
                     "log": [
                         {
-                            "title": "アイテムの追加 (Beta)"
+                            "title": "ショップの自動更新機能を追加 (JST以外では上手く動作しません)"
+                        },{
+                            "title": "デコレーション編集ページでページ移動ができない不具合の修正"
+                        },{
+                            "title": "一部のテキストカラーの変更"
+                        }
+                    ]
+                },{
+                    "version": "v7.1.1",
+                    "release_time": "2024-02-12",
+                    "log": [
+                        {
+                            "title": "ショップの自動更新を追加"
+                        },{
+                            "title": "部屋を追加"
+                        },{
+                            "title": "カラーの追加"
+                        },{
+                            "title": "ビルハブにカラー表示を追加"
+                        },{
+                            "title": "オートセーブに関する不具合の修正"
+                        },{
+                            "title": "プロフィールに関する不具合の修正"
+                        },{
+                            "title": "その他の細かな不具合の修正"
+                        }
+                    ]
+                },{
+                    "version": "v7.1",
+                    "release_time": "2024-02-09",
+                    "log": [{
+                            "title": "カーソルを追加"
+                        },{
+                            "title": "オートセーブの追加"
+                        },{
+                            "title": "カラーの追加"
+                        },{
+                            "title": "ショップの追加"
+                        },{
+                            "title": "スタート画面の配置の更新"
+                        },{
+                            "title": "ロード画面の変更"
+                        },{
+                            "title": "ビルのレンダリング方法の更新"
+                        },{
+                            "title": "その他の細かな不具合の修正"
+                        }
+                    ]
+                },{
+                    "version": "v7.0.5",
+                    "release_time": "2023-12-31",
+                    "log": [
+                        {
+                            "title": "カウントダウンを追加"
+                        },{
+                            "title": "プレゼントページを追加"
+                        },{
+                            "title": "エフェクトを追加"
                         }
                     ]
                 },{
                     "version": "v7.0.4",
                     "release_time": "2023-12-25",
-                    "creator": "Masaabu-YT",
                     "log": [
                         {
-                            "title": "設定項目を追加"
-                        },{
                             "title": "プロフィールデコレーションを追加"
                         },{
                             "title": "プレゼントページを追加"
@@ -39,12 +93,13 @@
                 },{
                     "version": "v7.0.3",
                     "release_time": "2023-12-24",
-                    "creator": "Masaabu-YT",
                     "log": [
                         {
                             "title": "投資機能の追加"
                         },{
                             "title": "ヘルプを追加"
+                        },{
+                            "title": "建築のアップグレード割引を追加"
                         },{
                             "title": "猫のコスチュームを変更 (サンタの帽子)"
                         },{
@@ -61,7 +116,6 @@
                 {
                     "version": "v7.0.2",
                     "release_time": "2023-12-04",
-                    "creator": "Masaabu-YT",
                     "log": [
                         {
                             "title": "他のユーザーのビルを見る機能を追加"
@@ -83,7 +137,6 @@
                 {
                     "version": "v7.0.1",
                     "release_time": "2023-12-03",
-                    "creator": "Masaabu-YT",
                     "log": [
                         {
                             "title": "ビルハブの追加"
