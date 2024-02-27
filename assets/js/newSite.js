@@ -1,2 +1,3 @@
-alert(`旧サイトは閉鎖され新しいサイトに移行しました！このアラートを閉じると新しいサイトに移動します。`)
-window.location.href=(`https://scratch-building.vercel.app/`)
+if (window.confirm("旧サイトは閉鎖され新しいサイトに移行しました！\nOKを押すと新しいサイトへリダイレクトされます。")) {
+    window.location.href=(`https://scratch-building.vercel.app/`)
+}
