@@ -50,25 +50,15 @@
                 <p style="margin-bottom: 10px;">ビル経営ゲームのMODを作りたいと思ったことはありませんか？<br>そんなあなたへ！誰でも簡単にMODを作れるプロジェクトを見てみましょう！</p>
                 <a class="button" href="pages/mods/">ページを見る</a>
             </div>
-            <div class="section_bg" id="SBads">
-                <h2>お知らせ</h2>
-                <p>ビル経営ゲームでクラウドセーブを行った人の数が3000人を超えました！<br>これからもビル経営ゲームをよろしくお願いします！</p>
-                <br>
-                
-                <div class="alert alert-3-danger" style="width: 800px;">
-                    <h3 class="alert-title"><b>サイトのシステム移行</b></h3>
-                    <p class="alert-content">現在サイトの再構築を行なっています。その為一部システムが利用することができなくなる可能性があります。</p>
+            <a href="https://scratch-building.vercel.app/">
+                <div class="section_bg alert alert-3-danger" id="SBads" style="width: 800px;">
+                    <h2 class="alert-title" style="font-weight: bold; font-size: x-large;">ウェブサイトの移行</h2>
+                    <p class="alert-content">新しいサイトに移行しました！移行をした為、このサイトの一部機能が利用できなくなっている可能性があります。移行したサイトの開発を優先的に行う為、旧サイトは修正等が遅れる場合があります。</p>
+                    <br>
                 </div>
-                
-            </div>
+            </a>
             <div id="コメント欄" class="section_bg">
                 <h2>コメント欄</h2>
-                <script>
-                    function doGet() {
-                        var template = HtmlService.createTemplateFromFile('top');
-                        return template.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME);
-                    };
-                </script>
                 <form id="commentForm" class="c-form" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
                     <div class="c-form__item"><p class="c-form__input" id="form_rep_data">通常コメントモード</p></div>
                     <div class="c-form__item">
@@ -84,10 +74,6 @@
                         <button type="reset" style="margin-top: 5px;" onclick="commentRepReset()">リセット</button>
                     </div>
                 </form>
-                <script type="text/javascript">
-                    let submitted = false;
-                </script>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){alert('コメントを送信しました');window.location='./';}"></iframe>
                 <div class="wrapper">
                     <h2></h2>
                     <ul class="list" id="commentsContainer" ontouchstart=""><div><div class="loader_box"><div class="loader"></div></div></ul>
