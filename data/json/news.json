@@ -5,7 +5,7 @@
     "content_list": [
         {
             "id": "45603a27-a8b0-4ecf-9168-3f93f4104c1a",
-            "title": "ウェブサイトの変更",
+            "title": "ウェブサイトの移行",
             "description": "",
             "saveTime": "10",
             "start": "nYEnMOnDAnHOnMInSE",
@@ -15,8 +15,8 @@
             "content": [
                 {
                     "title": "",
-                    "description": "新しいサイトに移行しました！移行をした為、このサイトの一部機能が利用できなくなっている可能性があります。移行したサイトの開発を優先的に行う為、旧サイトは修正等が遅れる場合があります。",
-                    "creator": "@Fun117"
+                    "description": "新しいサイトに移行しました！本サイトでのコメントなどの利用はできます！しかし移行したサイトの開発を優先的に行う為、本サイトでの修正等の対応が遅れる場合があります。<br><br><a class='button' href='https://scratch-building.vercel.app/'>新しいサイトを見る</a>",
+                    "creator": "@Masaabu_"
                 }
             ]
         },
