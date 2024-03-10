@@ -27,7 +27,6 @@ var file_path_data = [
         "link_play": (windowFileDirectlyPass + "/pages/game/"),
         "link_mod": (windowFileDirectlyPass + "/pages/mods/"),
         "link_wiki": (windowFileDirectlyPass + "/pages/wiki/"),
-        "link_tools": (windowFileDirectlyPass + "/pages/tools/"),
         "link_login": (windowFileDirectlyPass + "/pages/account/login/"),
         "link_signup": (windowFileDirectlyPass + "/pages/account/signup/"),
         "link_setting": (windowFileDirectlyPass + "/pages/user/setting/"),
@@ -50,7 +49,6 @@ document.getElementById('page_header_pc').innerHTML=(`
                 <a id="link_href_header_pc_play" rel="noopener noreferrer" href="${file_path_data.link_play}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">プレイ</a>
                 <a id="link_href_header_pc_mod" rel="noopener noreferrer" href="${file_path_data.link_mod}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">MOD</a>
                 <a id="link_href_header_pc_wiki" rel="noopener noreferrer" href="${file_path_data.link_wiki}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">Wiki</a>
-                <a id="link_href_header_pc_wiki" rel="noopener noreferrer" href="${file_path_data.link_tools}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">ツール</a>
                 <a id="link_href_header_pc_wiki" rel="noopener noreferrer" href="${file_path_data.link_setting}" class="relative group bg-transparent hover:text-white/[0.64] transition duration-200">設定</a>
             </div>
             <div class="flex space-x-4 items-center">
@@ -105,9 +103,6 @@ document.getElementById('page_header_mobile').innerHTML=(`
                 </a>
                 <a id="link_href_header_mobile_wiki" class="fadeDown4 relative" href="${file_path_data.link_wiki}">
                     <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Wiki</font></font> </span>
-                </a>
-                <a id="link_href_header_mobile_wiki" class="fadeDown4 relative" href="${file_path_data.link_tools}">
-                    <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ツール</font></font> </span>
                 </a>
                 <a id="link_href_header_mobile_wiki" class="fadeDown4 relative" href="${file_path_data.link_setting}">
                     <span class="block text-white/[0.64]" style="opacity: 1; transform: translateX(0vw) translateZ(0px);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">設定</font></font> </span>

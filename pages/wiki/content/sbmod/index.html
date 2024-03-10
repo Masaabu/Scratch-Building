@@ -29,7 +29,7 @@
             padding: 1px 15px;
             margin-top: 10px;
             border-radius: 5px;
-            line-height: 10px
+            line-height: 20px
             }
             .textTag {
             border-radius: 5px;
@@ -131,7 +131,7 @@
                     <h3>weather</h3>
                     <p>天候を設定する</p>
                     <main style="background-color: var(--background-4)"><p>0:晴れ 1:雨 2:大雨</p></main>
-                    <main style="background-color: #d6aa5c;"><p>雨か雪かは地域に依存します。</p></main>
+                    <main class="warn"><p>雨か雪かは地域に依存します。</p></main>
                 </main>
                 <main>
                     <h3>background</h3>
@@ -191,7 +191,7 @@
                     <h3>dialog</h3>
                     <p>ダイアログを表示して待つ</p>
                     <main style="background-color: var(--background-4)"><p>dialog [コスチューム] [ボタン]</p></main>
-                    <main style="background-color: #d6aa5c;"><p>マウスをロックしてから実行することを推奨します。</p></main>
+                    <main class="warn"><p>マウスをロックしてから実行することを推奨します。</p></main>
                     <p style="display: flex;">戻り値は<span class="blocks">(SBmod: return)</span>に表示される。</p>
                     <div class="blocks">
                         SB MOD[post][mouse][lock][]::custom
@@ -211,7 +211,7 @@
                 <main>
                     <h3>ads</h3>
                     <p>広告を表示する</p>
-                    <main style="background-color: #d6aa5c;"><p>マウスをロックしてから実行することを推奨します。</p></main>
+                    <main class="warn"><p>マウスをロックしてから実行することを推奨します。</p></main>
                 </main>
                 
                 <h2>メソッド - get</h2>
@@ -270,7 +270,7 @@
                     <h3>weather</h3>
                     <p>天候を取得する</p>
                     <h4>応答例 <div class="textTag response">0</div> 0:晴れ 1:雨 2:大雨</h4>
-                    <main style="background-color: #d6aa5c;"><p>雨か雪かは地域に依存します。</p></main>
+                    <main class="warn"><p>雨か雪かは地域に依存します。</p></main>
                 </main>
                 <main>
                     <h3>background</h3>

@@ -5509,7 +5509,16 @@ body {
     padding: 1px 15px;
     margin-top: 10px;
     border-radius: 5px;
-    line-height: 10px
+}
+.section_bg main h3 {
+    line-height: 10px;
+}
+.section_bg .warn {
+	background-color: #d6aa5c44;
+    border: 3px solid #d6aa5c;
+}
+.section_bg .warn p {
+	margin: 10px;
 }
 .textTag {
     border-radius: 5px;

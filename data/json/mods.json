@@ -1,7 +1,4 @@
 {
-    "createdBy": "Fun117",
-    "version": "0.0.1",
-    "release_time": "null",
     "last_change_time": "2023-12-03",
     "content_list": [
         {
@@ -11,15 +8,33 @@
             "content": [
                 {
                     "name": "SB MOD v1.0",
-                    "description": "",
+                    "description": "ビル経営ゲームv7のMod",
                     "creator": "Masaabu-YT",
                     "projectId": "940232456",
                     "tags": [
                         {
-                            "tagId": "1",
+                            "tagId": 1,
                             "name": "公式"
+                        },
+                        {
+                            "tagId": 2,
+                            "name": "前提"
                         }
                     ]
+                },
+                {
+                    "name": "SBMod GUIサンプル",
+                    "description": "SBMODのサンプルmod",
+                    "creator": "dmmo-com-jp",
+                    "projectId": "945187053",
+                    "tags": []
+                },
+                {
+                    "name": "SBMOD非公式アドオン",
+                    "description": "SBMODのguiサンプルを改造したmod",
+                    "creator": "edu_haruton2",
+                    "projectId": "949284994",
+                    "tags": []
                 }
             ]
         },
@@ -35,7 +50,7 @@
                     "projectId": "933515639",
                     "tags": [
                         {
-                            "tagId": "2",
+                            "tagId": 2,
                             "name": "前提"
                         }
                     ]
@@ -45,22 +60,21 @@
                     "description": "SBAPIのpostに依存した、コマンド強化modです。",
                     "creator": "dmmo-com-jp",
                     "projectId": "939787547",
-                    "tags": [
-                        {
-                            "tagId": "0"
-                        }
-                    ]
+                    "tags": []
                 },
                 {
                     "name": "隕石経営ゲーム",
                     "description": "隕石！！",
                     "creator": "banana_877_",
                     "projectId": "933713134",
-                    "tags": [
-                        {
-                            "tagId": "0"
-                        }
-                    ]
+                    "tags": []
+                },
+                {
+                    "name": "sorting Mod",
+                    "description": "隕石！！",
+                    "creator": "dmmo-com-jp",
+                    "projectId": "945217558",
+                    "tags": []
                 }
             ]
         },
@@ -76,7 +90,7 @@
                     "projectId": "790969288",
                     "tags": [
                         {
-                            "tagId": "1",
+                            "tagId": 1,
                             "name": "公式"
                         }
                     ]
@@ -86,44 +100,28 @@
                     "description": "",
                     "creator": "dmmo-com-jp",
                     "projectId": "791408146",
-                    "tags": [
-                        {
-                            "tagId": "0"
-                        }
-                    ]
+                    "tags": []
                 },
                 {
                     "name": "隕石アドオン",
                     "description": "隕石！！",
                     "creator": "dmmo-com-jp",
                     "projectId": "792121597",
-                    "tags": [
-                        {
-                            "tagId": "0"
-                        }
-                    ]
+                    "tags": []
                 },
                 {
                     "name": "Re:BN addon",
                     "description": "",
                     "creator": "banana_877_",
                     "projectId": "817892400",
-                    "tags": [
-                        {
-                            "tagId": "0"
-                        }
-                    ]
+                    "tags": []
                 },
                 {
                     "name": "SB Addons Remix",
                     "description": "",
                     "creator": "yoshikunTA",
                     "projectId": "795165690",
-                    "tags": [
-                        {
-                            "tagId": "0"
-                        }
-                    ]
+                    "tags": []
                 }
             ]
         },
@@ -139,7 +137,7 @@
                     "projectId": "926411096",
                     "tags": [
                         {
-                            "tagId": "2",
+                            "tagId": 2,
                             "name": "前提"
                         }
                     ]
@@ -149,11 +147,7 @@
                     "description": "天候を6.0に復活させます",
                     "creator": "dmmo-com-jp",
                     "projectId": "933340996",
-                    "tags": [
-                        {
-                            "tagId": "0"
-                        }
-                    ]
+                    "tags": []
                 }
             ]
         }

@@ -40,6 +40,13 @@
 
             var newUrl = windowUrl.replace('play/', 'pages/game/play/');
             window.location.href = newUrl;
+        } else
+        if (windowUrl.startsWith("/Scratch-Building/wiki/")) {
+            var contentsDiv = document.getElementById('contents');
+            contentsDiv.innerHTML = '<h2>リダイレクト中...</h2>';
+
+            var newUrl = windowUrl.replace('wiki/', 'wiki/content/');
+            window.location.href = newUrl;
         }
 
         // Configuration of link elements in this directory

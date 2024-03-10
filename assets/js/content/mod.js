@@ -49,7 +49,37 @@ function modsListLoad(){
         `)
         modContentGroup.appendChild(HtmlContentGroup);
         let modsProjectsList = document.getElementById(`group_${+i}`);
-        for (let i2 = 0; i2 < (serverModsData.content_list[i].content.length); i2++) {
+        serverModsData.content_list[i].content.forEach((content, i2) => {
+            var modTags = "";
+            content.tags.forEach(tag => {
+                switch (tag.tagId) {
+                    case 1:
+                        modTags += `<div class="textFrame orange">${tag.name}</div>`;
+                        break;
+                    case 2:
+                        modTags += `<div class="textFrame blue">${tag.name}</div>`;
+                        break;
+                    default:
+                        modTags += `<div class="textFrame">${tag.name}</div>`;
+                        break;
+                }
+            });
+            var modsProject = document.createElement('div');
+            modsProject.classList.add('project','fadeUp');
+            modsProject.addEventListener('click', () => {
+                openProject(content.projectId);
+            });
+            modsProject.innerHTML=(`
+                <img src="https://uploads.scratch.mit.edu/get_image/project/${content.projectId}_480x360.png"/>
+                <div class="project-desc" style="margin:5px;">
+                    <h2 style="padding-top:0;">${content.name}</h2>
+                    <div class="tags">${modTags}</div>
+                </div>
+                <p>${content.description?`${content.description}<br>`:``}<span style="color:#aaa;">by ${content.creator}<span/></p>
+            `);
+            modsProjectsList.appendChild(modsProject);
+        });
+        /*for (let i2 = 0; i2 < (serverModsData.content_list[i].content.length); i2++) {
             var HtmlTagsDate = "";
             if(serverModsData.content_list[i].content[i2].tags["0"].tagId === '1'){
                 HtmlTagsDate = `<div class="textFrame orange">${serverModsData.content_list[i].content[i2].tags["0"].name}</div>`;
@@ -71,7 +101,7 @@ function modsListLoad(){
                 <p>${serverModsData.content_list[i].content[i2].description}<br>by ${serverModsData.content_list[i].content[i2].creator}</p>
             `);
             modsProjectsList.appendChild(modsProject);
-        };
+        };*/
     };
 };
 
