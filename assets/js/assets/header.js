@@ -22,7 +22,7 @@ var file_path_data = [
     {
         "link_Masaabu_github": 'https://github.com/Masaabu',
         "link_Masaabu_youtube": 'https://youtube.com/@masaabu_',
-        "link_app_logo": (windowFileDirectlyPass + "/assets/image/Masaabu_yticon.png"),
+        "link_app_logo": (windowFileDirectlyPass + "/assets/image/Masaabu_yticon.webp"),
         "link_home": (windowFileDirectlyPass + "/"),
         "link_play": (windowFileDirectlyPass + "/pages/game/"),
         "link_mod": (windowFileDirectlyPass + "/pages/mods/"),

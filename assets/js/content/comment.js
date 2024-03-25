@@ -295,7 +295,7 @@ async function loadCommentListData(Load_mode,Load_value) {
 
                 var REPcommentRepCommentIdDiv = document.createElement(`div`);
                 REPcommentRepCommentIdDiv.style.display=('flex');
-                const REPcommentRepCommentID = document.createElement('a');
+                const REPcommentRepCommentID = document.createElement('p');
                 if(allComments[repComments[i].rep]){
                     REPcommentRepCommentID.classList.add(`text-[#6094F8]`);
                     REPcommentRepCommentID.textContent=`@${(allComments[repComments[i].rep].name)}`;
@@ -336,14 +336,14 @@ async function loadCommentListData(Load_mode,Load_value) {
         if(Load_value==='max'){
             loadAddComment('set',commentCount);
         }else{
-            if(commentCount >　commentListLoadSetC){
+            if(commentCount > commentListLoadSetC){
                 loadAddComment('set',commentListLoadSetC);
             }else{
                 loadAddComment('set',commentCount);
             };
         }
     }else{
-        if(commentCount >　commentListLoadSetC){
+        if(commentCount > commentListLoadSetC){
             loadAddComment('set',commentListLoadSetC);
         }else{
             loadAddComment('set',commentCount);

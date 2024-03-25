@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html id="html" class="dark">
     <head>
-        <link rel="icon" href="./assets/image/Masaabu_yticon.png">
         <title>ビル経営ゲーム</title>
         <meta name="description" content="ビル経営ゲームはScratchで作られたシミュレーションゲームです">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="./assets/image/favicon.ico" type="image/x-icon" sizes="256x256">
         <link rel="stylesheet" href="./assets/css/loading.css">
         <link rel="stylesheet" href="./assets/css/light_art.css">
         <link rel="stylesheet" href="./assets/css/alert.css">
@@ -60,7 +60,9 @@
                 <p style="margin-bottom: 10px;">ビル経営ゲームが更新されました！<br>今すぐアップデート内容を確認しましょう！</p>
                 <a class="button" href="pages/wiki/content/changelog/v7/">ページを見る</a>
                 <br><br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/j-LTJJghfJ4?si=KOfnbrZZAKajlEgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div id="UpdateInfoVideo">
+                    <img alt="YouTube" src="./assets/image/ytthumbnail_sb7-1-1.webp" onclick="showYouTubeVideo()">
+                </div>
             </div>
             
             <div id="コメント欄" class="section_bg">
@@ -101,6 +103,6 @@
     <script src="./assets/js/content/news.js"></script>
     <script>jsonListLoad('');</script>
     <script src="./assets/js/content/comment.js"></script>
+    <script src="./assets/js/index.js"></script>
     <script>loadCommentListData();offadadw();</script>
-    <script src="./assets/js/newSite.js"></script>
 </html>

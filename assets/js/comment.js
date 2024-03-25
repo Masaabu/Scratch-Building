@@ -86,7 +86,7 @@ async function loadData() {
       commentCount = commentCount+1;
     }
   });
-  if(commentCount >　commentListLoadSetC){
+  if(commentCount > commentListLoadSetC){
     loadAddComment('set',commentListLoadSetC);
   }else{
     loadAddComment('set',commentCount);
@@ -167,7 +167,7 @@ function repCommentLoadData(){
       commentCount = commentCount+1;
     }
   };
-  if(commentCount >　commentListLoadSetC){
+  if(commentCount > commentListLoadSetC){
     loadAddComment('set',commentListLoadSetC);
   }else{
     loadAddComment('set',commentCount);
