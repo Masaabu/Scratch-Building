@@ -1,4 +1,7 @@
 // Set the file path for this directory
+var windowFileDirectlyPass = "";
+if (window.location.href.startsWith("https://masaabu.github.io/")) windowFileDirectlyPass += "/Scratch-Building"
+/*
 var windowUrl = window.location.pathname;
 var windowUrlSr = 0;
 if((window.location.protocol) === 'https:'){
@@ -16,6 +19,7 @@ if(windowUrlSr > 0){
 }else{
     windowFileDirectlyPass = `.`;
 };
+*/
 
 var newsJSsetting_news = getCookieSettingContent(`ae71d4c5-8c8c-4e1c-85fe-a25276e3c243`)
 // js 処理

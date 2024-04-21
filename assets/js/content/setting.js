@@ -1,4 +1,7 @@
 // Set the file path for this directory
+var windowFileDirectlyPass = "";
+if (window.location.href.startsWith("https://masaabu.github.io/")) windowFileDirectlyPass += "/Scratch-Building"
+/*
 var windowUrl = window.location.pathname;
 var windowUrlSr = 0;
 if((window.location.protocol) === 'https:'){
@@ -16,6 +19,7 @@ if(windowUrlSr > 0){
 }else{
     windowFileDirectlyPass = `.`;
 };
+*/
 
 var allSettingDataCount = 0;
 var allSettingData=(JSON.parse(`{}`));

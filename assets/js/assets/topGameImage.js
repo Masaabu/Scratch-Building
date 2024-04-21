@@ -1,4 +1,7 @@
 // Set the file path for this directory
+var windowFileDirectlyPass = "";
+if (window.location.href.startsWith("https://masaabu.github.io/")) windowFileDirectlyPass += "/Scratch-Building"
+/*
 var windowUrl = window.location.pathname;
 var windowUrlSr = 0;
 if((window.location.protocol) === 'https:'){
@@ -16,6 +19,8 @@ if(windowUrlSr > 0){
 }else{
     windowFileDirectlyPass = `.`;
 };
+*/
+
 // <img class="homebanner" src="${windowFileDirectlyPass}/assets/image/banner.png" alt="Banner Image">
 document.getElementById('topGameImage').innerHTML=(`
 <img class="homebanner" src="${windowFileDirectlyPass}/assets/image/banner.webp" alt="Banner Image">
